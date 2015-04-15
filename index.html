@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
     <link rel="stylesheet" href="css/alertify/alertify.bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/alertify/alertify.core.css" type="text/css">
+    <link rel="stylesheet" href="css/tooltipster/tooltipster.css" type="text/css">
 
     <!--Created Style Sheets-->
     <link rel="stylesheet" href="css/style.css">
@@ -22,6 +23,7 @@
     <script rel="script" type="text/javascript" src="script/externalLibraries/reactjs/react.js"></script>
     <script rel="script" type="text/javascript" src="script/externalLibraries/jquery.js"></script>
     <script rel="script" type="text/javascript" src="script/externalLibraries/bootstrap/bootstrap.js"></script>
+    <script rel="script" type="text/javascript" src="script/externalLibraries/tooltipster/jquery.tooltipster.min.js"></script>
 
     <!--Data Libraries-->
     <script rel="script" type="text/javascript" src="tacks/MockDataForMarketVariants.js"></script>
@@ -33,28 +35,42 @@
     <script rel="script" type="text/javascript" src="script/js/stores/models/MenuItems.js"></script>
     <script rel="script" type="text/javascript" src="script/js/dispatchers/MenuDispatcher.js"></script>
     <script rel="script" type="text/javascript" src="script/js/stores/MenuItemStore.js"></script>
-    <script rel="script" type="text/jsx" src="script/js/components/MenuComponent.js"></script>
+    <script rel="script" type="text/jsx" src="script/js/components/menu/MenuItemComponent.js"></script>
+    <script rel="script" type="text/jsx" src="script/js/components/menu/MenuComponent.js"></script>
 
     <!--Internal Content Libraries-->
     <script rel="script" type="text/javascript" src="script/js/actions/ContentAction.js"></script>
     <script rel="script" type="text/javascript" src="script/js/dispatchers/ContentDispatcher.js"></script>
     <script rel="script" type="text/javascript" src="script/js/stores/ContentStore.js"></script>
-    <script rel="script" type="text/jsx" src="script/js/components/ContentComponent.js"></script>
+    <script rel="script" type="text/jsx" src="script/js/components/content/ProductThumbView.js"></script>
+    <script rel="script" type="text/jsx" src="script/js/components/content/ProductItem.js"></script>
+    <script rel="script" type="text/jsx" src="script/js/components/content/ContentComponent.js"></script>
 
     <!--Module Specific Scripts-->
     <script rel="script" type="text/jsx" src="script/js/utils/MasterScreenLoader.js"></script>
     <script rel="script" type="text/jsx" src="script/js/MainScreen.js"></script>
 
 </head>
+
 <body>
 
     <div id="MainContainer">
 
         <div id="MenuBar"></div>
 
-        <div id="Content"></div>
+        <div id="Content">
+            <div id="calenderScreen" class="entityScreen"></div>
+            <div id="campaignScreen" class="entityScreen"></div>
+            <div id="templateScreen" class="entityScreen"></div>
+            <div id="promotionScreen" class="entityScreen"></div>
+            <div id="assortmentScreen" class="entityScreen"></div>
+            <div id="contentScreen" class="entityScreen"></div>
+            <div id="targetScreen" class="entityScreen"></div>
+            <div id="reportScreen" class="entityScreen"></div>
+        </div>
 
     </div>
 
 </body>
+
 </html>

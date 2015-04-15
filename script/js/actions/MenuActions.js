@@ -7,5 +7,11 @@ var menuButtonClicked = function(btnLabel) {
 };
 
 var createButtonClicked = function (btnLabel) {
-  console.log("You can create " + btnLabel);
+  switch (btnLabel) {
+    case 'Content':
+      ContentListStore.createProduct();
+      break;
+    default :
+      console.log("You can create " + btnLabel);
+  }
 };
