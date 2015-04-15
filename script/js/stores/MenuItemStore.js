@@ -1,19 +1,20 @@
 var MenuListStore = {
-  items: MenuItemsList,
+  data: MenuItemsList,
 
-  getAllMenus: function() {
-    return this.items;
+  getAllData: function() {
+    return this.data;
   },
 
   setMenuItemActive: function(sMenuTitle) {
-    var items = MenuListStore.items;
-    for(var menuItem in items) {
-      if(items[menuItem].title == sMenuTitle) {
-        items[menuItem].isActive = true;
+    var data = MenuListStore.data;
+    for(var menuItem in data) {
+      if(data[menuItem].title == sMenuTitle) {
+        data[menuItem].isActive = true;
       } else {
-        items[menuItem].isActive = false;
+        data[menuItem].isActive = false;
       }
     }
+    loadMenuContent(sMenuTitle);
     MenuListStore.trigger('change');
   }
 };

@@ -1,0 +1,98 @@
+.PIMThumbContainer {
+    /* height: 130px; */
+    width: 135px;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #B5B5B5;
+    box-shadow: 1px 1px 2px -1px #7F7E7E;
+    background: #fff;
+    color: #333;
+    transition: all .2s;
+}
+
+.pimThumbView {
+    height: 190px;
+    background: #EAEAEA;
+}
+
+.PIMThumbImage {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background: #FFFFFF;
+}
+
+.PIMThumbImage img {
+    max-height: 96px;
+    max-width: 91%;
+    position: absolute;
+    left: 49%;
+    top: 51%;
+    transform: translate(-50%, -50%);
+}
+
+#PIMViewScrollDiv {
+    height: 87px;
+    overflow: auto;
+}
+
+.PIMThumbName {
+    width: 100%;
+    /*background: rgba(220, 220, 220, 0.72);*/
+    overflow: hidden;
+    transition: all .2s;
+    cursor: default;
+    padding: 1px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.PIMThumbTitle {
+    width: 100%;
+    /*background: rgba(220, 220, 220, 0.72);*/
+    overflow: hidden;
+    transition: all .2s;
+    cursor: default;
+    text-align: center;
+    padding: 1px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.PIMThumbLabel {
+    font-family: Tahoma;
+    padding: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    float: left;
+    width: 130px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.PIMThumbTag {
+    width: 100%;
+    background: rgba(220, 220, 220, 0.72);
+    /* overflow: hidden; */
+    transition: all .2s;
+    cursor: default;
+    text-align: center;
+    font-weight: normal;
+    padding: 1px;
+}
+
+#topToolsPanel {
+    width: 100%;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0 auto;
+    height: 28px;
+    padding: 4px 0 3px 3px;
+    border: 1px solid #7a7a7a;
+    background: linear-gradient(#FFFFFF, #ECECEC);
+    color: #333;
+    text-align: center;
+}

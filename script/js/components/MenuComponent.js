@@ -20,13 +20,13 @@ var MenuItem = React.createClass({
 var Menu = React.createClass({
   getInitialState: function() {
     return{
-      menuList: MenuListStore.getAllMenus()
+      menuList: MenuListStore.getAllData()
     };
   },
 
 
   listStateChanged: function() {
-    this.setState({menuList: MenuListStore.getAllMenus()});
+    this.setState({menuList: MenuListStore.getAllData()});
   },
   componentDidMount: function() {
     MenuListStore.bind( 'change', this.listStateChanged );

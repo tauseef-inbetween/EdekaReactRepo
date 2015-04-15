@@ -6,4 +6,5 @@ $(document).ready(function(){
 function loadMenuItems(){
   var $menuContainer = $('#MenuBar').get(0);
   React.render(<Menu />, $menuContainer);
+
 }
