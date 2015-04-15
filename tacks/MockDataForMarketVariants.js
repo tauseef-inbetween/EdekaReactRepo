@@ -1,6 +1,6 @@
-if (!MockData) {
-  MockData = {};
-}
+//if (!MockData) {
+var MockData = {};
+//}
 
 MockData.Markets = [
 { "id": 1,

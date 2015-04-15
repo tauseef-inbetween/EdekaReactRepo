@@ -1,0 +1,51 @@
+* {
+    font-family: Trebuchet, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.menuItem {
+    height: 103%;
+    width: 75px;
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 5px 5px 5px;
+    margin: 0 2px;
+    text-shadow: -1px -1px 1px #111;
+}
+
+#MenuBar {
+    width: 100%;
+    font-size: 12px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-weight: normal;
+    height: 53px;
+    background: #434343;
+    overflow: hidden;
+    border: none;
+}
+
+#edekaCSHeaderLogo{
+    background: url("../images/jira-logo-scaled.png") no-repeat;
+    width: 40px;
+    height: 40px;
+    margin: 8px 20px 0 13px;
+    float: left;
+    display: inline-block;
+    background-size: 172px;
+}
+
+.menuIcon {
+    height: 18px;
+    width: 14px;
+    font-size: 14px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+.activeScreenButton {
+    box-shadow: 0 -2px 0 0 #87C6EB inset;
+    color: #87C6EB !important;
+}
