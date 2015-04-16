@@ -1,11 +1,10 @@
 $(document).ready(function(){
-  loadMenuItems();
+  loadContent();
 
 });
 
-function loadMenuItems(){
-  /*var $menuContainer = $('#MenuBar').get(0);
-  React.render(<Menu />, $menuContainer);*/
+function loadContent(){
+
   var $mainContainer = $('#MainContainerBody').get(0);
   React.render(<MainContainer />, $mainContainer);
 
