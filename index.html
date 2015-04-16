@@ -32,7 +32,7 @@
 
     <!--Internal Menu Libraries-->
     <script rel="script" type="text/javascript" src="script/js/actions/MenuActions.js"></script>
-    <script rel="script" type="text/javascript" src="script/js/stores/models/MenuItems.js"></script>
+    <script rel="script" type="text/javascript" src="script/js/stores/models/MenuItemStoreModel.js"></script>
     <script rel="script" type="text/javascript" src="script/js/dispatchers/MenuDispatcher.js"></script>
     <script rel="script" type="text/javascript" src="script/js/stores/MenuItemStore.js"></script>
     <script rel="script" type="text/jsx" src="script/js/components/menu/MenuItemComponent.js"></script>
@@ -41,11 +41,39 @@
     <!--Internal Content Libraries-->
     <script rel="script" type="text/javascript" src="script/js/actions/ContentAction.js"></script>
     <script rel="script" type="text/javascript" src="script/js/dispatchers/ContentDispatcher.js"></script>
-    <script rel="script" type="text/javascript" src="script/js/stores/models/ContentStore.js"></script>
+    <script rel="script" type="text/javascript" src="script/js/stores/models/ContentStoreModel.js"></script>
     <script rel="script" type="text/javascript" src="script/js/stores/ContentStore.js"></script>
     <script rel="script" type="text/jsx" src="script/js/components/content/ProductThumbView.js"></script>
     <script rel="script" type="text/jsx" src="script/js/components/content/ProductItem.js"></script>
     <script rel="script" type="text/jsx" src="script/js/components/content/ContentComponent.js"></script>
+
+    <!--Internal Calender Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/calender/CalenderComponent.js"></script>
+
+    <!--Internal Campaign Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/campaign/CampaignComponent.js"></script>
+
+    <!--Internal Template Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/template/TemplateComponent.js"></script>
+
+    <!--Internal Promotion Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/promotion/PromotionComponent.js"></script>
+
+    <!--Internal Assortment Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/assortment/AssortmentComponent.js"></script>
+
+    <!--Internal Target Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/target/TargetComponent.js"></script>
+
+    <!--Internal Report Libraries-->
+    <script rel="script" type="text/jsx" src="script/js/components/report/ReportComponent.js"></script>
+
+    <!--Internal MainContainer Libraries-->
+    <script rel="script" type="text/javascript" src="script/js/actions/MainCotnainerAction.js"></script>
+    <script rel="script" type="text/javascript" src="script/js/dispatchers/MainContainerDispatcher.js"></script>
+    <script rel="script" type="text/javascript" src="script/js/stores/models/MainContainerStoreModel.js"></script>
+    <script rel="script" type="text/javascript" src="script/js/stores/MainContainerStore.js"></script>
+    <script rel="script" type="text/jsx" src="script/js/components/MainContainerComponent.js"></script>
 
     <!--Module Specific Scripts-->
     <script rel="script" type="text/jsx" src="script/js/utils/MasterScreenLoader.js"></script>
@@ -55,22 +83,7 @@
 
 <body>
 
-    <div id="MainContainer">
-
-        <div id="MenuBar"></div>
-
-        <div id="Content">
-            <div id="calenderScreen" class="entityScreen"></div>
-            <div id="campaignScreen" class="entityScreen"></div>
-            <div id="templateScreen" class="entityScreen"></div>
-            <div id="promotionScreen" class="entityScreen"></div>
-            <div id="assortmentScreen" class="entityScreen"></div>
-            <div id="contentScreen" class="entityScreen"></div>
-            <div id="targetScreen" class="entityScreen"></div>
-            <div id="reportScreen" class="entityScreen"></div>
-        </div>
-
-    </div>
+    <div id="MainContainerBody"></div>
 
 </body>
 

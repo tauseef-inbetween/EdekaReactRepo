@@ -1,4 +1,4 @@
-var MenuListStore = {
+MenuListStore = {
   data: MenuItemsList,
 
   getAllData: function() {
@@ -14,7 +14,7 @@ var MenuListStore = {
         data[menuItem].isActive = false;
       }
     }
-    loadMenuContent(sMenuTitle);
+    MainContainerStore.loadScreen(sMenuTitle);
     MenuListStore.trigger('change');
   }
 };

@@ -1,4 +1,4 @@
-var ContentListStore = {
+ContentListStore = {
   data: allProducts,
 
   getAllData: function() {

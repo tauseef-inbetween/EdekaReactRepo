@@ -1,4 +1,4 @@
-var ProductWrapper = React.createClass({
+var Content = React.createClass({
   getInitialState: function() {
     return{
       productList: ContentListStore.getAllData()
@@ -24,7 +24,7 @@ var ProductWrapper = React.createClass({
       );
     });
     return(
-        <div>
+        <div id="contentScreen" className={this.props.className}>
           <div id="topToolsPanel">Content</div>
           <div className = "ProductWrapper">
             {productItems}

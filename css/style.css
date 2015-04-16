@@ -15,7 +15,7 @@
     text-shadow: -1px -1px 1px #111;
 }
 
-#MenuBar {
+.Menu {
     width: 100%;
     font-size: 12px;
     margin: 0 auto;
@@ -75,9 +75,21 @@
     box-shadow: inset 0 8px 8px -8px #333, inset 0 -8px 8px -8px #333;
 }
 
-#Content {
+#moduleContainer {
     position: absolute;
     top: 51px;
     width: 100%;
-    /*height: 100%;*/
+}
+
+.showScreen {
+    display: block;
+}
+
+.hideScreen {
+    display: none;
+}
+
+.screen {
+    height: 625px;
+    overflow: auto;
 }
