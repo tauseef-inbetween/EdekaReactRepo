@@ -1,5 +1,5 @@
 var ContentListStore = {
-  data: products,
+  data: allProducts,
 
   getAllData: function() {
     return this.data;

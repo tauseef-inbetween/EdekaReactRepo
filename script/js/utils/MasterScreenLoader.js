@@ -1,11 +1,29 @@
+var ScreenLoaderHelper = {
+  "Calender": false,
+  "Campaign": false,
+  "Promotion": false,
+  "Assortment": false,
+  "Template": false,
+  "Content": false,
+  "Report": false,
+  "Target": false
+};
+
 function loadMenuContent (screenName) {
   $('.entityScreen').hide();
+
   var $screen = $('#' + screenName.toLowerCase() + 'Screen');
   $screen.show();
+
   switch (screenName) {
     case 'Content':
-      var $moduleContainer = $screen.get(0);
-      React.render(<ProductWrapper />, $moduleContainer);
+      if(ScreenLoaderHelper[screenName]){
+        ContentListStore.trigger('change');
+      } else {
+        var $moduleContainer = $screen.get(0);
+        React.render(<ProductWrapper />, $moduleContainer);
+        ScreenLoaderHelper[screenName] = true;
+      }
       break;
     default:
       $screen.html('Nothing to display');
