@@ -6,13 +6,9 @@ MenuListStore = {
   },
 
   setMenuItemActive: function(sMenuTitle) {
-    var data = this.data;
-    for(var menuItem in data) {
-      if(data[menuItem].title == sMenuTitle) {
-        data[menuItem].isActive = true;
-      } else {
-        data[menuItem].isActive = false;
-      }
+    var menus = this.data || [];
+    for(var iMenuCount = 0; iMenuCount < menus.length; iMenuCount++) {
+      menus[iMenuCount].isActive = (menus[iMenuCount].title == sMenuTitle);
     }
     MainContainerStore.loadScreen(sMenuTitle);
     this.trigger('change');

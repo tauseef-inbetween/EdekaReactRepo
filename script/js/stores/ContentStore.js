@@ -1,8 +1,19 @@
 ContentListStore = {
   data: allProducts,
 
+  contentViewStyle: 'thumbnail',
+
   getAllData: function() {
     return this.data;
+  },
+
+  getContentViewStyle: function () {
+    return this.contentViewStyle;
+  },
+
+  setContentViewStyle: function (sViewStyle) {
+    this.contentViewStyle = sViewStyle;
+    this.trigger('change');
   },
 
   createProduct: function() {

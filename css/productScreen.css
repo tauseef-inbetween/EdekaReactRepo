@@ -118,6 +118,7 @@
 .PIMThumbContainer:hover .PIMProductThumbDelete:hover {
     opacity: .8;
 }
+
 .PIMThumbContainer:hover .PIMProductThumbDelete {
     opacity: .5;
 }
@@ -125,4 +126,112 @@
 .ProductWrapper {
     height: 595px;
     overflow: auto;
+}
+
+.pimViewChangeButton {
+    float: left;
+    height: 21px;
+    width: 21px;
+    border: 1px solid #7e807e;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 1px 3px 3px 3px;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: -1px -1px 0 #3E7FB6;
+    color: #FFFFFF;
+    background-color: #66B8FF;
+    background-image: linear-gradient(to bottom, #A3A3A3, #5C5C5C);
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.selectedButton {
+    background-image: linear-gradient(to bottom, #66B8FF, #3E7FB6);
+}
+
+
+#contentViewContainer {
+    left: 0;
+    margin-top: -3px;
+    float: left;
+    height: 23px;
+    width: 50px;
+}
+
+.pimDetailView {
+    height: 120px;
+    background: #F7F7F7;
+}
+
+#PIMView2ScrollDiv {
+    height: 95px;
+    overflow: auto;
+}
+
+.PIMThumbContainer[data-type="Structured"] {
+    box-shadow: 1px 1px 2px -1px #7F7E7E, 0 4px 0px 0px green;
+}
+
+.PIMThumbContainer[data-type="Semi-structured"] {
+    box-shadow: 1px 1px 2px -1px #7F7E7E, 0 4px 0px 0px purple;
+}
+
+.PIMThumbContainer[data-type="CMS"] {
+    box-shadow: 1px 1px 2px -1px #7F7E7E, 0 4px 0px 0px #4d4b4b;
+}
+
+.PIMThumbContainer[data-type="Asset"] {
+    box-shadow: 1px 1px 2px -1px #7F7E7E, 0 4px 0px 0px yellow;
+}
+
+.PIMThumbContainer[data-type="Impulse"] {
+    box-shadow: 1px 1px 2px -1px #7F7E7E, 0 4px 0px 0px orange;
+}
+
+.PIMThumbContainer[data-workflow-status="Requested"]:before,
+.PIMThumbContainer[data-workflow-status="Created"]:before,
+.PIMThumbContainer[data-workflow-status="Rework"]:before,
+.PIMThumbContainer[data-workflow-status="Updated"]:before,
+.PIMThumbContainer[data-workflow-status="Approved"]:before,
+.PIMThumbContainer[data-workflow-status="Published"]:before,
+.PIMThumbContainer[data-workflow-status="Archived"]:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 0;
+    /* border-color: #007bff transparent transparent transparent; */
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+
+.PIMThumbContainer[data-workflow-status="Requested"]:before{
+    border-color: #22a64b transparent transparent transparent;
+}
+
+.PIMThumbContainer[data-workflow-status="Created"]:before{
+    border-color: #ffb31c transparent transparent transparent;
+}
+
+.PIMThumbContainer[data-workflow-status="Rework"]:before{
+    border-color: #fffe00 transparent transparent transparent;
+}
+
+.PIMThumbContainer[data-workflow-status="Updated"]:before{
+    border-color: #625cff transparent transparent transparent;
+}
+
+.PIMThumbContainer[data-workflow-status="Approved"]:before{
+    border-color: #80c7ff transparent transparent transparent;
+}
+
+.PIMThumbContainer[data-workflow-status="Published"]:before{
+    border-color: #575699 transparent transparent transparent;
+}
+
+.PIMThumbContainer[data-workflow-status="Archived"]:before {
+    border-color: #00c063 transparent transparent transparent;
 }
