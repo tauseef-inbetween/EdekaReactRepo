@@ -6,7 +6,7 @@ MenuListStore = {
   },
 
   setMenuItemActive: function(sMenuTitle) {
-    var data = MenuListStore.data;
+    var data = this.data;
     for(var menuItem in data) {
       if(data[menuItem].title == sMenuTitle) {
         data[menuItem].isActive = true;
@@ -15,7 +15,7 @@ MenuListStore = {
       }
     }
     MainContainerStore.loadScreen(sMenuTitle);
-    MenuListStore.trigger('change');
+    this.trigger('change');
   }
 };
 

@@ -19,8 +19,9 @@ var Content = React.createClass({
   render: function(){
     var productItems = [];
     this.state.productList.map(function(item, i) {
+      var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
       return (
-          productItems.push(<ProductItem key={i} product={item}/>)
+          productItems.push(<ProductItem key={i} product={item} onClick={productDeleteBtnClickBind}/>)
       );
     });
     return(

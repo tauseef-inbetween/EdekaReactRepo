@@ -6,7 +6,7 @@ MainContainerStore = {
   },
 
   loadScreen: function (screenName) {
-    var screens = MainContainerStore.getAllData();
+    var screens = this.getAllData();
     for(var iScreenCount = 0; iScreenCount < screens.length; iScreenCount++) {
       if(screens[iScreenCount].title == screenName) {
         screens[iScreenCount].isSelected = true;
@@ -14,7 +14,7 @@ MainContainerStore = {
         screens[iScreenCount].isSelected = false;
       }
     }
-    MainContainerStore.trigger('change');
+    this.trigger('change');
   }
 };
 
