@@ -1,8 +1,9 @@
 var ProductDetailViewItem = React.createClass({
   render: function () {
     var product = this.props.product;
+    var productTitle = product.title + " | " + product.type + " | " + product.workflowStatus;
     return (
-    <div className="PIMThumbContainer" data-type={this.props.product.type} data-workflow-status={this.props.product.workflowStatus}>
+    <div className="PIMThumbContainer" title={productTitle} data-type={product.type} data-workflow-status={product.workflowStatus}>
       <div className="PIMProductThumbDelete" title="Delete" onClick={this.props.onClick}></div>
       <div className="pimDetailView">
         <div className="PIMThumbName">

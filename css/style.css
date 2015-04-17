@@ -48,7 +48,7 @@
 }
 
 .activeScreenButton {
-    box-shadow: 0 -2px 0 0 #87C6EB inset;
+    box-shadow: 0 -4px 0 0 #87C6EB inset;
     color: #87C6EB !important;
 }
 
@@ -77,7 +77,7 @@
 
 #moduleContainer {
     position: absolute;
-    top: 51px;
+    top: 50px;
     width: 100%;
 }
 
@@ -92,4 +92,11 @@
 .screen {
     height: 625px;
     overflow: auto;
+}
+
+.alertify {
+    top: 30%;
+    font-size: 12px;
+    width: 350px;
+    left: 56%;
 }
