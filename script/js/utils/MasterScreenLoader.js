@@ -1,8 +1,9 @@
 function createDummyProduct () {
   var length = ContentListStore.data.length;
+  var id = ContentListStore.data[length-1].id + 100;
   return {
     "notes": [{
-      "header": "Untitled_" + length,
+      "header": "Untitled_" + id,
       "description": "",
       "type": "Title & Teaser",
       "id": "2f913782",
@@ -16,7 +17,7 @@ function createDummyProduct () {
         "Quality": []
       }
     }],
-    "label": "Untitled_" + length,
+    "label": "Untitled_" + id,
     "image": ["images/pouch.png"],
     "multimedia": [{
       "image": "images/pouch.png",
@@ -63,7 +64,7 @@ function createDummyProduct () {
     "description": "",
     "discount": "",
     "grill": "",
-    "id": length,
+    "id": id,
     "imageGrill": "",
     "imageOrganicStamp": "",
     "imageQRCode": "",
@@ -75,7 +76,7 @@ function createDummyProduct () {
     "type": "Structured",
     "workflowStatus": "Created",
     "Category": "",
-    "title": "Untitled_" + length,
+    "title": "Untitled_" + id,
     "blockData": "",
     "blockNotes": [],
     "richTextData": "",

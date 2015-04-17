@@ -1,12 +1,13 @@
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Content = React.createClass({
-  getInitialState: function() {
-    return{
+  getInitialState: function () {
+    return {
       productList: [],
-      contentViewStyle : 'thumbnail'
+      contentViewStyle: 'thumbnail'
     };
   },
 
-  listStateChanged: function() {
+  listStateChanged: function () {
     this.setState({
       productList: ContentListStore.getAllData(),
       contentViewStyle: ContentListStore.getContentViewStyle()
@@ -15,37 +16,38 @@ var Content = React.createClass({
   componentWillMount: function () {
     this.listStateChanged();
   },
-  componentDidMount: function() {
-    ContentListStore.bind( 'change', this.listStateChanged );
+  componentDidMount: function () {
+    ContentListStore.bind('change', this.listStateChanged);
   },
-  componentWillUnmount: function() {
-    ContentListStore.unbind( 'change', this.listStateChanged );
+  componentWillUnmount: function () {
+    ContentListStore.unbind('change', this.listStateChanged);
   },
 
 
-  render: function(){
-    var productItems = [];
+  render: function () {
     var contentViewStyle = this.state.contentViewStyle;
-    this.state.productList.map(function(item, i) {
+    var productItems = this.state.productList.map(function (item, i) {
       var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
-      var viewStyle = null;
-      if(contentViewStyle == 'thumbnail') {
-        viewStyle = <ProductThumbnailViewItem key={i} product={item} onClick={productDeleteBtnClickBind}/>;
+      if (contentViewStyle == 'thumbnail') {
+        return (
+            <ProductThumbnailViewItem key={item.id} product={item} onClick={productDeleteBtnClickBind}/>
+        );
       } else {
-        viewStyle = <ProductDetailViewItem key={i} product={item} onClick={productDeleteBtnClickBind}/>;
+        return (
+            <ProductDetailViewItem key={item.id} product={item} onClick={productDeleteBtnClickBind}/>
+        );
       }
-      return (
-          productItems.push(viewStyle)
-      );
     });
-    return(
+    return (
         <div id="contentScreen" className={this.props.className}>
           <div id="topToolsPanel">
             <ContentViewStyle />
-            Content
+          Content
           </div>
           <div className = "ProductWrapper">
-            {productItems}
+            <ReactCSSTransitionGroup transitionName="example">
+              {productItems}
+            </ReactCSSTransitionGroup>
           </div>
         </div>
     )
