@@ -1,11 +1,11 @@
-$(document).ready(function(){
-  loadContent();
+$(document).ready(function () {
+    loadContent();
 
 });
 
-function loadContent(){
+function loadContent() {
 
-  var $mainContainer = $('#MainContainerBody').get(0);
-  React.render(<MainContainer />, $mainContainer);
+    var $mainContainer = $('#MainContainerBody').get(0);
+    React.render(<MainContainer />, $mainContainer);
 
 }

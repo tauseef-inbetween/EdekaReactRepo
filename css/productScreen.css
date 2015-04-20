@@ -123,7 +123,7 @@
     opacity: .5;
 }
 
-.ProductWrapper {
+#ProductWrapper {
     height: 595px;
     overflow: auto;
 }
@@ -150,7 +150,6 @@
 .selectedButton {
     background-image: linear-gradient(to bottom, #66B8FF, #3E7FB6);
 }
-
 
 #contentViewContainer {
     left: 0;
@@ -208,27 +207,27 @@
     z-index: 1;
 }
 
-.PIMThumbContainer[data-workflow-status="Requested"]:before{
+.PIMThumbContainer[data-workflow-status="Requested"]:before {
     border-color: #22a64b transparent transparent transparent;
 }
 
-.PIMThumbContainer[data-workflow-status="Created"]:before{
+.PIMThumbContainer[data-workflow-status="Created"]:before {
     border-color: #ffb31c transparent transparent transparent;
 }
 
-.PIMThumbContainer[data-workflow-status="Rework"]:before{
+.PIMThumbContainer[data-workflow-status="Rework"]:before {
     border-color: #fffe00 transparent transparent transparent;
 }
 
-.PIMThumbContainer[data-workflow-status="Updated"]:before{
+.PIMThumbContainer[data-workflow-status="Updated"]:before {
     border-color: #625cff transparent transparent transparent;
 }
 
-.PIMThumbContainer[data-workflow-status="Approved"]:before{
+.PIMThumbContainer[data-workflow-status="Approved"]:before {
     border-color: #80c7ff transparent transparent transparent;
 }
 
-.PIMThumbContainer[data-workflow-status="Published"]:before{
+.PIMThumbContainer[data-workflow-status="Published"]:before {
     border-color: #575699 transparent transparent transparent;
 }
 
@@ -236,20 +235,38 @@
     border-color: #00c063 transparent transparent transparent;
 }
 
-.example-enter {
+.productTransition-enter {
     opacity: 0.01;
     transition: opacity .5s ease-in;
 }
 
-.example-enter.example-enter-active {
+.productTransition-enter.productTransition-enter-active {
     opacity: 1;
 }
 
-.example-leave {
+.productTransition-leave {
     opacity: 1;
-    transition: opacity .5s ease-in;
+    transition: all 0.5s ease-in;
 }
 
-.example-leave.example-leave-active {
-    opacity: 0.01;
+.productTransition-leave.productTransition-leave-active {
+    opacity: 0;
+}
+
+#ProductInfoScreen, #ProductEditInfoScreen {
+    height: 597px;
+    overflow: hidden;
+    width: 1365px;
+    border: none !important;
+}
+
+#northDOM {
+    height: 200px;
+    width: 1365px !important;
+    border: none !important;
+}
+
+.ui-layout-east, .ui-layout-west, .ui-layout-north, .ui-layout-center, .ui-layout-south, .ui-layout-container, .ui-layout-pane {
+    border: none !important;
+    padding: 0 !important;
 }

@@ -1,17 +1,17 @@
-var menuButtonClicked = function(btnLabel) {
+var menuButtonClicked = function (btnLabel) {
 
-  MenuDispatcher.dispatch({
-    menuItemName: btnLabel
-  });
+    MenuDispatcher.dispatch({
+        menuItemName: btnLabel
+    });
 
 };
 
 var createButtonClicked = function (btnLabel) {
-  switch (btnLabel) {
-    case 'Content':
-      ContentListStore.createProduct();
-      break;
-    default :
-      console.log("You can create " + btnLabel);
-  }
+    switch (btnLabel) {
+        case 'Content':
+            ContentListStore.createProduct();
+            break;
+        default :
+            console.log("You can create " + btnLabel);
+    }
 };
