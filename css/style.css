@@ -78,20 +78,24 @@
 #moduleContainer {
     position: absolute;
     top: 50px;
-    width: 100%;
+    width: 1365px;
+    height: 625px;
+    overflow: hidden;
 }
 
-.showScreen {
-    display: block;
+.showScreen, .currentProductScreen {
+    left: 0;
 }
 
-.hideScreen {
-    display: none;
+.hideScreen, .hiddenProductScreen {
+    left: 100%;
 }
 
 .screen {
     height: 625px;
-    overflow: auto;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
 }
 
 .alertify {
@@ -100,3 +104,12 @@
     width: 350px;
     left: 56%;
 }
+
+/*
+#contentScreen {
+    position: absolute;
+    top: 50px;
+    width: 1365px;
+    height: 625px;
+    overflow: hidden;
+}*/

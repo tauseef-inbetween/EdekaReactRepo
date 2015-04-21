@@ -3,12 +3,52 @@ ContentListStore = {
 
     contentViewStyle: 'thumbnail',
 
+    contentViewMode: 'viewMode',
+
+    selectedProduct: null,
+
+    productTypes: productTypes,
+
+    productWorkflowStatus: productWorkflowStatus,
+
+    productClasses: productClasses,
+
     getAllData: function () {
         return this.data;
     },
 
     getContentViewStyle: function () {
         return this.contentViewStyle;
+    },
+
+    getContentViewMode: function () {
+        return this.contentViewMode;
+    },
+
+    getSelectedProduct: function () {
+        return this.selectedProduct;
+    },
+
+    getProductTypes: function () {
+        return this.productTypes;
+    },
+
+    getProductWorkflowStatus: function () {
+        return this.productWorkflowStatus;
+    },
+
+    getProductClasses: function () {
+        return this.productClasses;
+    },
+
+    setSelectedProduct: function (oProduct) {
+        this.selectedProduct = oProduct;
+        this.trigger('change');
+    },
+
+    setContentViewMode: function (sContentViewMode) {
+        this.contentViewMode = sContentViewMode;
+        this.trigger('change');
     },
 
     setContentViewStyle: function (sViewStyle) {

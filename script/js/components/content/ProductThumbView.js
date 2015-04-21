@@ -24,9 +24,9 @@ var PIMScrollDiv = React.createClass({
 });
 var PimThumbView = React.createClass({
     render: function () {
-        var productThumbnailBtnClicked = productThumbClicked.bind(this, this.props.product.id);
+
         return (
-            <div className="pimThumbView" onClick={productThumbnailBtnClicked}>
+            <div className="pimThumbView" onClick={this.props.onProductClick}>
                 <PIMThumbImage imagSRC={this.props.product.image[0]}/>
                 <PIMScrollDiv product={this.props.product}/>
             </div>

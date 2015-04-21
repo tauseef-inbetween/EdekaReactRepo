@@ -12,8 +12,8 @@ var handleViewButtonClicked = function (viewStyleButtonEvent) {
 };
 
 var productThumbClicked = function (productId) {
-    console.log("Product Id : " + productId);
-
+    ContentListStore.setSelectedProduct(ContentListStore.getProductById(productId));
+    ContentListStore.setContentViewMode('editMode');
 };
 
 function initialiseLayouts() {
@@ -23,7 +23,7 @@ function initialiseLayouts() {
             spacing_open: 6
         },
         east: {
-            size: 300,
+            size: 400,
             resizable: false
         },
         east__paneSelector: "#basicProductInfoContainer",

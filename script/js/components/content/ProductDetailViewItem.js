@@ -4,8 +4,8 @@ var ProductDetailViewItem = React.createClass({
         var productTitle = product.title + " | " + product.type + " | " + product.workflowStatus;
         return (
             <div className="PIMThumbContainer" title={productTitle} data-type={product.type}
-                 data-workflow-status={product.workflowStatus}>
-                <div className="PIMProductThumbDelete" title="Delete" onClick={this.props.onClick}></div>
+                 data-workflow-status={product.workflowStatus} onClick={this.props.onProductClick}>
+                <div className="PIMProductThumbDelete" title="Delete" onClick={this.props.onDeleteClick}></div>
                 <div className="pimDetailView">
                     <div className="PIMThumbName">
                         <div className="PIMThumbLabel">{product.id} | {product.title}</div>
