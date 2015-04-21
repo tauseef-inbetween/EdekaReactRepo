@@ -1,17 +1,11 @@
 ContentListStore = {
-    data: allProducts,
-
-    contentViewStyle: 'thumbnail',
-
-    contentViewMode: 'viewMode',
-
-    selectedProduct: null,
-
-    productTypes: productTypes,
-
-    productWorkflowStatus: productWorkflowStatus,
-
-    productClasses: productClasses,
+    data: contentData.allProducts,
+    contentViewStyle: contentData.contentViewStyle,
+    contentViewMode: contentData.contentViewMode,
+    selectedProduct: contentData.selectedProduct,
+    productTypes: contentData.productTypes,
+    productWorkflowStatus: contentData.productWorkflowStatus,
+    productClasses: contentData.productClasses,
 
     getAllData: function () {
         return this.data;

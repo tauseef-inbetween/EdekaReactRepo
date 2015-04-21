@@ -1,8 +1,11 @@
-var allProducts = products;
+var contentData = {
+    allProducts: MockData.products,
+    productTypes: MockData.productTypes,
+    productWorkflowStatus: MockData.productWorkflowStatus,
+    productClasses: MockData.productClasses,
+    contentViewStyle: 'thumbnail',
+    contentViewMode: 'viewMode',
+    selectedProduct: null
+};
 
-var productTypes = ["Structured", "Semi-Structured", "CMS", "Asset", "Impulse"];
-
-var productWorkflowStatus = ["Requested", "Created", "Rework", "Updated", "Approved", "Published", "Archived"];
-
-var productClasses = ["Standard", "Product", "Recipes"];
 
