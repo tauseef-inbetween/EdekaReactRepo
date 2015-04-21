@@ -81,7 +81,8 @@ var Content = React.createClass({
                                            selectedProduct={this.state.selectedProduct}
                                            productWorkFlowStatus={productWorkFlowStatus}
                                            productTypes={productTypes}
-                                           productClasses={productClasses}/>
+                                           productClasses={productClasses}
+                                           productItems={productItems}/>
                 </div>
             </div>
         )

@@ -8,13 +8,15 @@ var ProductEditInfoScreen = React.createClass({
         var productWorkFlowStatus = this.props.productWorkFlowStatus;
         var productTypes = this.props.productTypes;
         var productClasses = this.props.productClasses;
+        var productItems = this.props.productItems;
         return (
             <div id="ProductEditInfoScreen" ref="ProductEditInfoScreen">
                 <ProductEditNorthContent productList={productList} selectedProduct={selectedProduct}
                                          productWorkFlowStatus={productWorkFlowStatus}
                                          productTypes={productTypes}
                                          productClasses={productClasses}
-                                         ref="northDOM" key="2"/>
+                                         ref="northDOM" key="2"
+                                         productItems={productItems}/>
                 <ProductEditCenterContent selectedProduct={selectedProduct} ref="centerDOM" key="1"/>
                 <ProductEditWestContent  selectedProduct={selectedProduct} ref="westDOM" key="5"/>
                 <ProductEditEastContent  selectedProduct={selectedProduct} ref="eastDOM" key="4"/>
