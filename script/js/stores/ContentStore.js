@@ -42,7 +42,15 @@ ContentListStore = {
     },
 
     setSelectedProduct: function (oProduct) {
-        this.selectedProduct = oProduct;
+        this.selectedProduct  = _.cloneDeep(oProduct);
+        this.trigger('change');
+    },
+
+    setSelectedProductValue: function (property, value) {
+        if(property == 'label'){
+            this.selectedProduct['title'] = value;
+        }
+        this.selectedProduct[property] = value;
         this.trigger('change');
     },
 
@@ -53,6 +61,12 @@ ContentListStore = {
 
     setContentViewStyle: function (sViewStyle) {
         this.contentViewStyle = sViewStyle;
+        this.trigger('change');
+    },
+
+    saveSelectedProductInfo: function () {
+        var product = this.getProductById(this.selectedProduct.id);
+        _.merge(product, this.selectedProduct);
         this.trigger('change');
     },
 

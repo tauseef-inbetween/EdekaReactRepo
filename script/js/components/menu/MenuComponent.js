@@ -21,7 +21,7 @@ var Menu = React.createClass({
         var menuItems = [];
         var createButtonVisibilityClass = "btn btn-primary menuItem";
         var createButtonClickBound = '';
-        this.state.menuList.map(function (item, i) {
+        _.map(this.state.menuList, function (item, i) {
             var boundClick = menuButtonClicked.bind(this, item.title);
             if (item.isActive) {
                 createButtonClickBound = createButtonClicked.bind(this, item.title);

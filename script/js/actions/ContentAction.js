@@ -16,7 +16,20 @@ var productThumbClicked = function (productId) {
     ContentListStore.setContentViewMode('editMode');
 };
 
-function initialiseLayouts() {
+var backToViewMode = function () {
+    ContentListStore.setContentViewMode('viewMode');
+};
+
+var changeSelectedProduct = function (property, value) {
+    ContentListStore.setSelectedProductValue(property, value);
+};
+
+var saveProductInfo = function () {
+    ContentListStore.saveSelectedProductInfo();
+    alertify.success("Content successfully updated");
+};
+
+var initialiseLayouts = function () {
     $('#northDOM').layout({
         applyDefaultStyles: true,
         panes: {

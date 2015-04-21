@@ -1,72 +1,44 @@
 var ProductBasicInfoForm = React.createClass({
-    getInitialState: function () {
-       return {
-           label: '',
-           type: '',
-           workflowStatus: '',
-           class: '',
-           comments: '',
-
-           productWorkFlowStatus : [],
-           productTypes : [],
-           productClasses: []
-       }
-    },
-
-    listStateChanged: function () {
-        var selectedProduct = this.props.selectedProduct;
-        if(selectedProduct != null ) {
-            this.setState({
-                label: selectedProduct.label,
-                type: selectedProduct.type,
-                workflowStatus: selectedProduct.workflowStatus,
-                class: selectedProduct.class,
-                comments: selectedProduct.comments
-            });
-        }
-    },
-
-    componentWillReceiveProps: function(nextProps) {
-        this.props = nextProps;
-        this.listStateChanged();
-    },
-
-    componentWillMount: function () {
-      this.setState({
-          productWorkFlowStatus: this.props.productWorkFlowStatus,
-          productTypes: this.props.productTypes,
-          productClasses: this.props.productClasses
-      });
-    },
-
     handleChange (DOMEvent) {
         var targetId = DOMEvent.currentTarget.id;
         var targetValue = DOMEvent.target.value;
         if(targetId == 'pimScreenProductName') {
-            this.setState({label : targetValue});
+            changeSelectedProduct('label', targetValue);
         } else if(targetId == 'pimScreenType') {
-            this.setState({type : targetValue});
+            changeSelectedProduct('type', targetValue);
         } else if(targetId == 'pimScreenWorkflow') {
-            this.setState({workflowStatus : targetValue});
+            changeSelectedProduct('workflowStatus', targetValue);
         } else if(targetId == 'pimScreenClasses') {
-            this.setState({class : targetValue});
+            changeSelectedProduct('class', targetValue);
         } else if(targetId == 'pimScreenComments') {
-            this.setState({comments : targetValue});
+            changeSelectedProduct('comments', targetValue);
         }
     },
 
     render: function () {
-        var productWorkFlowStatus = this.state.productWorkFlowStatus.map(function(item, i){
+        var productWorkFlowStatus = _.map(this.props.productWorkFlowStatus, function(item, i){
             return <option key={i}>{item}</option>;
         });
 
-        var productTypes = this.state.productTypes.map(function (item, i) {
+        var productTypes = _.map(this.props.productTypes, function (item, i) {
             return <option key={i}>{item}</option>
         });
 
-        var productClasses = this.state.productClasses.map(function (item, i) {
+        var productClasses = _.map(this.props.productClasses, function (item, i) {
             return <option key={i}>{item}</option>
         });
+
+        var selectedProduct = this.props.selectedProduct;
+
+        if(selectedProduct == null) {
+            selectedProduct = {};
+            selectedProduct.label = '';
+            selectedProduct.workflowStatus = '';
+            selectedProduct.type = '';
+            selectedProduct.class = '';
+            selectedProduct.comments = '';
+        }
+
         return (
         <div id="pimDetailWrapper">
 
@@ -79,7 +51,7 @@ var ProductBasicInfoForm = React.createClass({
                     <div className="pimScreenFormSectionInputWrapper">
                         <input id="pimScreenProductName" className="pimScreenWizardFormInput" type="text"
                                name="name" required=""
-                               value={this.state.label}
+                               value={selectedProduct.label}
                                onChange={this.handleChange}/>
                     </div>
                 </div>
@@ -89,7 +61,7 @@ var ProductBasicInfoForm = React.createClass({
                     <div className="pimScreenFormSectionInputWrapper">
                         <select id="pimScreenType"
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
-                                value={this.state.type}
+                                value={selectedProduct.type}
                                 onChange={this.handleChange}>
                             {productTypes}
                         </select>
@@ -102,7 +74,7 @@ var ProductBasicInfoForm = React.createClass({
                         <select id="pimScreenWorkflow"
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
                                 defaultValue="Created"
-                                value={this.state.workflowStatus}
+                                value={selectedProduct.workflowStatus}
                                 onChange={this.handleChange}>
                             {productWorkFlowStatus}
                         </select>
@@ -114,7 +86,7 @@ var ProductBasicInfoForm = React.createClass({
                     <div className="pimScreenFormSectionInputWrapper">
                         <select id="pimScreenClasses"
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
-                                value={this.state.class}
+                                value={selectedProduct.class}
                                 onChange={this.handleChange}>
                             {productClasses}
                         </select>
@@ -126,7 +98,7 @@ var ProductBasicInfoForm = React.createClass({
                     <div className="pimScreenFormSectionInputWrapper">
                         <textarea id="pimScreenComments" className="textArea"
                                   required=""
-                                  value={this.state.comments}
+                                  value={selectedProduct.comments}
                                   onChange={this.handleChange}></textarea>
                     </div>
                 </div>

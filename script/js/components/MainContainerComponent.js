@@ -24,7 +24,7 @@ MainContainer = React.createClass({
     },
 
     render: function () {
-        var screenDisplayClasses = this.state.screens.map(function (item) {
+        var screenDisplayClasses = _.map(this.state.screens, function (item) {
             return ('screen ' + (item.isSelected ? 'showScreen' : 'hideScreen'));
         });
         return (

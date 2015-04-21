@@ -363,3 +363,35 @@
     font-size: 11px;
     font-weight: normal;
 }
+
+#contentEditController {
+    float: right;
+}
+
+.showContentEditController {
+    display: block;
+}
+
+.hideContentEditController {
+    display: none;
+}
+
+#backToPimThumbsButton {
+    background: url("../images/psPrev.png") no-repeat;
+    cursor: pointer;
+    background-size: 18px;
+    height: 18px;
+    width: 18px;
+    float: left;
+    margin-right: 3px;
+}
+
+#productSaveButton {
+    float: right;
+    height: 20px;
+    width: 57px;
+    line-height: 0px;
+    font-size: 10px;
+    margin-right: 2px;
+    margin-top: -1px;
+}

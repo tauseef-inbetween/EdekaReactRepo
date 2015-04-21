@@ -7,8 +7,8 @@ var Content = React.createClass({
             contentViewMode: 'viewMode',
             selectedProduct: null,
 
-            productWorkFlowStatus : [],
-            productTypes : [],
+            productWorkFlowStatus: [],
+            productTypes: [],
             productClasses: []
         };
     },
@@ -48,37 +48,40 @@ var Content = React.createClass({
         var productTypes = this.state.productTypes;
         var productClasses = this.state.productClasses;
 
-        var productItems = this.state.productList.map(function (item) {
+        var productItems = _.map(this.state.productList, function (item) {
             var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
             var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id);
 
             if (contentViewStyle == 'thumbnail') {
                 return (
-                    <ProductThumbnailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked} onDeleteClick={productDeleteBtnClickBind}/>
+                    <ProductThumbnailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked}
+                                              onDeleteClick={productDeleteBtnClickBind}/>
                 );
             } else {
                 return (
-                    <ProductDetailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked} onDeleteClick={productDeleteBtnClickBind}/>
+                    <ProductDetailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked}
+                                           onDeleteClick={productDeleteBtnClickBind}/>
                 );
             }
         });
         return (
             <div id="contentScreen" className={this.props.className}>
-                <div id="topToolsPanel">
-                    <ContentViewStyle  contentViewStyle={this.state.contentViewStyle}/>
-                    Content
-                </div>
+
+                <ContentViewStyle contentViewStyle={this.state.contentViewStyle}
+                                  contentViewMode={this.state.contentViewMode}/>
+
                 <div id="ProductWrapper" className={productWrapperClass}>
                     <ReactCSSTransitionGroup transitionName="productTransition">
                         {productItems}
                     </ReactCSSTransitionGroup>
                 </div>
-                <div id="ProductInfoScreen" className={productInfoScreenClass} >
+
+                <div id="ProductInfoScreen" className={productInfoScreenClass}>
                     <ProductEditInfoScreen productList={this.state.productList}
                                            selectedProduct={this.state.selectedProduct}
                                            productWorkFlowStatus={productWorkFlowStatus}
                                            productTypes={productTypes}
-                                           productClasses={productClasses} />
+                                           productClasses={productClasses}/>
                 </div>
             </div>
         )

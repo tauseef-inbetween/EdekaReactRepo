@@ -1,4 +1,4 @@
-MainContainerStore = {
+var MainContainerStore = {
     data: allScreens,
 
     getAllData: function () {
