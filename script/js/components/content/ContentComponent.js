@@ -65,7 +65,7 @@ var Content = React.createClass({
         return (
             <div id="contentScreen" className={this.props.className}>
                 <div id="topToolsPanel">
-                    <ContentViewStyle />
+                    <ContentViewStyle  contentViewStyle={this.state.contentViewStyle}/>
                     Content
                 </div>
                 <div id="ProductWrapper" className={productWrapperClass}>
@@ -78,8 +78,7 @@ var Content = React.createClass({
                                            selectedProduct={this.state.selectedProduct}
                                            productWorkFlowStatus={productWorkFlowStatus}
                                            productTypes={productTypes}
-                                           productClasses={productClasses}
-                        />
+                                           productClasses={productClasses} />
                 </div>
             </div>
         )
