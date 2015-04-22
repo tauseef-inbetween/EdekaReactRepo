@@ -36,19 +36,17 @@ var initialiseLayouts = function () {
             spacing_open: 6
         },
         east: {
-            size: 400,
+            size: 700,
             resizable: false
         },
         east__paneSelector: "#basicProductInfoContainer",
         center__paneSelector: "#centerOwlContainer"
     });
 
-
-    $('#ProductEditInfoScreen').layout({
+    $('#centerDOMMainContainer').layout({
         applyDefaultStyles: true,
-        west__paneSelector: "#westDOM",
         east__paneSelector: "#eastDOM",
-        center__paneSelector: "#centerDOM",
+        center_DOM: "#centerDOM",
         north__paneSelector: "#northDOM",
         panes: {
             spacing_open: 6
@@ -56,11 +54,20 @@ var initialiseLayouts = function () {
         east: {
             size: 300
         },
-        west: {
-            size: 300
-        },
         north: {
             size: 200
         }
     });
-}
+
+    $('#ProductEditInfoScreen').layout({
+        applyDefaultStyles: true,
+        west__paneSelector: "#westDOM",
+        center__paneSelector: "#centerDOMMainContainer",
+        panes: {
+            spacing_open: 6
+        },
+        west: {
+            size: 300
+        }
+    });
+};

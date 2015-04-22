@@ -47,27 +47,16 @@ var Content = React.createClass({
         var productWorkFlowStatus = this.state.productWorkFlowStatus;
         var productTypes = this.state.productTypes;
         var productClasses = this.state.productClasses;
-        var productItems = [];
 
-        if (contentViewStyle == 'thumbnail') {
-            productItems = _.map(this.state.productList, function (item) {
-                var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
-                var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id);
-                return (
-                    <ProductThumbnailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked}
-                                              onDeleteClick={productDeleteBtnClickBind}/>
-                );
-            });
-        } else {
-            productItems = _.map(this.state.productList, function (item) {
-                var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
-                var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id);
-                return (
-                    <ProductDetailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked}
-                                           onDeleteClick={productDeleteBtnClickBind}/>
-                );
-            });
-        }
+        var productItems = _.map(this.state.productList, function (item) {
+            var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
+            var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id);
+            return (
+                <ProductThumbnailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked}
+                                          onDeleteClick={productDeleteBtnClickBind}
+                                          contentViewStyle={contentViewStyle}/>
+            );
+        });
         return (
             <div id="contentScreen" className={this.props.className}>
 
