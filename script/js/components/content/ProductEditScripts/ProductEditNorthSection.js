@@ -1,17 +1,7 @@
-var ProductEditViewWithOwl  = React.createClass({
-    render: function () {
-        return({});
-    }
-});
-
 var ProductEditNorthContent = React.createClass({
     componentDidUpdate: function () {
         if(this.props.contentViewMode == 'editMode') {
-
-
-
-
-            /*var $container = $('#centerOwlContainer');
+            var $container = $('#centerOwlContainer');
             if($container && $container.data('owlCarousel')) {
                 $container.data('owlCarousel').reinit();
             } else {
@@ -22,7 +12,7 @@ var ProductEditNorthContent = React.createClass({
                     pagination: false,
                     navigation: true
                 });
-            }*/
+            }
         }
     },
     render: function () {
