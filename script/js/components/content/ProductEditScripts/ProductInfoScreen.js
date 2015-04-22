@@ -1,4 +1,4 @@
-var ProductEditInfoScreen = React.createClass({
+var ProductInfoScreen = React.createClass({
     componentDidUpdate: function () {
         if(this.props.contentViewMode == 'editMode') {
             initialiseLayouts();
