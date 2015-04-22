@@ -41,36 +41,22 @@ var Content = React.createClass({
     render: function () {
         var contentViewStyle = this.state.contentViewStyle;
         var contentViewMode = this.state.contentViewMode;
-        var productWrapperClass = (contentViewMode == 'viewMode') ? 'currentProductScreen' : 'hiddenProductScreen';
-        var productInfoScreenClass = (contentViewMode == 'editMode') ? 'currentProductScreen' : 'hiddenProductScreen';
-
         var productWorkFlowStatus = this.state.productWorkFlowStatus;
         var productTypes = this.state.productTypes;
         var productClasses = this.state.productClasses;
 
-        var productItems = _.map(this.state.productList, function (item) {
-            var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
-            var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id);
-            return (
-                <ProductThumbnailViewItem key={item.id} product={item} onProductClick={productThumbnailBtnClicked}
-                                          onDeleteClick={productDeleteBtnClickBind}
-                                          contentViewStyle={contentViewStyle}/>
-            );
-        });
         return (
             <div id="contentScreen" className={this.props.className}>
-
                 <ContentViewStyle contentViewStyle={this.state.contentViewStyle}
                                   contentViewMode={this.state.contentViewMode}/>
-
                 <div id="ProductInfoScreen" >
                     <ProductEditInfoScreen productList={this.state.productList}
                                            selectedProduct={this.state.selectedProduct}
                                            productWorkFlowStatus={productWorkFlowStatus}
                                            productTypes={productTypes}
                                            productClasses={productClasses}
-                                           productItems={productItems}
-                                           contentViewMode={this.state.contentViewMode}/>
+                                           contentViewMode={contentViewMode}
+                                           contentViewStyle={contentViewStyle}/>
                 </div>
             </div>
         )

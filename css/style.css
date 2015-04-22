@@ -83,11 +83,11 @@
     overflow: hidden;
 }
 
-.showScreen, .currentProductScreen {
+.showScreen {
     left: 0;
 }
 
-.hideScreen, .hiddenProductScreen {
+.hideScreen {
     left: 100%;
 }
 

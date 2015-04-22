@@ -10,8 +10,8 @@ var ProductEditInfoScreen = React.createClass({
         var productWorkFlowStatus = this.props.productWorkFlowStatus;
         var productTypes = this.props.productTypes;
         var productClasses = this.props.productClasses;
-        var productItems = this.props.productItems;
         var contentViewMode = this.props.contentViewMode;
+        var contentViewStyle = this.props.contentViewStyle;
         return (
             <div id="ProductEditInfoScreen" ref="ProductEditInfoScreen">
                 <div id="centerDOMMainContainer">
@@ -20,8 +20,8 @@ var ProductEditInfoScreen = React.createClass({
                                              productTypes={productTypes}
                                              productClasses={productClasses}
                                              ref="northDOM" key="2"
-                                             productItems={productItems}
-                                             contentViewMode={contentViewMode}/>
+                                             contentViewMode={contentViewMode}
+                                             contentViewStyle={contentViewStyle}/>
                     <ProductEditCenterContent contentViewMode={contentViewMode} selectedProduct={selectedProduct} ref="centerDOM" key="1"/>
                     <ProductEditEastContent contentViewMode={contentViewMode} selectedProduct={selectedProduct} ref="eastDOM" key="4"/>
                 </div>
