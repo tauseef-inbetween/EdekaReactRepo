@@ -123,7 +123,7 @@
     opacity: .5;
 }
 
-#ProductWrapper, #ProductInfoScreen {
+#ProductInfoScreen {
     position: absolute;
     height: 595px;
     overflow: auto;
@@ -262,8 +262,8 @@
 }
 
 #northDOM {
-    height: 200px;
-    width: 1365px !important;
+    /*height: 200px;*/
+    width: 100% !important;
     border: none !important;
 }
 
@@ -404,30 +404,30 @@
     overflow: hidden !important;
 }
 
-#centerOwlContainer .owl-item {
+.owl-item {
     width: 145px !important;
     font-size: 10px;
     font-weight: bold;
 }
 
-#centerOwlContainer .PIMThumbContainer {
+.owl-item .PIMThumbContainer {
      height: 130px;
 }
 
-#centerOwlContainer .pimThumbView {
+.owl-item .pimThumbView {
     height: 131px;
 }
 
-#centerOwlContainer .PIMThumbImage {
+.owl-item .PIMThumbImage {
     height: 80px;
 }
 
-#centerOwlContainer .PIMThumbImage img {
+.owl-item .PIMThumbImage img {
     max-height: 66px;
     top: 50%;
 }
 
-#centerOwlContainer .PIMThumbName, #centerOwlContainer .PIMThumbLabel{
+.owl-item .PIMThumbName, .owl-item .PIMThumbLabel{
     font-size: 10px;
 }
 
@@ -452,4 +452,12 @@
 
 #centerDOMMainContainer {
     overflow: hidden !important;
+}
+
+.productViewMode {
+    display: none;
+}
+
+.ProductWrapper {
+    height: 1000px;
 }

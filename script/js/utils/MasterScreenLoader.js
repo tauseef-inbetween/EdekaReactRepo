@@ -1,4 +1,4 @@
-function createDummyProduct() {
+var createDummyProduct = function () {
     var length = ContentListStore.data.length;
     var id = ContentListStore.data[length - 1].id + 100;
     return {
@@ -90,4 +90,12 @@ function createDummyProduct() {
             "Quality": {}
         }
     }
-}
+};
+
+
+var destroyLayout = function( containerSelector ) {
+    var $C = $(containerSelector);
+    if ($C.data("layoutContainer"))
+        $C.layout().destroy();
+
+};

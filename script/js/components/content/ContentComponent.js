@@ -63,19 +63,14 @@ var Content = React.createClass({
                 <ContentViewStyle contentViewStyle={this.state.contentViewStyle}
                                   contentViewMode={this.state.contentViewMode}/>
 
-                <div id="ProductWrapper" className={productWrapperClass}>
-                    <ReactCSSTransitionGroup transitionName="productTransition">
-                        {productItems}
-                    </ReactCSSTransitionGroup>
-                </div>
-
-                <div id="ProductInfoScreen" className={productInfoScreenClass}>
+                <div id="ProductInfoScreen" >
                     <ProductEditInfoScreen productList={this.state.productList}
                                            selectedProduct={this.state.selectedProduct}
                                            productWorkFlowStatus={productWorkFlowStatus}
                                            productTypes={productTypes}
                                            productClasses={productClasses}
-                                           productItems={productItems}/>
+                                           productItems={productItems}
+                                           contentViewMode={this.state.contentViewMode}/>
                 </div>
             </div>
         )

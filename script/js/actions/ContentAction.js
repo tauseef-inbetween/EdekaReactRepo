@@ -17,6 +17,13 @@ var productThumbClicked = function (productId) {
 };
 
 var backToViewMode = function () {
+    destroyLayout('#northDOM');
+    destroyLayout('#centerDOMMainContainer');
+    destroyLayout('#ProductEditInfoScreen');
+    var $container = $('#centerOwlContainer');
+    if($container && $container.data('owlCarousel')) {
+        $container.data('owlCarousel').destroy();
+    }
     ContentListStore.setContentViewMode('viewMode');
 };
 
@@ -36,8 +43,8 @@ var initialiseLayouts = function () {
             spacing_open: 6
         },
         east: {
-            size: 700,
-            resizable: false
+            size: 350
+            //resizable: false
         },
         east__paneSelector: "#basicProductInfoContainer",
         center__paneSelector: "#centerOwlContainer"
