@@ -14,7 +14,7 @@ var ContentViewStyle = React.createClass({
                 </div>
                 Content
                 <div id="contentEditController" className={modeClass}>
-                    <button id="productSaveButton" className="saveContent btn btn-primary" onClick={saveProductInfo}>Save</button>
+                    <button id="productSaveButton" className="saveContent btn btn-primary" tabIndex="-1" onClick={saveProductInfo}>Save</button>
                     <div id="backToPimThumbsButton" title="Back" onClick={backToViewMode}></div>
                 </div>
             </div>

@@ -52,6 +52,7 @@ var ProductBasicInfoForm = React.createClass({
                         <input id="pimScreenProductName" className="pimScreenWizardFormInput" type="text"
                                name="name" required=""
                                value={selectedProduct.label}
+                               tabIndex="-1"
                                onChange={this.handleChange}/>
                     </div>
                 </div>
@@ -62,6 +63,7 @@ var ProductBasicInfoForm = React.createClass({
                         <select id="pimScreenType"
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
                                 value={selectedProduct.type}
+                                tabIndex="-1"
                                 onChange={this.handleChange}>
                             {productTypes}
                         </select>
@@ -75,6 +77,7 @@ var ProductBasicInfoForm = React.createClass({
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
                                 defaultValue="Created"
                                 value={selectedProduct.workflowStatus}
+                                tabIndex="-1"
                                 onChange={this.handleChange}>
                             {productWorkFlowStatus}
                         </select>
@@ -87,6 +90,7 @@ var ProductBasicInfoForm = React.createClass({
                         <select id="pimScreenClasses"
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
                                 value={selectedProduct.class}
+                                tabIndex="-1"
                                 onChange={this.handleChange}>
                             {productClasses}
                         </select>
@@ -99,6 +103,7 @@ var ProductBasicInfoForm = React.createClass({
                         <textarea id="pimScreenComments" className="textArea"
                                   required=""
                                   value={selectedProduct.comments}
+                                  tabIndex="-1"
                                   onChange={this.handleChange}></textarea>
                     </div>
                 </div>

@@ -42,7 +42,7 @@ var Menu = React.createClass({
 
                 <div id="masterCreateNewButtonContainer">
                     <input type="button" id="masterCreateNewButton" onClick={createButtonClickBound}
-                           className={createButtonVisibilityClass} value="Create"/>
+                           className={createButtonVisibilityClass} tabIndex="-1" value="Create"/>
                 </div>
 
             </div>
