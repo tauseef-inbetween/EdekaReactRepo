@@ -11,9 +11,6 @@ var ProductEditNorthContent = React.createClass({
         selectedIndex: React.PropTypes.number
     },
 
-    componentDidUpdate: function () {
-
-    },
     render: function () {
         var contentViewStyle = this.props.contentViewStyle;
         var selectedProduct = this.props.selectedProduct;
@@ -24,7 +21,7 @@ var ProductEditNorthContent = React.createClass({
         var productWrapperClass = (this.props.contentViewMode == 'editMode') ? 'owl-carousel' : 'ProductWrapper';
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
 
-
+        //#LogicFlow #DataCreation
         var productItems = _.map(this.props.productList, function (item, i) {
             var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
             var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id, i);
@@ -37,6 +34,7 @@ var ProductEditNorthContent = React.createClass({
                                           contentViewStyle={contentViewStyle}/>
             );
         });
+
         var productItemView = (this.props.contentViewMode == 'editMode') ?
             <Carousel items={productItems} selectedIndex={selectedIndex} key="carousel"/> : (
             <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);

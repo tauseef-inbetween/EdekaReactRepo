@@ -1,4 +1,11 @@
 var CarouselItems = React.createClass({
+
+    propTypes: {
+        selectedIndex: React.PropTypes.number,
+        items: React.PropTypes.arrayOf(React.PropTypes.element),
+        wheeling: React.PropTypes.func
+    },
+
     componentDidUpdate: function () {
         var itemWidth = this.getWidthOfSingleItem();
         this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "width:" + itemWidth * this.props.items.length + "px");
@@ -7,20 +14,19 @@ var CarouselItems = React.createClass({
         var itemWidth = this.getWidthOfSingleItem();
         this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "width:" + itemWidth * this.props.items.length + "px");
     },
-    getWidthOfSingleItem : function () {
-      return this.refs.item0.getDOMNode().offsetWidth;
+    getWidthOfSingleItem: function () {
+        return this.refs.item0.getDOMNode().offsetWidth;
     },
     render: function () {
         var selectedIndex = this.props.selectedIndex;
         var carouselItem = _.map(this.props.items, function (item, i) {
             return (
-                <div className={"carouselItem " + (selectedIndex == i ? 'selectedItem' : '') } key={"item" + i} ref={"item" + i}>{item}</div>
+                <div className={"carouselItem " + (selectedIndex == i ? 'selectedItem' : '') } key={"item" + i}
+                     ref={"item" + i}>{item}</div>
             );
         });
         return (
             <div className="carouselItemContainer"
-                 draggable="true"
-                 onDragStart={this.props.dragStarted}
                  onWheel={this.props.wheeling}
                  ref="carouselItemContainer">{carouselItem}</div>
         );
@@ -28,6 +34,12 @@ var CarouselItems = React.createClass({
 });
 
 var CarouselController = React.createClass({
+
+    propTypes: {
+        leftBtnClick: React.PropTypes.func.isRequired,
+        rightBtnClick: React.PropTypes.func.isRequired
+    },
+
     render: function () {
         return (
             <div className="carouselController">
@@ -53,11 +65,14 @@ var Carousel = React.createClass({
         var left = position.left;
         var right = left + $container.outerWidth();
         if (left == 0) {
-            moveLength += (right *-1);
+            moveLength += (right * -1);
         } else if (left > (moveLength * -1)) {
             moveLength = left * -1;
         }
-        $container.css('right', 'auto').animate({left: (left + moveLength) + 'px'}, {easing: 'easeInOutCubic', duration: 600});
+        $container.css('right', 'auto').animate({left: (left + moveLength) + 'px'}, {
+            easing: 'easeInOutCubic',
+            duration: 600
+        });
     },
 
     rightButtonClicked: function () {
@@ -67,14 +82,16 @@ var Carousel = React.createClass({
         var position = $container.position();
         var left = position.left;
         var right = left + $container.outerWidth();
-        if(right == moveLength) {
+        if (right == moveLength) {
             moveLength = left;
-        }
-        else if (right < 2*moveLength) {
-            moveLength = right-moveLength;
+        } else if (right < 2 * moveLength) {
+            moveLength = right - moveLength;
         }
 
-        $container.css('right', 'auto').animate({left: (left - moveLength) + 'px'}, {easing: 'easeInOutCubic', duration: 600});
+        $container.css('right', 'auto').animate({left: (left - moveLength) + 'px'}, {
+            easing: 'easeInOutCubic',
+            duration: 600
+        });
     },
 
     moveTo: function (index) {
@@ -85,11 +102,11 @@ var Carousel = React.createClass({
 
         var moveLength = 0;
         var right = left + $container.outerWidth();
-        if(index > 4){
-            index = Math.trunc(index/5);
+        if (index > 4) {
+            index = Math.trunc(index / 5);
             moveLength = (itemWidth * 5) * index;
-            if(moveLength > (right - itemWidth*5)) {
-                moveLength = right - itemWidth*5;
+            if (moveLength > (right - itemWidth * 5)) {
+                moveLength = right - itemWidth * 5;
             }
         }
 
@@ -97,25 +114,21 @@ var Carousel = React.createClass({
     },
 
     componentDidMount () {
-        if(this.props.selectedIndex > 0) {
+        if (this.props.selectedIndex > 0) {
             this.moveTo(this.props.selectedIndex);
         }
     },
 
     componentDidUpdate: function () {
-        if(this.props.selectedIndex > 0) {
+        if (this.props.selectedIndex > 0) {
             this.moveTo(this.props.selectedIndex);
         }
     },
 
-    dragging: function (event) {
-
-    },
-
     wheeling: function (event) {
-        if(event.deltaY == 100) {
+        if (event.deltaY == 100) {
             this.rightButtonClicked();
-        } else if(event.deltaY == -100) {
+        } else if (event.deltaY == -100) {
             this.leftButtonClicked();
         }
     },
@@ -124,7 +137,8 @@ var Carousel = React.createClass({
         return (
             <div className="carouselContainer">
                 <div className="carouselItemWrapper" key="itemWrapper">
-                    <CarouselItems items={this.props.items} dragStarted={this.dragging} wheeling={this.wheeling} selectedIndex={this.props.selectedIndex}  key="items" ref="items"/>
+                    <CarouselItems items={this.props.items} wheeling={this.wheeling}
+                                   selectedIndex={this.props.selectedIndex} key="items" ref="items"/>
                 </div>
                 <CarouselController key="controls" leftBtnClick={this.leftButtonClicked}
                                     rightBtnClick={this.rightButtonClicked}/>

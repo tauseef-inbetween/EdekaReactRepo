@@ -12,6 +12,8 @@ var ProductInfoScreen = React.createClass({
     },
 
     componentDidUpdate: function () {
+
+        //#LogicFlow Check
         if (this.props.contentViewMode == 'editMode') {
             initialiseLayouts();
         }
