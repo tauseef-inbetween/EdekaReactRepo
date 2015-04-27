@@ -11,12 +11,14 @@ var handleViewButtonClicked = function (viewStyleButtonEvent) {
     viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentListStore.setContentViewStyle('thumbnail') : ContentListStore.setContentViewStyle('detailView');
 };
 
-var productThumbClicked = function (productId) {
+var productThumbClicked = function (productId, index) {
     ContentListStore.setSelectedProduct(ContentListStore.getProductById(productId));
+    ContentListStore.setSelectedIndex(index);
     ContentListStore.setContentViewMode('editMode');
 };
 
 var backToViewMode = function () {
+
     destroyLayout('#northDOM');
     destroyLayout('#centerDOMMainContainer');
     destroyLayout('#ProductEditInfoScreen');
@@ -24,6 +26,7 @@ var backToViewMode = function () {
     if($container && $container.data('owlCarousel')) {
         $container.data('owlCarousel').destroy();
     }
+    ContentListStore.setSelectedProduct(null);
     ContentListStore.setContentViewMode('viewMode');
 };
 

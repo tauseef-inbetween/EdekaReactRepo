@@ -254,9 +254,13 @@
     opacity: 0;
 }
 
-#ProductInfoScreen, #ProductEditInfoScreen {
-    height: 597px;
+#ProductInfoScreen {
     overflow: hidden;
+}
+
+#ProductEditInfoScreen {
+    height: 597px;
+    overflow-x: hidden;
     width: 1365px;
     border: none !important;
 }
@@ -404,51 +408,27 @@
     overflow: hidden !important;
 }
 
-.owl-item {
-    width: 145px !important;
-    font-size: 10px;
-    font-weight: bold;
-}
-
-.owl-item .PIMThumbContainer {
+.carouselItem .PIMThumbContainer {
      height: 130px;
 }
 
-.owl-item .pimThumbView {
+.carouselItem .pimThumbView {
     height: 131px;
 }
 
-.owl-item .PIMThumbImage {
+.carouselItem .PIMThumbImage {
     height: 80px;
 }
 
-.owl-item .PIMThumbImage img {
+.carouselItem .PIMThumbImage img {
     max-height: 66px;
     top: 50%;
 }
 
-.owl-item .PIMThumbName, .owl-item .PIMThumbLabel{
+.carouselItem .PIMThumbName, .carouselItem .PIMThumbLabel{
     font-size: 10px;
 }
 
-.owl-prev {
-    background: url("../images/LeftCircularSmall.png") no-repeat !important;
-    background-size: 25px !important;
-    border-radius: 0 !important;
-}
-
-.owl-next {
-    background: url("../images/RightCircularSmall.png") no-repeat !important;
-    background-size: 25px !important;
-    border-radius: 0 !important;
-}
-
-.owl-prev, .owl-next {
-    height: 25px;
-    width: 25px;
-    background-size: 25px;
-    text-indent: 77777px;
-}
 
 #centerDOMMainContainer {
     overflow: hidden !important;
@@ -460,4 +440,8 @@
 
 .ProductWrapper {
     height: 1000px;
+}
+
+.selectedItem {
+    box-shadow: 0 0 1px 3px #4390df inset, 0 0 1px 4px #797979 inset;
 }

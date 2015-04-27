@@ -6,6 +6,7 @@ ContentListStore = {
     productTypes: contentData.productTypes,
     productWorkflowStatus: contentData.productWorkflowStatus,
     productClasses: contentData.productClasses,
+    selectedIndex: contentData.selectedIndex,
 
     getAllData: function () {
         return this.data;
@@ -33,6 +34,14 @@ ContentListStore = {
 
     getProductClasses: function () {
         return this.productClasses;
+    },
+
+    getSelectedIndex: function () {
+        return this.selectedIndex;
+    },
+
+    setSelectedIndex: function (index) {
+        this.selectedIndex = index;
     },
 
     setSelectedProduct: function (oProduct) {

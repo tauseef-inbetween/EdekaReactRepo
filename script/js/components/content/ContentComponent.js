@@ -9,7 +9,8 @@ var Content = React.createClass({
 
             productWorkFlowStatus: [],
             productTypes: [],
-            productClasses: []
+            productClasses: [],
+            selectedIndex: 0
         };
     },
 
@@ -21,7 +22,8 @@ var Content = React.createClass({
             selectedProduct: ContentListStore.getSelectedProduct(),
             productWorkFlowStatus: ContentListStore.getProductWorkflowStatus(),
             productTypes: ContentListStore.getProductTypes(),
-            productClasses: ContentListStore.getProductClasses()
+            productClasses: ContentListStore.getProductClasses(),
+            selectedIndex: ContentListStore.getSelectedIndex()
         });
     },
 
@@ -39,24 +41,12 @@ var Content = React.createClass({
 
 
     render: function () {
-        var contentViewStyle = this.state.contentViewStyle;
-        var contentViewMode = this.state.contentViewMode;
-        var productWorkFlowStatus = this.state.productWorkFlowStatus;
-        var productTypes = this.state.productTypes;
-        var productClasses = this.state.productClasses;
-
         return (
             <div id="contentScreen" className={this.props.className}>
                 <ContentViewStyle contentViewStyle={this.state.contentViewStyle}
                                   contentViewMode={this.state.contentViewMode}/>
                 <div id="ProductInfoScreen" >
-                    <ProductInfoScreen productList={this.state.productList}
-                                           selectedProduct={this.state.selectedProduct}
-                                           productWorkFlowStatus={productWorkFlowStatus}
-                                           productTypes={productTypes}
-                                           productClasses={productClasses}
-                                           contentViewMode={contentViewMode}
-                                           contentViewStyle={contentViewStyle}/>
+                    <ProductInfoScreen {...this.state}/>
                 </div>
             </div>
         )

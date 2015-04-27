@@ -26,7 +26,7 @@
     position: fixed;
     overflow: hidden;
     border: none;
-    z-index: 1;
+    z-index: 10;
 }
 
 #edekaCSHeaderLogo {

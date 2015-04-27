@@ -5,7 +5,8 @@ var contentData = {
     productClasses: MockData.productClasses,
     contentViewStyle: 'thumbnail',
     contentViewMode: 'viewMode',
-    selectedProduct: null
+    selectedProduct: null,
+    selectedIndex: 0
 };
 
 
