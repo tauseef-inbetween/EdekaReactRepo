@@ -1,4 +1,10 @@
 var ContentViewStyle = React.createClass({
+
+    propTypes: {
+        contentViewStyle: React.PropTypes.string.isRequired,
+        contentViewMode: React.PropTypes.string.isRequired
+    },
+
     render: function () {
         var thumbnailClass = "pimViewChangeButton glyphicon glyphicon-picture ";
         var detailClass = "pimViewChangeButton glyphicon glyphicon-align-justify ";

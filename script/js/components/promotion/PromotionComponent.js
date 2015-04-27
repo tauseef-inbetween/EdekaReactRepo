@@ -1,4 +1,9 @@
-Promotion = React.createClass({
+var Promotion = React.createClass({
+
+    propTypes: {
+        className: React.PropTypes.string
+    },
+
     render: function () {
         return (
             <div id="promotionScreen" className={this.props.className}>

@@ -1,4 +1,8 @@
-Assortment = React.createClass({
+var Assortment = React.createClass({
+    propTypes: {
+        className: React.PropTypes.string
+    },
+
     render: function () {
         return (
             <div id="assortmentScreen" className={this.props.className}>

@@ -1,4 +1,16 @@
 var ProductEditNorthContent = React.createClass({
+
+    propTypes: {
+        productList: React.PropTypes.arrayOf(React.PropTypes.object),
+        selectedProduct: React.PropTypes.object,
+        productWorkFlowStatus: React.PropTypes.array.isRequired,
+        productTypes: React.PropTypes.array.isRequired,
+        productClasses: React.PropTypes.array.isRequired,
+        contentViewMode: React.PropTypes.string.isRequired,
+        contentViewStyle: React.PropTypes.string.isRequired,
+        selectedIndex: React.PropTypes.number
+    },
+
     componentDidUpdate: function () {
 
     },
@@ -11,6 +23,8 @@ var ProductEditNorthContent = React.createClass({
         var productClasses = this.props.productClasses;
         var productWrapperClass = (this.props.contentViewMode == 'editMode') ? 'owl-carousel' : 'ProductWrapper';
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
+
+
         var productItems = _.map(this.props.productList, function (item, i) {
             var productDeleteBtnClickBind = deleteProductButtonClicked.bind(this, item.id);
             var productThumbnailBtnClicked = productThumbClicked.bind(this, item.id, i);
@@ -23,7 +37,10 @@ var ProductEditNorthContent = React.createClass({
                                           contentViewStyle={contentViewStyle}/>
             );
         });
-        var productItemView = (this.props.contentViewMode == 'editMode') ? <Carousel items={productItems} selectedIndex={selectedIndex} key="carousel" />: (<ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
+        var productItemView = (this.props.contentViewMode == 'editMode') ?
+            <Carousel items={productItems} selectedIndex={selectedIndex} key="carousel"/> : (
+            <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
+
         return (
             <div id="northDOM" className="ui-layout-north ">
                 <div id="centerOwlContainer" className={productWrapperClass}>
@@ -34,7 +51,7 @@ var ProductEditNorthContent = React.createClass({
                                           productWorkFlowStatus={productWorkFlowStatus}
                                           productTypes={productTypes}
                                           productClasses={productClasses}
-                                          />
+                        />
                 </div>
             </div>
         );

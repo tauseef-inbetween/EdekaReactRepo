@@ -1,4 +1,9 @@
-Report = React.createClass({
+var Report = React.createClass({
+
+    propTypes: {
+        className: React.PropTypes.string
+    },
+
     render: function () {
         return (
             <div id="reportScreen" className={this.props.className}>

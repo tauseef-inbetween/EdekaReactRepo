@@ -1,4 +1,12 @@
 var ProductThumbnailViewItem = React.createClass({
+
+    propTypes: {
+        product: React.PropTypes.object.isRequired,
+        contentViewStyle: React.PropTypes.string.isRequired,
+        onDeleteClick: React.PropTypes.func,
+        onProductClick: React.PropTypes.func
+    },
+
     render: function () {
         var product = this.props.product;
         var productTitle = product.title + " | " + product.type + " | " + product.workflowStatus;

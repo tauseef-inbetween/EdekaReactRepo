@@ -1,4 +1,8 @@
-Campaign = React.createClass({
+var Campaign = React.createClass({
+    propTypes: {
+        className: React.PropTypes.string
+    },
+
     render: function () {
         return (
             <div id="campaignScreen" className={this.props.className}>

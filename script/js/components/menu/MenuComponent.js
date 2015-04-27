@@ -1,10 +1,14 @@
 var Menu = React.createClass({
+
+    propTypes: {
+
+    },
+
     getInitialState: function () {
         return {
             menuList: MenuListStore.getAllData()
         };
     },
-
 
     listStateChanged: function () {
         this.setState({menuList: MenuListStore.getAllData()});
@@ -18,10 +22,9 @@ var Menu = React.createClass({
 
 
     render: function () {
-        var menuItems = [];
         var createButtonVisibilityClass = "btn btn-primary menuItem";
         var createButtonClickBound = '';
-        _.map(this.state.menuList, function (item, i) {
+        var menuItems = _.map(this.state.menuList, function (item, i) {
             var boundClick = menuButtonClicked.bind(this, item.title);
             if (item.isActive) {
                 createButtonClickBound = createButtonClicked.bind(this, item.title);
@@ -32,7 +35,7 @@ var Menu = React.createClass({
                 }
             }
             return (
-                menuItems.push(<MenuItem key={i} menuItem={item} onClick={boundClick}/>)
+                <MenuItem key={i} menuItem={item} onClick={boundClick}/>
             );
         });
         return (

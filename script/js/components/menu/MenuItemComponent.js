@@ -1,4 +1,10 @@
 var MenuItem = React.createClass({
+
+    propTypes: {
+        menuItem: React.PropTypes.object.isRequired,
+        onClick: React.PropTypes.func.isRequired
+    },
+
     render: function () {
         var menuClass = "menuItem";
         if (this.props.menuItem.isActive) {

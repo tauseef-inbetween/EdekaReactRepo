@@ -1,4 +1,9 @@
-Target = React.createClass({
+var Target = React.createClass({
+
+    propTypes: {
+        className: React.PropTypes.string
+    },
+
     render: function () {
         return (
             <div id="targetScreen" className={this.props.className}>

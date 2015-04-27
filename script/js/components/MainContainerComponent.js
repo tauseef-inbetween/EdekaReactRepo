@@ -1,4 +1,8 @@
-MainContainer = React.createClass({
+var MainContainer = React.createClass({
+
+    propTypes: {
+
+    },
 
     getInitialState: function () {
         return {

@@ -1,4 +1,8 @@
-Calender = React.createClass({
+var Calender = React.createClass({
+    propTypes: {
+        className: React.PropTypes.string
+    },
+
     render: function () {
         return (
             <div id="calenderScreen" className={this.props.className}>

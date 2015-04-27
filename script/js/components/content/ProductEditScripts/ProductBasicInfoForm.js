@@ -1,4 +1,12 @@
 var ProductBasicInfoForm = React.createClass({
+
+    propTypes: {
+        productWorkFlowStatus: React.PropTypes.array.isRequired,
+        productTypes: React.PropTypes.array.isRequired,
+        productClasses: React.PropTypes.array.isRequired,
+        selectedProduct: React.PropTypes.object
+    },
+
     handleChange (DOMEvent) {
         var targetId = DOMEvent.currentTarget.id;
         var targetValue = DOMEvent.target.value;

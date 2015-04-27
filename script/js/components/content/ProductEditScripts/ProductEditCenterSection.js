@@ -1,4 +1,10 @@
 var ProductEditCenterContent = React.createClass({
+
+    propTypes: {
+        selectedProduct: React.PropTypes.object,
+        contentViewMode: React.PropTypes.string.isRequired
+    },
+
     render : function () {
         var product = this.props.selectedProduct;
         var data = 'No Product Selected';

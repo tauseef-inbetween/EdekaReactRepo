@@ -18,7 +18,11 @@ var CarouselItems = React.createClass({
             );
         });
         return (
-            <div className="carouselItemContainer" ref="carouselItemContainer">{carouselItem}</div>
+            <div className="carouselItemContainer"
+                 draggable="true"
+                 onDragStart={this.props.dragStarted}
+                 onWheel={this.props.wheeling}
+                 ref="carouselItemContainer">{carouselItem}</div>
         );
     }
 });
@@ -104,11 +108,23 @@ var Carousel = React.createClass({
         }
     },
 
+    dragging: function (event) {
+
+    },
+
+    wheeling: function (event) {
+        if(event.deltaY == 100) {
+            this.rightButtonClicked();
+        } else if(event.deltaY == -100) {
+            this.leftButtonClicked();
+        }
+    },
+
     render: function () {
         return (
             <div className="carouselContainer">
                 <div className="carouselItemWrapper" key="itemWrapper">
-                    <CarouselItems items={this.props.items} selectedIndex={this.props.selectedIndex} key="items" ref="items"/>
+                    <CarouselItems items={this.props.items} dragStarted={this.dragging} wheeling={this.wheeling} selectedIndex={this.props.selectedIndex}  key="items" ref="items"/>
                 </div>
                 <CarouselController key="controls" leftBtnClick={this.leftButtonClicked}
                                     rightBtnClick={this.rightButtonClicked}/>
