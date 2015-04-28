@@ -30,18 +30,34 @@ var ProductInfoScreen = React.createClass({
         return (
             <div id="ProductEditInfoScreen" ref="ProductEditInfoScreen">
                 <div id="centerDOMMainContainer">
-                    <ProductEditNorthContent productList={productList} selectedProduct={selectedProduct}
-                                             productWorkFlowStatus={productWorkFlowStatus}
-                                             productTypes={productTypes}
-                                             productClasses={productClasses}
-                                             ref="northDOM" key="2"
-                                             contentViewMode={contentViewMode}
-                                             contentViewStyle={contentViewStyle}
-                                             selectedIndex={selectedIndex}/>
-                    <ProductEditCenterContent contentViewMode={contentViewMode} selectedProduct={selectedProduct} ref="centerDOM" key="1"/>
-                    <ProductEditEastContent contentViewMode={contentViewMode} selectedProduct={selectedProduct} ref="eastDOM" key="4"/>
+
+                    <ProductEditNorthContent
+                        productList={productList}
+                        selectedProduct={selectedProduct}
+                        productWorkFlowStatus={productWorkFlowStatus}
+                        productTypes={productTypes}
+                        productClasses={productClasses}
+                        ref="northDOM" key="2"
+                        contentViewMode={contentViewMode}
+                        contentViewStyle={contentViewStyle}
+                        selectedIndex={selectedIndex}/>
+
+                    <ProductEditCenterContent
+                        contentViewMode={contentViewMode}
+                        selectedProduct={selectedProduct}
+                        ref="centerDOM"
+                        key="1"/>
+
+                    <ProductEditEastContent
+                        contentViewMode={contentViewMode}
+                        productClasses={productClasses}
+                        selectedProduct={selectedProduct}
+                        ref="eastDOM"
+                        key="4"/>
+
                 </div>
-                <ProductEditWestContent  contentViewMode={contentViewMode} selectedProduct={selectedProduct} ref="westDOM" key="5"/>
+                <ProductEditWestContent
+                    contentViewMode={contentViewMode} selectedProduct={selectedProduct} ref="westDOM" key="5"/>
             </div>
         );
     }

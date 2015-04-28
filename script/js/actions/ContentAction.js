@@ -62,7 +62,7 @@ var initialiseLayouts = function () {
             spacing_open: 6
         },
         east: {
-            size: 300
+            size: 350
         },
         north: {
             size: 200

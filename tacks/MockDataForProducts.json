@@ -1,35 +1,50 @@
-[{
-    "notes": [{
-        "header": "Untitled_19",
-        "description": "",
+[
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
         "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_19"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_19",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -37,7 +52,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -67,7 +83,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "3bae5501", "text": ""}],
+    "impulse": [
+      {
+        "id": "3bae5501",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -78,48 +99,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001d9ea826b351a4684e23"}
-}, {
-    "notes": [{
-        "header": "Untitled_18",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "77190e3f",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_18"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
-        },
-        "Title & Teaser": ""
-    }],
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
+        }
+      }
+    ],
     "label": "Untitled_18",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -127,7 +162,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -161,48 +197,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001d00a826b351a4684e21"}
-}, {
-    "notes": [{
-        "header": "Untitled_17",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "10b898db",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_17"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
-        },
-        "Title & Teaser": ""
-    }],
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
+        }
+      }
+    ],
     "label": "Untitled_17",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -210,7 +260,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -244,48 +295,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001c80a826b351a4684e1f"}
-}, {
-    "notes": [{
-        "header": "Untitled_16",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "2ce8cf3c",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_16"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
-        },
-        "Title & Teaser": ""
-    }],
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
+        }
+      }
+    ],
     "label": "Untitled_16",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -293,7 +358,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -327,47 +393,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001ac7a826b351a4684e1d"}
-}, {
-    "notes": [{
-        "header": "Untitled_15",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "389beaa3",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_15"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_15",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -375,7 +456,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -405,7 +487,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "739c9595", "text": ""}],
+    "impulse": [
+      {
+        "id": "739c9595",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -416,47 +503,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "550018f5a826b351a4684e1b"}
-}, {
-    "notes": [{
-        "header": "Untitled_14",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "2b9b4c96",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_14"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_14",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -464,7 +566,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -494,7 +597,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "f873487b", "text": ""}],
+    "impulse": [
+      {
+        "id": "f873487b",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -505,47 +613,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "5500187da826b351a4684e19"}
-}, {
-    "notes": [{
-        "header": "Untitled_13",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "95bcc11b",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_13"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_13",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -553,7 +676,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -583,7 +707,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "84cbc65a", "text": ""}],
+    "impulse": [
+      {
+        "id": "84cbc65a",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -594,47 +723,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "5500175ca826b351a4684e17"}
-}, {
-    "notes": [{
-        "header": "Untitled_12",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "7256d7e4",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_12"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_12",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -642,7 +786,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -672,7 +817,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "3b6c4bcd", "text": ""}],
+    "impulse": [
+      {
+        "id": "3b6c4bcd",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -683,47 +833,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "5500162fa826b351a4684e15"}
-}, {
-    "notes": [{
-        "header": "Untitled_11",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "397e3bc0",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_11"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_11",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -731,7 +896,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -761,7 +927,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "3c51213e", "text": ""}],
+    "impulse": [
+      {
+        "id": "3c51213e",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -772,47 +943,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001527a826b351a4684e13"}
-}, {
-    "notes": [{
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "596656db",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_18"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
-        },
-        "Title & Teaser": "",
-        "undefined": ""
-    }],
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
+        }
+      }
+    ],
     "label": "Untitled_18",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -820,7 +1006,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -854,47 +1041,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "550013f2a826b351a4684e11"}
-}, {
-    "notes": [{
-        "header": "Untitled_9",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "dc50a808",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_9"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_9",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -902,7 +1104,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -932,7 +1135,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "a00c3b62", "text": ""}],
+    "impulse": [
+      {
+        "id": "a00c3b62",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -943,47 +1151,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001358a826b351a4684e0e"}
-}, {
-    "notes": [{
-        "header": "Untitled_8",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "7593c363",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_8"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_8",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -991,7 +1214,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1021,7 +1245,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "26e2b6dd", "text": ""}],
+    "impulse": [
+      {
+        "id": "26e2b6dd",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -1032,47 +1261,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "550012d7a826b351a4684e0b"}
-}, {
-    "notes": [{
-        "header": "Untitled_7",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "e02586e0",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_7"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_7",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1080,7 +1324,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1110,7 +1355,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "71ea13a7", "text": ""}],
+    "impulse": [
+      {
+        "id": "71ea13a7",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -1121,47 +1371,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001190a826b351a4684e0a"}
-}, {
-    "notes": [{
-        "header": "Untitled_6",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "9614247f",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_6"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_6",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1169,7 +1434,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1199,7 +1465,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "91dcde92", "text": ""}],
+    "impulse": [
+      {
+        "id": "91dcde92",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -1210,47 +1481,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "55001039a826b351a4684e07"}
-}, {
-    "notes": [{
-        "header": "Untitled_5",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "68b1a816",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_5"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_5",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1258,7 +1544,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1288,7 +1575,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "5a41bc2c", "text": ""}],
+    "impulse": [
+      {
+        "id": "5a41bc2c",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -1299,47 +1591,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "5530ef150364bba2a5c74899"}
-}, {
-    "notes": [{
-        "header": "Untitled_4",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "d95e1c3c",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_4"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_4",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1347,7 +1654,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1377,7 +1685,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "c595abca", "text": ""}],
+    "impulse": [
+      {
+        "id": "c595abca",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -1388,47 +1701,62 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "_id": {"$oid": "5530ef150364bba2a5c74898"}
-}, {
-    "notes": [{
-        "header": "Untitled_3",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "2f913782",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_3"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         }
-    }],
+      }
+    ],
     "label": "Untitled_3",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1436,7 +1764,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1466,7 +1795,12 @@
     "imageQRCode": "",
     "imageSuperKnuller": "",
     "imageWatchStamp": "",
-    "impulse": [{"id": "72f29f41", "text": ""}],
+    "impulse": [
+      {
+        "id": "72f29f41",
+        "text": ""
+      }
+    ],
     "isFolder": "",
     "previousPrice": "",
     "type": "Structured",
@@ -1477,47 +1811,61 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     }
-}, {
-    "notes": [{
-        "header": "Untitled_2",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "17360260",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_2"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
-        },
-        "Title & Teaser": ""
-    }],
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
+        }
+      }
+    ],
     "label": "Untitled_2",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1525,7 +1873,8 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
@@ -1559,47 +1908,61 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     }
-}, {
-    "notes": [{
-        "header": "Untitled_1",
-        "description": "",
+  },
+  {
+    "notes": [
+      {
         "type": "Title & Teaser",
-        "id": "0ea71b6c",
+        "id": "0a1d66a5",
+        "values": [
+          {
+            "label": "Title",
+            "value": "Untitled_1"
+          },
+          {
+            "label": "Teaser",
+            "value": "",
+            "type": "Description"
+          }
+        ],
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
-        },
-        "Title & Teaser": ""
-    }],
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
+        }
+      }
+    ],
     "label": "Untitled_1",
     "image": ["images/pouch.png"],
-    "multimedia": [{
+    "multimedia": [
+      {
         "image": "images/pouch.png",
         "tags": {
-            "Brand": [],
-            "Market Cluster": [],
-            "Category": [],
-            "Region": [],
-            "Content Score": [],
-            "Communication channel": [],
-            "Quality": []
+          "Brand": [],
+          "Market Cluster": [],
+          "Category": [],
+          "Region": [],
+          "Content Score": [],
+          "Communication channel": [],
+          "Quality": []
         },
         "name": ""
-    }],
-    "imageTags": [{
+      }
+    ],
+    "imageTags": [
+      {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],
@@ -1607,20 +1970,29 @@
         "Content Score": [],
         "Communication channel": [],
         "Quality": []
-    }],
+      }
+    ],
     "comments": "",
     "class": "Standard",
     "Channel": "",
     "Target Group": "",
-    "Brand": [{
+    "Brand": [
+      {
         "id": "RURFS0FAVEFHQEJyYW5k",
         "name": "EDEKA",
         "relevance": "-100"
-    }, {
+      },
+      {
         "id": "RURFS0EgQ2VudGVyQFRBR0BCcmFuZA==",
         "name": "EDEKA Center",
         "relevance": "54"
-    }, {"id": "RURFS0EgUmVpY2hlbHRAVEFHQEJyYW5k", "name": "EDEKA Reichelt", "relevance": "100"}],
+      },
+      {
+        "id": "RURFS0EgUmVpY2hlbHRAVEFHQEJyYW5k",
+        "name": "EDEKA Reichelt",
+        "relevance": "100"
+      }
+    ],
     "Market Cluster": [],
     "Content Score": [],
     "Communication Channel": "",
@@ -1649,22 +2021,27 @@
     "blockNotes": [],
     "richTextData": "",
     "markers": {
-        "Brand": {},
-        "Market Cluster": {},
-        "Category": {},
-        "Region": {},
-        "Content Score": {},
-        "Communication channel": {},
-        "Quality": {}
+      "Brand": {},
+      "Market Cluster": {},
+      "Category": {},
+      "Region": {},
+      "Content Score": {},
+      "Communication channel": {},
+      "Quality": {}
     },
     "Communication channel": [],
     "checkedTagGroups": {
-        "Brand": ["EDEKA", "EDEKA Center", "EDEKA Reichelt"],
-        "Market Cluster": [],
-        "Category": [],
-        "Region": [],
-        "Content Score": [],
-        "Communication channel": [],
-        "Quality": []
+      "Brand": [
+        "EDEKA",
+        "EDEKA Center",
+        "EDEKA Reichelt"
+      ],
+      "Market Cluster": [],
+      "Category": [],
+      "Region": [],
+      "Content Score": [],
+      "Communication channel": [],
+      "Quality": []
     }
-}]
+  }
+]

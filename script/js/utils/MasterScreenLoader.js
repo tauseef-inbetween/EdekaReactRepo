@@ -2,21 +2,32 @@ var createDummyProduct = function () {
     var length = ContentListStore.data.length;
     var id = ContentListStore.data[length - 1].id + 100;
     return {
-        "notes": [{
-            "header": "Untitled_" + id,
-            "description": "",
-            "type": "Title & Teaser",
-            "id": "2f913782",
-            "tags": {
-                "Brand": [],
-                "Market Cluster": [],
-                "Category": [],
-                "Region": [],
-                "Content Score": [],
-                "Communication channel": [],
-                "Quality": []
+        "notes": [
+            {
+                "type": "Title & Teaser",
+                "id": id,
+                "values": [
+                    {
+                        "label": "Title",
+                        "value": "Untitled_" + id
+                    },
+                    {
+                        "label": "Teaser",
+                        "value": "",
+                        "type": "Description"
+                    }
+                ],
+                "tags": {
+                    "Brand": [],
+                    "Market Cluster": [],
+                    "Category": [],
+                    "Region": [],
+                    "Content Score": [],
+                    "Communication channel": [],
+                    "Quality": []
+                }
             }
-        }],
+        ],
         "label": "Untitled_" + id,
         "image": ["images/pouch.png"],
         "multimedia": [{

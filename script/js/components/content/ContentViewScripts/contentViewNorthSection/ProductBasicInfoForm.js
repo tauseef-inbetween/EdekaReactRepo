@@ -1,32 +1,3 @@
-
-
-function renderDropDownButton() {
-    var DropdownButton = ReactBootstrap.DropdownButton;
-    var MenuItem = ReactBootstrap.MenuItem;
-    var ButtonToolbar = ReactBootstrap.ButtonToolbar;
-
-    const BUTTONS = ['Default', 'Primary', 'Success', 'Info', 'Warning', 'Danger', 'Link'];
-
-    function renderDropdownButton (title, i) {
-        return (
-            <DropdownButton bsStyle={title.toLowerCase()} title={title} key={i}>
-                <MenuItem eventKey='1'>Action</MenuItem>
-                <MenuItem eventKey='2'>Another action</MenuItem>
-                <MenuItem onClick={btnClicked} eventKey='3'>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey='4'>Separated link</MenuItem>
-            </DropdownButton>
-        );
-    }
-
-    const buttonsDropDown = (
-        <ButtonToolbar>{BUTTONS.map(renderDropdownButton)}</ButtonToolbar>
-    );
-
-    React.render(buttonsDropDown, $('#btnContainer').get(0));
-
-}
-
 var ProductBasicInfoForm = React.createClass({
 
     propTypes: {
@@ -76,7 +47,7 @@ var ProductBasicInfoForm = React.createClass({
 
         function renderDropdownButton (item, i) {
             return (
-                    <MenuItem eventKey={i}>{item}</MenuItem>
+                    <MenuItem key={"item" + i} eventKey={i}>{item}</MenuItem>
             );
         }
 
@@ -95,7 +66,7 @@ var ProductBasicInfoForm = React.createClass({
         });
 
         var productClasses = _.map(this.props.productClasses, function (item, i) {
-            return <option key={i}>{item}</option>
+            return <option key={i}>{item.label}</option>
         });
 
         return (
