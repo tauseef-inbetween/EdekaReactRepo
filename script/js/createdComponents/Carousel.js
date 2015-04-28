@@ -65,6 +65,18 @@ var Carousel = React.createClass({
 
     moveDuration: 600,
 
+    calculateMoveDurationSpeed: function (clickHitRecord) {
+        if(clickHitRecord == 1) {
+            this.moveDuration = 600;
+        } else if(clickHitRecord > 1 && clickHitRecord < 5) {
+            this.moveDuration = 300;
+        } else if (clickHitRecord >= 5 && clickHitRecord < 8){
+            this.moveDuration = 100;
+        } else if(clickHitRecord > 10){
+            this.moveDuration = 10;
+        }
+    },
+
     leftButtonClicked: function () {
 
         var that = this;
@@ -72,9 +84,7 @@ var Carousel = React.createClass({
         that.leftClickRecord++;
 
         if(that.isMoving) {
-            if(that.leftClickRecord > 1) {
-                that.moveDuration = 50;
-            }
+            that.calculateMoveDurationSpeed(that.leftClickRecord);
         } else {
             that.isMoving = true;
         }
@@ -94,9 +104,7 @@ var Carousel = React.createClass({
             function () {
                 that.isMoving = false;
                 that.leftClickRecord--;
-                if(that.leftClickRecord == 1) {
-                    that.moveDuration = 600;
-                }
+                that.calculateMoveDurationSpeed(that.leftClickRecord);
             });
     },
 
@@ -107,9 +115,7 @@ var Carousel = React.createClass({
         that.rightClickRecord++;
 
         if(that.isMoving) {
-            if(that.rightClickRecord > 1) {
-                that.moveDuration = 50;
-            }
+            that.calculateMoveDurationSpeed(that.rightClickRecord);
         } else {
             that.isMoving = true;
         }
@@ -130,9 +136,7 @@ var Carousel = React.createClass({
             function () {
                 that.isMoving = false;
                 that.rightClickRecord--;
-                if(that.rightClickRecord == 1) {
-                    that.moveDuration = 600;
-                }
+                that.calculateMoveDurationSpeed(that.rightClickRecord);
             });
 
     },

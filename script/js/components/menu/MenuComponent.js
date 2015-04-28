@@ -6,12 +6,12 @@ var Menu = React.createClass({
 
     getInitialState: function () {
         return {
-            menuList: MenuListStore.getAllData()
+            menuList: MenuListStore.getData()
         };
     },
 
     listStateChanged: function () {
-        this.setState({menuList: MenuListStore.getAllData()});
+        this.setState({menuList: MenuListStore.getData()});
     },
     componentDidMount: function () {
         MenuListStore.bind('change', this.listStateChanged);

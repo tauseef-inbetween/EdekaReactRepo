@@ -1,5 +1,6 @@
 ContentListStore = {
     data: ContentData.allProducts,
+
     contentViewStyle: ContentData.contentViewStyle,
     contentViewMode: ContentData.contentViewMode,
     selectedProduct: ContentData.selectedProduct,
@@ -8,7 +9,7 @@ ContentListStore = {
     productClasses: ContentData.productClasses,
     selectedIndex: ContentData.selectedIndex,
 
-    getAllData: function () {
+    getData: function () {
         return this.data;
     },
 
@@ -40,12 +41,20 @@ ContentListStore = {
         return this.selectedIndex;
     },
 
+    setData: function (data) {
+      this.data = data;
+    },
+
     setSelectedIndex: function (index) {
         this.selectedIndex = index;
     },
 
     setSelectedProduct: function (oProduct) {
         this.selectedProduct  = _.cloneDeep(oProduct);
+    },
+
+    setSelectedProductWithTrigger: function (oProduct) {
+        this.setSelectedProduct(oProduct);
         this.trigger('change');
     },
 
@@ -59,11 +68,19 @@ ContentListStore = {
 
     setContentViewMode: function (sContentViewMode) {
         this.contentViewMode = sContentViewMode;
+    },
+
+    setContentViewModeWithTrigger: function (sContentViewMode) {
+        this.setContentViewMode(sContentViewMode);
         this.trigger('change');
     },
 
     setContentViewStyle: function (sViewStyle) {
         this.contentViewStyle = sViewStyle;
+    },
+
+    setContentViewStyleWithTrigger: function (sViewStyle) {
+        this.setContentViewStyle(sViewStyle);
         this.trigger('change');
     },
 

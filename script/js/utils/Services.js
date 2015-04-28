@@ -147,3 +147,8 @@ forwardRequest = function(sUrl, bAsync, oDataParams, aURLParams, sRequestType, o
     processGetRequest(sUrl,bAsync, oDataParams, oCallback, mCallbackData);
   }
 };
+
+
+isValidResponse = function (oResponse) {
+     return (oResponse.status == 200 && oResponse.statusText == "OK");
+};

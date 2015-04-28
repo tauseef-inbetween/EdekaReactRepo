@@ -1,7 +1,7 @@
 MenuListStore = {
     data: MenuItemsList,
 
-    getAllData: function () {
+    getData: function () {
         return this.data;
     },
 

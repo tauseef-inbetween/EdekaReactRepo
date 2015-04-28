@@ -8,13 +8,13 @@ var deleteProductButtonClicked = function (sProductId) {
 };
 
 var handleViewButtonClicked = function (viewStyleButtonEvent) {
-    viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentListStore.setContentViewStyle('thumbnail') : ContentListStore.setContentViewStyle('detailView');
+    viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentListStore.setContentViewStyleWithTrigger('thumbnail') : ContentListStore.setContentViewStyleWithTrigger('detailView');
 };
 
 var productThumbClicked = function (productId, index) {
     ContentListStore.setSelectedProduct(ContentListStore.getProductById(productId));
     ContentListStore.setSelectedIndex(index);
-    ContentListStore.setContentViewMode('editMode');
+    ContentListStore.setContentViewModeWithTrigger('editMode');
 };
 
 var backToViewMode = function () {
@@ -27,7 +27,7 @@ var backToViewMode = function () {
         $container.data('owlCarousel').destroy();
     }
     ContentListStore.setSelectedProduct(null);
-    ContentListStore.setContentViewMode('viewMode');
+    ContentListStore.setContentViewModeWithTrigger('viewMode');
 };
 
 var changeSelectedProduct = function (property, value) {

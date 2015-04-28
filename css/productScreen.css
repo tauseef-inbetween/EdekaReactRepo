@@ -260,15 +260,15 @@
 
 #ProductEditInfoScreen {
     height: 597px;
-    overflow-x: hidden;
     width: 1365px;
-    border: none !important;
+    border: none;
+    overflow: hidden;
 }
 
 #northDOM {
-    /*height: 200px;*/
-    width: 100% !important;
-    border: none !important;
+    width: 100%;
+    border: none;
+    overflow: hidden;
 }
 
 .ui-layout-east, .ui-layout-west, .ui-layout-north, .ui-layout-center, .ui-layout-south, .ui-layout-container, .ui-layout-pane {
@@ -301,7 +301,7 @@
     height: 99%;
     font-size: 11px;
     border-right: 1px solid #D3D3D3;
-    overflow: hidden !important;
+    overflow: hidden ;
 }
 
 .pimScreenFormSectionAttribute{
@@ -401,11 +401,9 @@
 }
 
 #centerOwlContainer {
-    overflow: hidden !important;
-}
-
-#northDOM {
-    overflow: hidden !important;
+    overflow: auto;
+    width: 1365px;
+    height: 600px;
 }
 
 .carouselContainer {
@@ -439,7 +437,7 @@
 
 
 #centerDOMMainContainer {
-    overflow: hidden !important;
+    overflow: hidden;
 }
 
 .productViewMode {
@@ -452,4 +450,12 @@
 
 .selectedItem {
     box-shadow: 0 0 1px 3px #4390df inset, 0 0 1px 4px #797979 inset;
+}
+
+#centerOwlContainer.owl-carousel {
+    overflow: hidden !important;
+}
+
+#centerDOMMainContainer.ui-layout-container {
+    overflow: hidden !important;
 }

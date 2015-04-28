@@ -14,6 +14,8 @@ var MainContainerStore = {
                 screens[iScreenCount].isSelected = false;
             }
         }
+
+        loadDataFromNetwork(screenName);
         this.trigger('change');
     }
 };

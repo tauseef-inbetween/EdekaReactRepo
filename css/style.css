@@ -76,7 +76,7 @@
 }
 
 #moduleContainer {
-    position: absolute;
+    position: relative;
     top: 50px;
     width: 1365px;
     height: 625px;

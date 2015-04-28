@@ -21,7 +21,7 @@ var Content = React.createClass({
 
     listStateChanged: function () {
         this.setState({
-            productList: ContentListStore.getAllData(),
+            productList: ContentListStore.getData(),
             contentViewStyle: ContentListStore.getContentViewStyle(),
             contentViewMode: ContentListStore.getContentViewMode(),
             selectedProduct: ContentListStore.getSelectedProduct(),

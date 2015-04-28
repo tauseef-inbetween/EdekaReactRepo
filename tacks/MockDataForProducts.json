@@ -1,4 +1,4 @@
-var products = [{
+[{
     "notes": [{
         "header": "Untitled_19",
         "description": "",
@@ -1667,4 +1667,4 @@ var products = [{
         "Communication channel": [],
         "Quality": []
     }
-}];
+}]
