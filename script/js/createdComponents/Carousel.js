@@ -57,10 +57,31 @@ var Carousel = React.createClass({
         selectedIndex: React.PropTypes.number
     },
 
+    isMoving: false,
+
+    leftClickRecord: 0,
+
+    rightClickRecord: 0,
+
+    moveDuration: 600,
+
     leftButtonClicked: function () {
-        var itemWidth = this.refs.items.getWidthOfSingleItem();
+
+        var that = this;
+
+        that.leftClickRecord++;
+
+        if(that.isMoving) {
+            if(that.leftClickRecord > 1) {
+                that.moveDuration = 50;
+            }
+        } else {
+            that.isMoving = true;
+        }
+
+        var itemWidth = that.refs.items.getWidthOfSingleItem();
         var moveLength = itemWidth * 5;
-        var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
+        var $container = $(that.refs.items.refs.carouselItemContainer.getDOMNode());
         var position = $container.position();
         var left = position.left;
         var right = left + $container.outerWidth();
@@ -69,16 +90,33 @@ var Carousel = React.createClass({
         } else if (left > (moveLength * -1)) {
             moveLength = left * -1;
         }
-        $container.css('right', 'auto').animate({left: (left + moveLength) + 'px'}, {
-            easing: 'easeInOutCubic',
-            duration: 600
-        });
+        $container.css('right', 'auto').animate({left: (left + moveLength) + 'px'}, that.moveDuration, 'easeInOutCubic',
+            function () {
+                that.isMoving = false;
+                that.leftClickRecord--;
+                if(that.leftClickRecord == 1) {
+                    that.moveDuration = 600;
+                }
+            });
     },
 
     rightButtonClicked: function () {
-        var itemWidth = this.refs.items.getWidthOfSingleItem();
+
+        var that = this;
+
+        that.rightClickRecord++;
+
+        if(that.isMoving) {
+            if(that.rightClickRecord > 1) {
+                that.moveDuration = 50;
+            }
+        } else {
+            that.isMoving = true;
+        }
+
+        var itemWidth = that.refs.items.getWidthOfSingleItem();
         var moveLength = itemWidth * 5;
-        var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
+        var $container = $(that.refs.items.refs.carouselItemContainer.getDOMNode());
         var position = $container.position();
         var left = position.left;
         var right = left + $container.outerWidth();
@@ -88,10 +126,15 @@ var Carousel = React.createClass({
             moveLength = right - moveLength;
         }
 
-        $container.css('right', 'auto').animate({left: (left - moveLength) + 'px'}, {
-            easing: 'easeInOutCubic',
-            duration: 600
-        });
+        $container.css('right', 'auto').animate({left: (left - moveLength) + 'px'}, that.moveDuration, 'easeInOutCubic',
+            function () {
+                that.isMoving = false;
+                that.rightClickRecord--;
+                if(that.rightClickRecord == 1) {
+                    that.moveDuration = 600;
+                }
+            });
+
     },
 
     moveTo: function (index) {

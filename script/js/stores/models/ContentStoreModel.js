@@ -1,4 +1,4 @@
-var contentData = {
+var ContentData = {
     allProducts: MockData.products,
     productTypes: MockData.productTypes,
     productWorkflowStatus: MockData.productWorkflowStatus,
