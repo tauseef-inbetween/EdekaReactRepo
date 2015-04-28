@@ -1,3 +1,32 @@
+
+
+function renderDropDownButton() {
+    var DropdownButton = ReactBootstrap.DropdownButton;
+    var MenuItem = ReactBootstrap.MenuItem;
+    var ButtonToolbar = ReactBootstrap.ButtonToolbar;
+
+    const BUTTONS = ['Default', 'Primary', 'Success', 'Info', 'Warning', 'Danger', 'Link'];
+
+    function renderDropdownButton (title, i) {
+        return (
+            <DropdownButton bsStyle={title.toLowerCase()} title={title} key={i}>
+                <MenuItem eventKey='1'>Action</MenuItem>
+                <MenuItem eventKey='2'>Another action</MenuItem>
+                <MenuItem onClick={btnClicked} eventKey='3'>Something else here</MenuItem>
+                <MenuItem divider />
+                <MenuItem eventKey='4'>Separated link</MenuItem>
+            </DropdownButton>
+        );
+    }
+
+    const buttonsDropDown = (
+        <ButtonToolbar>{BUTTONS.map(renderDropdownButton)}</ButtonToolbar>
+    );
+
+    React.render(buttonsDropDown, $('#btnContainer').get(0));
+
+}
+
 var ProductBasicInfoForm = React.createClass({
 
     propTypes: {
@@ -7,9 +36,13 @@ var ProductBasicInfoForm = React.createClass({
         selectedProduct: React.PropTypes.object
     },
 
-    handleChange (DOMEvent) {
+    handleWorkflowChange: function (index) {
+        changeSelectedProduct('workflowStatus', this.props.productWorkFlowStatus[index]);
+    },
+
+    handleChange: function (DOMEvent) {
         var targetId = DOMEvent.currentTarget.id;
-        var targetValue = DOMEvent.target.value;
+        var targetValue = DOMEvent.target.value || DOMEvent.target.innerText;
         if(targetId == 'pimScreenProductName') {
             changeSelectedProduct('label', targetValue);
         } else if(targetId == 'pimScreenType') {
@@ -23,10 +56,39 @@ var ProductBasicInfoForm = React.createClass({
         }
     },
 
+
+
     render: function () {
-        var productWorkFlowStatus = _.map(this.props.productWorkFlowStatus, function(item, i){
+
+        var SplitButton = ReactBootstrap.SplitButton;
+        var MenuItem = ReactBootstrap.MenuItem;
+
+        var selectedProduct = this.props.selectedProduct;
+
+        if(selectedProduct == null) {
+            selectedProduct = {};
+            selectedProduct.label = '';
+            selectedProduct.workflowStatus = this.props.productWorkFlowStatus[0];
+            selectedProduct.type = '';
+            selectedProduct.class = '';
+            selectedProduct.comments = '';
+        }
+
+        function renderDropdownButton (item, i) {
+            return (
+                    <MenuItem eventKey={i}>{item}</MenuItem>
+            );
+        }
+
+        const productWorkFlowStatus = (
+                <SplitButton id="pimScreenWorkflow" onSelect={this.handleWorkflowChange} bsSize='xsmall' key='workflow' title={selectedProduct.workflowStatus}>
+                    {_.map(this.props.productWorkFlowStatus, renderDropdownButton)}
+                </SplitButton>
+        );
+
+        /*var productWorkFlowStatus = _.map(this.props.productWorkFlowStatus, function(item, i){
             return <option key={i}>{item}</option>;
-        });
+        });*/
 
         var productTypes = _.map(this.props.productTypes, function (item, i) {
             return <option key={i}>{item}</option>
@@ -35,17 +97,6 @@ var ProductBasicInfoForm = React.createClass({
         var productClasses = _.map(this.props.productClasses, function (item, i) {
             return <option key={i}>{item}</option>
         });
-
-        var selectedProduct = this.props.selectedProduct;
-
-        if(selectedProduct == null) {
-            selectedProduct = {};
-            selectedProduct.label = '';
-            selectedProduct.workflowStatus = '';
-            selectedProduct.type = '';
-            selectedProduct.class = '';
-            selectedProduct.comments = '';
-        }
 
         return (
         <div id="pimDetailWrapper">
@@ -81,14 +132,7 @@ var ProductBasicInfoForm = React.createClass({
                 <div className="pimScreenFormSection">
                     <div className="pimScreenFormSectionAttribute">Workflow Status* :</div>
                     <div className="pimScreenFormSectionInputWrapper">
-                        <select id="pimScreenWorkflow"
-                                className="pimScreenWizardFormInput pimScreenWizardInput"
-                                defaultValue="Created"
-                                value={selectedProduct.workflowStatus}
-                                tabIndex="-1"
-                                onChange={this.handleChange}>
-                            {productWorkFlowStatus}
-                        </select>
+                        {productWorkFlowStatus}
                     </div>
                 </div>
 
