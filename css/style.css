@@ -105,11 +105,6 @@
     left: 56%;
 }
 
-/*
-#contentScreen {
-    position: absolute;
-    top: 50px;
-    width: 1365px;
-    height: 625px;
-    overflow: hidden;
-}*/
+#popUpContainer {
+    z-index: 12;
+}

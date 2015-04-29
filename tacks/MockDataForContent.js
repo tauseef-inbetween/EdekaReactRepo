@@ -10,15 +10,15 @@ MockData.productClasses = [
             {
                 label: "Title & Teaser",
                 contents: [
-                    {label: "Title", defaultValues: []},
-                    {label: "Teaser", defaultValues: []}
+                    {label: "Title", defaultValues: [], type: "singleValued"},
+                    {label: "Teaser", defaultValues: [], type: "Description"}
                 ]
             },
             {
                 label: "Feature & Description",
-                content: [
-                    {label: "Feature", defaultValues: []},
-                    {label: "Description", defaultValues: []}
+                contents: [
+                    {label: "Feature", defaultValues: [], type: "singleValued"},
+                    {label: "Description", defaultValues: [], type: "Description"}
                 ]
             }
         ]
@@ -29,63 +29,63 @@ MockData.productClasses = [
             {
             label: "Title & Teaser",
             contents: [
-                {label: "Title", defaultValues: []},
-                {label: "Teaser", defaultValues: []}
+                {label: "Title", defaultValues: [], type: "singleValued"},
+                {label: "Teaser", defaultValues: [], type: "Description"}
             ]
             },
             {
                 label: "Feature & Description",
-                content: [
-                    {label: "Feature", defaultValues: []},
-                    {label: "Description", defaultValues: []}
+                contents: [
+                    {label: "Feature", defaultValues: [], type: "singleValued"},
+                    {label: "Description", defaultValues: [], type: "Description"}
                 ]
             },
             {
                 label: "Bonus Point",
-                content: [
-                    {label: "Bonus Point", defaultValues: []}
+                contents: [
+                    {label: "Bonus Point", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Logistic Block",
-                content: [
-                    {label: "Logistic Block", defaultValues: []}
+                contents: [
+                    {label: "Logistic Block", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Bonus Point",
-                content: [
-                    {label: "Bonus Point", defaultValues: []}
+                contents: [
+                    {label: "Bonus Point", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Logistic Block",
-                content: [
-                    {label: "Logistic Block", defaultValues: [1, 2, 3, 4]}
+                contents: [
+                    {label: "Logistic Block", defaultValues: [1, 2, 3, 4], type: "optionValued"}
                 ]
             },
             {
                 label: "Price",
-                content: [
-                    {label: "Price", defaultValues: []}
+                contents: [
+                    {label: "Price", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Me",
-                content: [
-                    {label: "Me", defaultValues: []}
+                contents: [
+                    {label: "Me", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Manufacturer",
-                content: [
-                    {label: "Manufacturer", defaultValues: []}
+                contents: [
+                    {label: "Manufacturer", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Conflicting Manufacturer",
-                content: [
-                    {label: "Conflicting Manufacturer", defaultValues: []}
+                contents: [
+                    {label: "Conflicting Manufacturer", defaultValues: [], type: "singleValued"}
                 ]
             }
         ]
@@ -95,38 +95,38 @@ MockData.productClasses = [
         groups: [
             {
                 label: "Zutaten Fur",
-                content: [
-                    {label: "Zutaten Fur", defaultValues: []}
+                contents: [
+                    {label: "Zutaten Fur", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Zubereitungszeit",
-                content: [
-                    {label: "Zubereitungszeit", defaultValues: []}
+                contents: [
+                    {label: "Zubereitungszeit", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Fertig In",
-                content: [
-                    {label: "Fertig In", defaultValues: []}
+                contents: [
+                    {label: "Fertig In", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Je Portion",
-                content: [
-                    {label: "Je Portion", defaultValues: []}
+                contents: [
+                    {label: "Je Portion", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Schwierigkeitsgrad",
-                content: [
-                    {label: "Schwierigkeitsgrad", defaultValues: []}
+                contents: [
+                    {label: "Schwierigkeitsgrad", defaultValues: [], type: "singleValued"}
                 ]
             },
             {
                 label: "Kategorian",
-                content: [
-                    {label: "Kategorian", defaultValues: []}
+                contents: [
+                    {label: "Kategorian", defaultValues: [], type: "singleValued"}
                 ]
             }
         ]

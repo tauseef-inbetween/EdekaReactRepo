@@ -39,6 +39,19 @@ var saveProductInfo = function () {
     alertify.success("Content successfully updated");
 };
 
+var addNoteToSelectedContent = function (note) {
+    var newNote = createDummyNote(note);
+    ContentListStore.addProductNote(newNote);
+};
+
+var deleteNoteFromSelectedProduct = function (note) {
+    ContentListStore.deleteNoteById(note.id);
+};
+
+var changeNoteContent = function (groupItem, newNote) {
+    ContentListStore.changeNoteDetails(groupItem, newNote);
+};
+
 var initialiseLayouts = function () {
     $('#northDOM').layout({
         applyDefaultStyles: true,

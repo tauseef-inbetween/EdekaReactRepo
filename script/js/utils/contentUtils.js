@@ -103,6 +103,25 @@ var createDummyProduct = function () {
     }
 };
 
+var createDummyNote = function (note) {
+    var newNote = {};
+    newNote.type = note.label;
+    newNote.id = '' + (new Date().getTime());
+    newNote.tags = {
+        "Brand": [],
+        "Market Cluster": [],
+        "Category": [],
+        "Region": [],
+        "Content Score": [],
+        "Communication channel": [],
+        "Quality": []
+    };
+    newNote.values = [];
+    for(var iContentCount = 0; iContentCount < note.contents.length; iContentCount++) {
+        newNote.values.push({"label": note.contents[iContentCount].label, "value": "", "type": note.contents[iContentCount].type});
+    }
+    return newNote;
+};
 
 var destroyLayout = function( containerSelector ) {
     var $C = $(containerSelector);
