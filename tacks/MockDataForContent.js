@@ -2,7 +2,8 @@ var MockData = MockData || {};
 
 MockData.products = [];
 MockData.productTypes = ["Structured", "Semi-Structured", "CMS", "Asset", "Impulse"];
-MockData.productWorkflowStatus = ["Requested", "Created", "Rework", "Updated", "Approved", "Published", "Archived"];;
+MockData.productWorkflowStatus = ["Requested", "Created", "Rework", "Updated", "Approved", "Published", "Archived"];
+;
 MockData.productClasses = [
     {
         label: "Standard",
@@ -27,11 +28,11 @@ MockData.productClasses = [
         label: "Product",
         groups: [
             {
-            label: "Title & Teaser",
-            contents: [
-                {label: "Title", defaultValues: [], type: "singleValued"},
-                {label: "Teaser", defaultValues: [], type: "Description"}
-            ]
+                label: "Title & Teaser",
+                contents: [
+                    {label: "Title", defaultValues: [], type: "singleValued"},
+                    {label: "Teaser", defaultValues: [], type: "Description"}
+                ]
             },
             {
                 label: "Feature & Description",

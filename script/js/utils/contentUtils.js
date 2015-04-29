@@ -118,7 +118,14 @@ var createDummyNote = function (note) {
     };
     newNote.values = [];
     for(var iContentCount = 0; iContentCount < note.contents.length; iContentCount++) {
-        newNote.values.push({"label": note.contents[iContentCount].label, "value": "", "type": note.contents[iContentCount].type});
+        newNote.values.push(
+            {
+                "label": note.contents[iContentCount].label,
+                "value": "",
+                "type": note.contents[iContentCount].type,
+                defaultValues: note.contents[iContentCount].defaultValues
+            }
+        );
     }
     return newNote;
 };
