@@ -124,7 +124,7 @@ var createDummyNote = function (note) {
                 "label": note.contents[iContentCount].label,
                 "value": "",
                 "type": note.contents[iContentCount].type,
-                defaultValues: note.contents[iContentCount].defaultValues
+                //defaultValues: note.contents[iContentCount].defaultValues
             }
         );
     }

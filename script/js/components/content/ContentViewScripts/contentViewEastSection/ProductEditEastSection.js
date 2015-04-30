@@ -22,6 +22,7 @@ var ProductEditEastContent = React.createClass({
             <div id="eastDOM" className={"ui-layout-east " + editModeDisabledClass }>
                 <div id="pimScreenBasicRightHeader">Text</div>
                 <ProductNoteList
+                    selectedProduct={selectedProduct}
                     productClasses={productClasses}
                     selectedProductNotes={selectedProductNotes}
                     selectedProductClass={selectedProductClass}/>

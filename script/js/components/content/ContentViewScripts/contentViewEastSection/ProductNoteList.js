@@ -67,7 +67,7 @@ var ProductNoteList = React.createClass({
             return (<div className="noteContainer" key={"item" + i}>
                 <button className="jDeletePimNotes" onClick={deleteNote}></button>
                 <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
-                    <ProductNoteRows item={item}/>
+                    <ProductNoteRows item={item} selectedProductClass={that.props.selectedProductClass} productClasses={that.props.productClasses}/>
                 </table>
             </div>);
         });

@@ -3,7 +3,9 @@ var endTime = 0;
 var ProductNoteRows = React.createClass({
 
     propType: {
-        item: React.PropTypes.object
+        item: React.PropTypes.object,
+        selectedProductClass: React.PropTypes.string,
+        productClasses: React.PropTypes.array
     },
 
     handleChange: function (item, DOMEvent) {
@@ -17,6 +19,8 @@ var ProductNoteRows = React.createClass({
 
     render: function () {
         var that = this;
+
+        var selectedClassGroups = _.result(_.find(that.props.productClasses, 'label', that.props.selectedProductClass), 'groups');
         var noteItem = _.map(that.props.item.values, function (item, i) {
                 var changeContent = that.handleChange.bind(that, item);
                 var content = '';
@@ -27,11 +31,13 @@ var ProductNoteRows = React.createClass({
                                           value={item.value}
                                           className="textArea"/>);
                 } else if (item.type == "optionValued") {
+                    var selectedNoteFromMock = _.result(_.find(selectedClassGroups, 'label', that.props.item.type), 'contents');
+                    var defaultValuesOfMock = _.result(_.find(selectedNoteFromMock, 'label', item.label), 'defaultValues');
                     content = (
                         <select className="selectNote" onChange={changeContent}
-                                value={item.value.length > 0 ? item.value : item.defaultValues[0]}>
-                            {_.map(item.defaultValues, function (value) {
-                                return (<option>{value}</option>)
+                                value={item.value.length > 0 ? item.value : defaultValuesOfMock[0]}>
+                            {_.map(defaultValuesOfMock, function (value, i) {
+                                return (<option key={"value" + i}>{value}</option>)
                             })}
                         </select>
                     );

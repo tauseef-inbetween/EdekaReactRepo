@@ -50,18 +50,6 @@ MockData.productClasses = [
             {
                 label: "Logistic Block",
                 contents: [
-                    {label: "Logistic Block", defaultValues: [], type: "singleValued"}
-                ]
-            },
-            {
-                label: "Bonus Point",
-                contents: [
-                    {label: "Bonus Point", defaultValues: [], type: "singleValued"}
-                ]
-            },
-            {
-                label: "Logistic Block",
-                contents: [
                     {label: "Logistic Block", defaultValues: [1, 2, 3, 4], type: "optionValued"}
                 ]
             },
