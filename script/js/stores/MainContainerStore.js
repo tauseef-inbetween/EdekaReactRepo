@@ -1,18 +1,14 @@
 var MainContainerStore = {
-    data: allScreens,
+    data: MainContainerStoreModel,
 
     getAllData: function () {
-        return this.data;
+        return this.data.getAllScreens();
     },
 
     loadScreen: function (screenName) {
         var screens = this.getAllData();
         for (var iScreenCount = 0; iScreenCount < screens.length; iScreenCount++) {
-            if (screens[iScreenCount].title == screenName) {
-                screens[iScreenCount].isSelected = true;
-            } else {
-                screens[iScreenCount].isSelected = false;
-            }
+            screens[iScreenCount].isSelected = (screens[iScreenCount].title == screenName);
         }
 
         loadDataFromNetwork(screenName);

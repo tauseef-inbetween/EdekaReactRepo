@@ -1,5 +1,5 @@
 MenuListStore = {
-    data: MenuItemsList,
+    data: MenuItemStoreModel.getMenuItemList(),
 
     getData: function () {
         return this.data;
