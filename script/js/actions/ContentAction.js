@@ -40,8 +40,7 @@ var saveProductInfo = function () {
 };
 
 var addNoteToSelectedContent = function (note) {
-    var newNote = createDummyNote(note);
-    ContentListStore.addProductNote(newNote);
+    ContentListStore.addProductNote(note);
 };
 
 var deleteNoteFromSelectedProduct = function (note) {

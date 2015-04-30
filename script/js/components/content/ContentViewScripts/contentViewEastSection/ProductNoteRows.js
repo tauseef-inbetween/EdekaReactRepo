@@ -7,13 +7,12 @@ var ProductNoteRows = React.createClass({
     },
 
     handleChange: function (item, DOMEvent) {
+
+        //#Rethink #LogicFlow [Unwanted looping for searching of notes for every key hit]
+
         item.value = DOMEvent.target.value || DOMEvent.target.innerText;
         startTime = new Date().getTime();
         changeNoteContent(this.props.item, item);
-    },
-
-    componentDidUpdate: function () {
-        console.log('q');
     },
 
     render: function () {
@@ -29,7 +28,7 @@ var ProductNoteRows = React.createClass({
                                           className="textArea"/>);
                 } else if (item.type == "optionValued") {
                     content = (
-                        <select className="pimScreenWizardFormInput" onChange={changeContent}
+                        <select className="selectNote" onChange={changeContent}
                                 value={item.value.length > 0 ? item.value : item.defaultValues[0]}>
                             {_.map(item.defaultValues, function (value) {
                                 return (<option>{value}</option>)

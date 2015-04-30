@@ -1,3 +1,6 @@
+var uniquePopoverStore = {};
+var uniqueKey = 1;
+
 var ProductNoteList = React.createClass({
 
     propTypes: {
@@ -18,7 +21,27 @@ var ProductNoteList = React.createClass({
 
     componentDidUpdate: function () {
         endTime = new Date().getTime();
-        console.log("Elapsed Time : " + (endTime - startTime));
+        this.refs.myPopover.hide();
+        //console.log("Elapsed Time : " + (endTime - startTime));
+    },
+
+    showPopOver: function () {
+        this.refs.myPopover.show();
+    },
+
+    hidePopOver: function (event) {
+        if(!$(event.target).hasClass('productClassGroup')) {
+            this.refs.myPopover.hide();
+        }
+    },
+
+    componentDidMount: function() {
+        $('body').bind('click',this.hidePopOver);
+    },
+
+    handleItemClick: function (item, event) {
+        this.hidePopOver(event);
+        addNoteToSelectedContent(item);
     },
 
     render: function () {
@@ -33,7 +56,7 @@ var ProductNoteList = React.createClass({
         var classGroup = this.getClassGroup();
         if (classGroup) {
             var classContents = _.map(classGroup.groups, function (item, i) {
-                var addNote = addNoteToSelectedContent.bind(that, item);
+                var addNote = that.handleItemClick.bind(that, item);
                 return (<div className="productClassGroup" key={"item" + i} onClick={addNote}>{item.label}</div>);
             });
             var popOver = (<Popover>{classContents}</Popover>)
@@ -53,10 +76,11 @@ var ProductNoteList = React.createClass({
             <div id="noteContentDiv">
                 {noteItems}
                 <OverlayTrigger
-                    trigger='click'
+                    trigger='manual'
                     placement='right'
+                    ref='myPopover'
                     overlay={popOver}>
-                    <Button className="btnAddNote" bsSize='xsmall' bsStyle='primary'><Glyphicon glyph='plus-sign'/> Add</Button>
+                    <Button onClick={this.showPopOver} className="btnAddNote" bsSize='xsmall' bsStyle='primary'><Glyphicon glyph='plus-sign'/> Add</Button>
                 </OverlayTrigger>
             </div>
         );

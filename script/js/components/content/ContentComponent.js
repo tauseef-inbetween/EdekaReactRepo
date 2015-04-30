@@ -8,27 +8,29 @@ var Content = React.createClass({
     getInitialState: function () {
         return {
             productList: [],
+            productTypes: [],
+            productClasses: [],
+            productWorkFlowStatus: [],
+
             contentViewStyle: 'thumbnail',
             contentViewMode: 'viewMode',
             selectedProduct: null,
-
-            productWorkFlowStatus: [],
-            productTypes: [],
-            productClasses: [],
             selectedIndex: 0
         };
     },
 
     listStateChanged: function () {
+        var data = ContentListStore.getData();
         this.setState({
-            productList: ContentListStore.getData(),
-            contentViewStyle: ContentListStore.getContentViewStyle(),
-            contentViewMode: ContentListStore.getContentViewMode(),
-            selectedProduct: ContentListStore.getSelectedProduct(),
-            productWorkFlowStatus: ContentListStore.getProductWorkflowStatus(),
-            productTypes: ContentListStore.getProductTypes(),
-            productClasses: ContentListStore.getProductClasses(),
-            selectedIndex: ContentListStore.getSelectedIndex()
+            productList: data.getAppData().getAllProducts(),
+            productTypes: data.getAppData().getProductTypes(),
+            productClasses: data.getAppData().getProductClasses(),
+            productWorkFlowStatus: data.getAppData().getProductWorkflowStatus(),
+
+            contentViewStyle: data.getComponentProps().getContentViewStyle(),
+            contentViewMode: data.getComponentProps().getContentViewMode(),
+            selectedProduct: data.getComponentProps().getSelectedProduct(),
+            selectedIndex: data.getComponentProps().getSelectedIndex()
         });
     },
 

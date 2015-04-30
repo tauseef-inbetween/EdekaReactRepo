@@ -26,7 +26,7 @@ var ProductThumbnailViewItem = React.createClass({
                     {imageDiv}
                     <div id="PIMViewScrollDiv">
                         <div className="PIMThumbName">
-                            <div className="PIMThumbLabel">{product.id} | {product.title}</div>
+                            <div className="PIMThumbLabel">{product.id} | {product.label}</div>
                         </div>
                         <div className="PIMThumbTitle">Title: {product.title}</div>
                         {descriptionDiv}
