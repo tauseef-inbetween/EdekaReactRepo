@@ -7,7 +7,7 @@ var ProductEditEastContent = React.createClass({
     },
 
     render : function () {
-
+        var Button = ReactBootstrap.Button;
         var selectedProduct = this.props.selectedProduct;
         if(!selectedProduct) {
             selectedProduct = {};
@@ -20,7 +20,10 @@ var ProductEditEastContent = React.createClass({
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
         return (
             <div id="eastDOM" className={"ui-layout-east " + editModeDisabledClass }>
-                <div id="pimScreenBasicRightHeader">Text</div>
+                <div id="pimScreenBasicRightHeader">
+                    <span>Text</span>
+                    <Button className="btnSetDefault" bsSize='xsmall' bsStyle='primary'>Set As Default</Button>
+                </div>
                 <ProductNoteList
                     selectedProduct={selectedProduct}
                     productClasses={productClasses}
