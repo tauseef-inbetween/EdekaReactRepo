@@ -108,7 +108,8 @@ var createDummyNote = function (note) {
     var newNote = {};
     newNote.type = note.label;
     newNote.id = '' + (new Date().getTime());
-    newNote.tags = {
+    newNote.groupName = note.groupName;
+        newNote.tags = {
         "Brand": [],
         "Market Cluster": [],
         "Category": [],

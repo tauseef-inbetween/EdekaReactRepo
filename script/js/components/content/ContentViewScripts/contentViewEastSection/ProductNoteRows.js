@@ -20,7 +20,7 @@ var ProductNoteRows = React.createClass({
     render: function () {
         var that = this;
 
-        var selectedClassGroups = _.result(_.find(that.props.productClasses, 'label', that.props.selectedProductClass), 'groups');
+        var selectedClassGroups = _.result(_.find(that.props.productClasses, 'label', that.props.item.groupName), 'groups');
         var noteItem = _.map(that.props.item.values, function (item, i) {
                 var changeContent = that.handleChange.bind(that, item);
                 var content = '';

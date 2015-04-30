@@ -30,7 +30,7 @@ var backToViewMode = function () {
     ContentListStore.setContentViewModeWithTrigger('viewMode');
 };
 
-var changeSelectedProduct = function (property, value) {
+var changeSelectedProductProperty = function (property, value) {
     ContentListStore.setSelectedProductValue(property, value);
 };
 
@@ -40,7 +40,7 @@ var saveProductInfo = function () {
 };
 
 var addNoteToSelectedContent = function (note) {
-    ContentListStore.addProductNote(note);
+    ContentListStore.addProductNoteWithTrigger(note);
 };
 
 var deleteNoteFromSelectedProduct = function (note) {

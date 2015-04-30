@@ -35,6 +35,11 @@ ContentListStore = {
     },
 
     setSelectedProductValue: function (property, value) {
+
+        if(property == 'class') {
+            this.addDefaultNotes(value);
+        }
+
         var selectedProduct = this.data.getComponentProps().getSelectedProduct();
         selectedProduct[property] = value;
         this.setSelectedProductWithTrigger(selectedProduct);
@@ -103,6 +108,17 @@ ContentListStore = {
         return null;
     },
 
+    addDefaultNotes: function (classValue) {
+        var groups = _.result(_.find(this.data.getAppData().getProductClasses(),'label',classValue), 'groups');
+        var defaultNotes = _.where(groups, { 'defaultValue': true});
+        var selectedProductNotes = this.data.getComponentProps().getSelectedProduct().notes;
+        var notesToAdd = _.filter(defaultNotes, function(obj){ return !_.findWhere(selectedProductNotes, {'type' : obj.label}); });
+        var that = this;
+        _.map(notesToAdd, function (note){
+            that.addProductNote(note);
+        });
+    },
+
     changeNoteDetails: function (groupItem, newNote) {
         var values = this.getSelectedProductNoteValuesById(groupItem.id);
         var value = _.result(_.find(values, function (value) {
@@ -123,6 +139,10 @@ ContentListStore = {
     addProductNote: function (note) {
         var newNote = createDummyNote(note);
         this.data.getComponentProps().getSelectedProduct().notes.push(newNote);
+    },
+
+    addProductNoteWithTrigger: function (note) {
+        this.addProductNote(note);
         this.trigger('change');
     }
 };

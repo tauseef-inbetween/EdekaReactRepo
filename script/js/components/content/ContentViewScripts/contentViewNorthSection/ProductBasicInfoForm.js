@@ -8,22 +8,22 @@ var ProductBasicInfoForm = React.createClass({
     },
 
     handleWorkflowChange: function (index) {
-        changeSelectedProduct('workflowStatus', this.props.productWorkFlowStatus[index]);
+        changeSelectedProductProperty('workflowStatus', this.props.productWorkFlowStatus[index]);
     },
 
     handleChange: function (DOMEvent) {
         var targetId = DOMEvent.currentTarget.id;
         var targetValue = DOMEvent.target.value || DOMEvent.target.innerText;
         if(targetId == 'pimScreenProductName') {
-            changeSelectedProduct('label', targetValue);
+            changeSelectedProductProperty('label', targetValue);
         } else if(targetId == 'pimScreenType') {
-            changeSelectedProduct('type', targetValue);
+            changeSelectedProductProperty('type', targetValue);
         } else if(targetId == 'pimScreenWorkflow') {
-            changeSelectedProduct('workflowStatus', targetValue);
+            changeSelectedProductProperty('workflowStatus', targetValue);
         } else if(targetId == 'pimScreenClasses') {
-            changeSelectedProduct('class', targetValue);
+            changeSelectedProductProperty('class', targetValue);
         } else if(targetId == 'pimScreenComments') {
-            changeSelectedProduct('comments', targetValue);
+            changeSelectedProductProperty('comments', targetValue);
         }
     },
 
