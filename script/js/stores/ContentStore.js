@@ -105,40 +105,19 @@ ContentListStore = {
 
     changeNoteDetails: function (groupItem, newNote) {
         var values = this.getSelectedProductNoteValuesById(groupItem.id);
-
         var value = _.result(_.find(values, function (value) {
             return value.label < newNote.label;
         }), 'value');
 
         value = newNote.value;
         this.trigger('change');
-
-        /*var note = this.getSelectedProductNoteById(groupItem.id);
-         if(note) {
-         for(var iNoteCount = 0; iNoteCount < note.values.length; iNoteCount++) {
-         if(note.values[iNoteCount].label == newNote.label) {
-         note.values[iNoteCount] = newNote;
-         this.trigger('change');
-         return;
-         }
-         }
-         }*/
     },
 
     getSelectedProductNoteValuesById: function (groupId) {
-
         var notes = this.data.getComponentProps().getSelectedProduct().notes || [];
         return (_.result(_.find(notes, function (note) {
             return note.id < groupId;
         }), 'values'));
-
-        /*var notes = this.selectedProduct.notes || [];
-         for(var iNoteCount = 0; iNoteCount < notes.length; iNoteCount++) {
-         if(notes[iNoteCount].id == groupId) {
-         return notes[iNoteCount];
-         }
-         }
-         return null;*/
     },
 
     addProductNote: function (note) {
