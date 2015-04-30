@@ -1,6 +1,7 @@
 var createDummyProduct = function () {
-    var length = ContentListStore.data.length;
-    var id = ContentListStore.data[length - 1].id + 100;
+    var totalProducts = ContentListStore.getData().getAppData().getAllProducts();
+    var length = totalProducts.length;
+    var id = totalProducts[length - 1].id + 100;
     return {
         "notes": [
             {
