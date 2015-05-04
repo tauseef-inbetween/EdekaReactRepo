@@ -8,7 +8,8 @@ var ProductEditNorthContent = React.createClass({
         productClasses: React.PropTypes.array.isRequired,
         contentViewMode: React.PropTypes.string.isRequired,
         contentViewStyle: React.PropTypes.string.isRequired,
-        selectedIndex: React.PropTypes.number
+        selectedIndex: React.PropTypes.number,
+        isSaved: React.PropTypes.bool
     },
 
     render: function () {
@@ -20,6 +21,7 @@ var ProductEditNorthContent = React.createClass({
         var productClasses = this.props.productClasses;
         var productWrapperClass = (this.props.contentViewMode == 'editMode') ? 'owl-carousel' : 'ProductWrapper';
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
+        var isSaved = this.props.isSaved;
 
         //#LogicFlow #DataCreation
         var productItems = _.map(this.props.productList, function (item, i) {
@@ -36,7 +38,7 @@ var ProductEditNorthContent = React.createClass({
         });
 
         var productItemView = (this.props.contentViewMode == 'editMode') ?
-            <Carousel items={productItems} selectedIndex={selectedIndex} key="carousel"/> : (
+            <Carousel items={productItems} selectedIndex={selectedIndex} isSaved={isSaved} key="carousel"/> : (
             <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
 
         return (

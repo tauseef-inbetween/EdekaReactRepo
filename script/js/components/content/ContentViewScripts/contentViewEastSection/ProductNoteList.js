@@ -19,29 +19,48 @@ var ProductNoteList = React.createClass({
         return null;
     },
 
-    componentDidUpdate: function () {
-        endTime = new Date().getTime();
-        this.refs.myPopover.hide();
-        //console.log("Elapsed Time : " + (endTime - startTime));
-    },
-
     showPopOver: function () {
         this.refs.myPopover.show();
     },
 
     hidePopOver: function (event) {
-        if(!$(event.target).hasClass('productClassGroup')) {
+        if (!$(event.target).hasClass('productClassGroup')) {
             this.refs.myPopover.hide();
         }
-    },
-
-    componentDidMount: function() {
-        $('body').bind('click',this.hidePopOver);
     },
 
     handleItemClick: function (item, event) {
         this.hidePopOver(event);
         addNoteToSelectedContent(item);
+    },
+
+    scrollToTop: function () {
+        var node = this.getDOMNode();
+        node.scrollTop = 0;
+    },
+
+    componentDidMount: function () {
+        $('body').bind('click', this.hidePopOver);
+    },
+
+    componentDidUpdate: function () {
+        this.refs.myPopover.hide();
+
+        if(!this.shouldScrollBottom) {
+            this.refs.goToTop.getDOMNode().style.opacity = 0;
+        } else {
+            this.refs.goToTop.getDOMNode().style.opacity = 0.8;
+        }
+
+        if (this.shouldScrollBottom) {
+            var node = this.refs.noteContainer.getDOMNode();
+            node.scrollTop = node.scrollHeight;
+        }
+    },
+
+    componentWillUpdate: function () {
+        var node = this.refs.noteContainer.getDOMNode();
+        this.shouldScrollBottom = (node.scrollTop && (node.scrollTop + node.offsetHeight) === node.scrollHeight);
     },
 
     render: function () {
@@ -67,21 +86,26 @@ var ProductNoteList = React.createClass({
             return (<div className="noteContainer" key={"item" + i}>
                 <button className="jDeletePimNotes" onClick={deleteNote}></button>
                 <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
-                    <ProductNoteRows item={item} selectedProductClass={that.props.selectedProductClass} productClasses={that.props.productClasses}/>
+                    <ProductNoteRows item={item} selectedProductClass={that.props.selectedProductClass}
+                                     productClasses={that.props.productClasses}/>
                 </table>
             </div>);
         });
 
         return (
-            <div id="noteContentDiv">
+            <div id="noteContentDiv" ref="noteContainer">
                 {noteItems}
-                <OverlayTrigger
-                    trigger='manual'
-                    placement='right'
-                    ref='myPopover'
-                    overlay={popOver}>
-                    <Button onClick={this.showPopOver} className="btnAddNote" bsSize='xsmall' bsStyle='primary'><Glyphicon glyph='plus-sign'/> Add</Button>
-                </OverlayTrigger>
+                <div className="noteControls">
+                    <OverlayTrigger
+                        trigger='manual'
+                        placement='right'
+                        ref='myPopover'
+                        overlay={popOver}>
+                        <Button onClick={this.showPopOver} className="btnAddNote" bsSize='xsmall'
+                                bsStyle='primary'><Glyphicon glyph='plus-sign'/> Add</Button>
+                    </OverlayTrigger>
+                    <div id="productNoteScrollTop" ref="goToTop" onClick={this.scrollToTop} title="Move to Top"><Glyphicon glyph='circle-arrow-up'/></div>
+                </div>
             </div>
         );
     }

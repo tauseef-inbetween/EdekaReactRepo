@@ -13,6 +13,12 @@ var ProductThumbnailViewItem = React.createClass({
         var viewTypeClass = (this.props.contentViewStyle == 'thumbnail') ? 'pimThumbView' : 'pimDetailView';
         var imageDiv = '';
         var descriptionDiv = '';
+        var titleValues = _.result(_.find(product.notes, function(note) {return note.type == 'Title & Teaser';}), 'values');
+        var title = product.title;
+        if(titleValues) {
+            title = _.result(_.find(titleValues, function(value) {return value.label=='Title';}), 'value');
+        }
+
         if(this.props.contentViewStyle == 'thumbnail') {
             imageDiv = <div className="PIMThumbImage"><img src={product.image[0]}></img></div>;
         } else {
@@ -28,7 +34,7 @@ var ProductThumbnailViewItem = React.createClass({
                         <div className="PIMThumbName">
                             <div className="PIMThumbLabel">{product.id} | {product.label}</div>
                         </div>
-                        <div className="PIMThumbTitle">Title: {product.title}</div>
+                        <div className="PIMThumbTitle">Title: {title}</div>
                         {descriptionDiv}
                         <div className="PIMThumbTag" data-title=""></div>
                     </div>

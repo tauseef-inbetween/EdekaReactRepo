@@ -26,17 +26,18 @@ ContentListStore = {
     },
 
     setSelectedProduct: function (oProduct) {
-        this.data.getComponentProps().setSelectedProduct(_.cloneDeep(oProduct));
+        this.data.getComponentProps().setSelectedProduct(_.clone(oProduct, true));
     },
 
     setSelectedProductWithTrigger: function (oProduct) {
         this.setSelectedProduct(oProduct);
+        this.setSavingState(false);
         this.trigger('change');
     },
 
     setSelectedProductValue: function (property, value) {
 
-        if(property == 'class') {
+        if (property == 'class') {
             this.addDefaultNotes(value);
         }
 
@@ -63,10 +64,15 @@ ContentListStore = {
         this.trigger('change');
     },
 
+    setSavingState: function (savingState) {
+        this.data.getComponentProps().setSavingState(savingState);
+    },
+
     saveSelectedProductInfo: function () {
         var selectedProduct = this.data.getComponentProps().getSelectedProduct();
         var product = this.getProductById(selectedProduct.id);
-        _.merge(product, selectedProduct);
+        _.assign(product, selectedProduct);
+        this.setSavingState(true);
         this.trigger('change');
     },
 

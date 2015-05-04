@@ -45,6 +45,7 @@ var ContentStoreModel = (function () {
         contentViewMode: 'viewMode',
         selectedProduct: null,
         selectedIndex: 0,
+        isSaving: true,
 
         getContentViewStyle: function () {
             return this.contentViewStyle;
@@ -76,6 +77,14 @@ var ContentStoreModel = (function () {
 
         setSelectedIndex: function (selectedIndex) {
             this.selectedIndex = selectedIndex;
+        },
+
+        getSavingState: function () {
+            return this.isSaving;
+        },
+
+        setSavingState: function (state) {
+            this.isSaving = state;
         }
     };
 

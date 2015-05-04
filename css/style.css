@@ -108,3 +108,8 @@
 #popUpContainer {
     z-index: 12;
 }
+
+#MainContainer {
+    overflow: hidden;
+    height: 675px;
+}

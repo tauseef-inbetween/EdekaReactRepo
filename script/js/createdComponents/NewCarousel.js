@@ -3,7 +3,8 @@ var CarouselItems = React.createClass({
     propTypes: {
         selectedIndex: React.PropTypes.number,
         items: React.PropTypes.arrayOf(React.PropTypes.element),
-        wheeling: React.PropTypes.func
+        wheeling: React.PropTypes.func,
+        handleThumbClick: React.PropTypes.func
     },
 
     componentDidUpdate: function () {
@@ -18,16 +19,17 @@ var CarouselItems = React.createClass({
         return this.refs.item0.getDOMNode().offsetWidth;
     },
     render: function () {
-        var selectedIndex = this.props.selectedIndex;
-        var carouselItem = _.map(this.props.items, function (item, i) {
+        var that = this;
+        var selectedIndex = that.props.selectedIndex;
+        var carouselItem = _.map(that.props.items, function (item, i) {
             return (
                 <div className={"carouselItem " + (selectedIndex == i ? 'selectedItem' : '') } key={"item" + i}
-                     ref={"item" + i}>{item}</div>
+                     ref={"item" + i} onClick={that.props.handleThumbClick}>{item}</div>
             );
         });
         return (
             <div className="carouselItemContainer"
-                 onWheel={this.props.wheeling}
+                 onWheel={that.props.wheeling}
                  ref="carouselItemContainer">{carouselItem}</div>
         );
     }
@@ -54,91 +56,79 @@ var Carousel = React.createClass({
 
     propTypes: {
         items: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
-        selectedIndex: React.PropTypes.number
+        selectedIndex: React.PropTypes.number,
+        jump: React.PropTypes.bool
     },
 
-    isMoving: false,
+    getInitialState: function () {
+        return {
+            moveDuration: 600,
+            previousLeftPosition: 0,
+            leftPosition: 0,
+            buttonClicked: false
+        }
+    },
 
-    leftClickRecord: 0,
+    thumbClick: function () {
+        var left = this.state.leftPosition;
+        this.setState({previousLeftPosition: left, leftPosition: left});
+    },
 
-    rightClickRecord: 0,
+    wheeling: function (event) {
+        if (event.deltaY >= 100) {
+            this.rightButtonClicked();
+        } else if (event.deltaY <= -100) {
 
-    moveDuration: 600,
-
-    calculateMoveDurationSpeed: function (clickHitRecord) {
-        if(clickHitRecord == 1) {
-            this.moveDuration = 600;
-        } else if(clickHitRecord > 1 && clickHitRecord < 5) {
-            this.moveDuration = 300;
-        } else if (clickHitRecord >= 5 && clickHitRecord < 8){
-            this.moveDuration = 100;
-        } else if(clickHitRecord > 10){
-            this.moveDuration = 10;
+            this.leftButtonClicked();
         }
     },
 
     leftButtonClicked: function () {
-
-        var that = this;
-
-        that.leftClickRecord++;
-
-        if(that.isMoving) {
-            that.calculateMoveDurationSpeed(that.leftClickRecord);
-        } else {
-            that.isMoving = true;
-        }
-
-        var itemWidth = that.refs.items.getWidthOfSingleItem();
-        var moveLength = itemWidth * 5;
-        var $container = $(that.refs.items.refs.carouselItemContainer.getDOMNode());
-        var position = $container.position();
-        var left = position.left;
-        var right = left + $container.outerWidth();
-        if (left == 0) {
-            moveLength += (right * -1);
-        } else if (left > (moveLength * -1)) {
-            moveLength = left * -1;
-        }
-        $container.css('right', 'auto').animate({left: (left + moveLength) + 'px'}, that.moveDuration, 'easeInOutCubic',
-            function () {
-                that.isMoving = false;
-                that.leftClickRecord--;
-                that.calculateMoveDurationSpeed(that.leftClickRecord);
-            });
+        this.handleButtonClick('left');
     },
 
     rightButtonClicked: function () {
+        this.handleButtonClick('right');
+    },
 
-        var that = this;
-
-        that.rightClickRecord++;
-
-        if(that.isMoving) {
-            that.calculateMoveDurationSpeed(that.rightClickRecord);
-        } else {
-            that.isMoving = true;
-        }
-
-        var itemWidth = that.refs.items.getWidthOfSingleItem();
-        var moveLength = itemWidth * 5;
-        var $container = $(that.refs.items.refs.carouselItemContainer.getDOMNode());
+    handleButtonClick: function (direction) {
+        var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
         var position = $container.position();
         var left = position.left;
         var right = left + $container.outerWidth();
-        if (right == moveLength) {
-            moveLength = left;
-        } else if (right < 2 * moveLength) {
-            moveLength = right - moveLength;
+        var itemWidth = this.refs.items.getWidthOfSingleItem();
+        var moveLength = itemWidth * 5;
+        if(direction == 'left') {
+            if (left == 0) {
+                moveLength += (right * -1);
+            } else if (left > (moveLength * -1)) {
+                moveLength = left * -1;
+            }
+            this.setState({previousLeftPosition: left, leftPosition: (left + moveLength)});
+        } else {
+            if (right == moveLength) {
+                moveLength = left;
+            } else if (right < 2 * moveLength) {
+                moveLength = right - moveLength;
+            }
+            this.setState({previousLeftPosition: left, leftPosition: (left - moveLength)});
         }
+    },
 
-        $container.css('right', 'auto').animate({left: (left - moveLength) + 'px'}, that.moveDuration, 'easeInOutCubic',
-            function () {
-                that.isMoving = false;
-                that.rightClickRecord--;
-                that.calculateMoveDurationSpeed(that.rightClickRecord);
-            });
+    slideCarouselTo: function () {
+        var left = this.state.leftPosition;
+        this.moveCarouselToPosition(left);
+    },
 
+    jumpToPreviousPosition: function () {
+        var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
+        $container.css('left', (this.state.previousLeftPosition) + 'px');
+    },
+
+    moveCarouselToPosition: function (left) {
+        var that = this;
+        var $container = $(that.refs.items.refs.carouselItemContainer.getDOMNode());
+        $container.css('right', 'auto').animate({left: left + 'px'}, that.state.moveDuration, 'easeInOutCubic');
     },
 
     jumpToSelectedProduct: function (index) {
@@ -156,35 +146,36 @@ var Carousel = React.createClass({
                 moveLength = right - itemWidth * 5;
             }
         }
-
         $container.css('left', (left - moveLength) + 'px');
     },
 
     componentDidMount () {
-        if (this.props.selectedIndex > 0) {
+        if(this.state.leftPosition == this.state.previousLeftPosition ) {
             this.jumpToSelectedProduct(this.props.selectedIndex);
+        } else {
+            this.jumpToPreviousPosition();
+            this.slideCarouselTo();
         }
     },
 
     componentDidUpdate: function () {
-        if (this.props.selectedIndex > 0) {
+        if(this.props.leftPosition == this.state.previousLeftPosition) {
             this.jumpToSelectedProduct(this.props.selectedIndex);
+        } else {
+            this.jumpToPreviousPosition();
+            this.slideCarouselTo();
         }
     },
 
-    wheeling: function (event) {
-        if (event.deltaY == 100) {
-            this.rightButtonClicked();
-        } else if (event.deltaY == -100) {
-            this.leftButtonClicked();
-        }
+    shouldComponentUpdate: function (nextProps, nextState) {
+        return nextProps.isSaved;
     },
 
     render: function () {
         return (
             <div className="carouselContainer">
                 <div className="carouselItemWrapper" key="itemWrapper">
-                    <CarouselItems items={this.props.items} wheeling={this.wheeling}
+                    <CarouselItems items={this.props.items} wheeling={this.wheeling} handleThumbClick={this.thumbClick}
                                    selectedIndex={this.props.selectedIndex} key="items" ref="items"/>
                 </div>
                 <CarouselController key="controls" leftBtnClick={this.leftButtonClicked}

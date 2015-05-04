@@ -8,14 +8,15 @@ var ProductInfoScreen = React.createClass({
         productClasses: React.PropTypes.array.isRequired,
         contentViewMode: React.PropTypes.string.isRequired,
         contentViewStyle: React.PropTypes.string.isRequired,
-        selectedIndex: React.PropTypes.number
+        selectedIndex: React.PropTypes.number,
+        isSaved: React.PropTypes.bool
     },
 
     componentDidUpdate: function () {
 
         //#LogicFlow Check
         if (this.props.contentViewMode == 'editMode') {
-            initialiseLayouts();
+            initialiseLayouts(this.props.selectedProduct.type);
         }
     },
     render: function () {
@@ -27,6 +28,7 @@ var ProductInfoScreen = React.createClass({
         var contentViewMode = this.props.contentViewMode;
         var contentViewStyle = this.props.contentViewStyle;
         var selectedIndex = this.props.selectedIndex;
+        var isSaved = this.props.isSaved;
         return (
             <div id="ProductEditInfoScreen" ref="ProductEditInfoScreen">
                 <div id="centerDOMMainContainer">
@@ -40,7 +42,8 @@ var ProductInfoScreen = React.createClass({
                         ref="northDOM" key="2"
                         contentViewMode={contentViewMode}
                         contentViewStyle={contentViewStyle}
-                        selectedIndex={selectedIndex}/>
+                        selectedIndex={selectedIndex}
+                        isSaved={isSaved}/>
 
                     <ProductEditCenterContent
                         contentViewMode={contentViewMode}

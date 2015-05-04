@@ -622,3 +622,20 @@
     font-size: 10px;
     text-shadow: 1px 1px 0 #2F608A;
 }
+
+#productNoteScrollTop {
+    display: inline-block;
+    float: right;
+    padding: 3px 5px;
+    font-size: 13px;
+    opacity: .8;
+    transition: all .2s;
+}
+
+#productNoteScrollTop:hover {
+    opacity: 1;
+}
+
+.noteControls {
+    /*margin-bottom: 30px;*/
+}

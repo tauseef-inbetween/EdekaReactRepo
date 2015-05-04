@@ -15,7 +15,8 @@ var Content = React.createClass({
             contentViewStyle: 'thumbnail',
             contentViewMode: 'viewMode',
             selectedProduct: null,
-            selectedIndex: 0
+            selectedIndex: 0,
+            isSaved: false
         };
     },
 
@@ -30,7 +31,8 @@ var Content = React.createClass({
             contentViewStyle: data.getComponentProps().getContentViewStyle(),
             contentViewMode: data.getComponentProps().getContentViewMode(),
             selectedProduct: data.getComponentProps().getSelectedProduct(),
-            selectedIndex: data.getComponentProps().getSelectedIndex()
+            selectedIndex: data.getComponentProps().getSelectedIndex(),
+            isSaved: data.getComponentProps().getSavingState()
         });
     },
 
@@ -54,6 +56,7 @@ var Content = React.createClass({
         var productTypes = this.state.productTypes;
         var productClasses = this.state.productClasses;
         var selectedIndex = this.state.selectedIndex;
+        var isSaved = this.state.isSaved;
         return (
             <div id="contentScreen" className={this.props.className}>
                 <ContentViewStyle contentViewStyle={this.state.contentViewStyle}
@@ -66,7 +69,8 @@ var Content = React.createClass({
                                            productClasses={productClasses}
                                            contentViewMode={contentViewMode}
                                            contentViewStyle={contentViewStyle}
-                                           selectedIndex={selectedIndex}/>
+                                           selectedIndex={selectedIndex}
+                                           isSaved={isSaved}/>
                 </div>
             </div>
         )

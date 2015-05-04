@@ -51,7 +51,7 @@ var changeNoteContent = function (groupItem, newNote) {
     ContentListStore.changeNoteDetails(groupItem, newNote);
 };
 
-var initialiseLayouts = function () {
+var initialiseLayouts = function (type) {
     $('#northDOM').layout({
         applyDefaultStyles: true,
         panes: {
@@ -65,7 +65,7 @@ var initialiseLayouts = function () {
         center__paneSelector: "#centerOwlContainer"
     });
 
-    $('#centerDOMMainContainer').layout({
+    var PIMCenterLayout = $('#centerDOMMainContainer').layout({
         applyDefaultStyles: true,
         east__paneSelector: "#eastDOM",
         center_DOM: "#centerDOM",
@@ -92,4 +92,10 @@ var initialiseLayouts = function () {
             size: 300
         }
     });
+
+    if(type == 'Semi-Structured' || type == 'Asset' || type == 'Impulse') {
+        PIMCenterLayout.hide('east');
+    } else {
+        PIMCenterLayout.show('east');
+    }
 };
