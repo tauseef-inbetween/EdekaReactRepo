@@ -31,7 +31,6 @@ ContentListStore = {
 
     setSelectedProductWithTrigger: function (oProduct) {
         this.setSelectedProduct(oProduct);
-        this.setSavingState(false);
         this.trigger('change');
     },
 
@@ -42,6 +41,7 @@ ContentListStore = {
         }
 
         var selectedProduct = this.data.getComponentProps().getSelectedProduct();
+        this.data.getComponentProps().setIsSaved(false);
         selectedProduct[property] = value;
         this.setSelectedProductWithTrigger(selectedProduct);
     },
@@ -64,15 +64,11 @@ ContentListStore = {
         this.trigger('change');
     },
 
-    setSavingState: function (savingState) {
-        this.data.getComponentProps().setSavingState(savingState);
-    },
-
     saveSelectedProductInfo: function () {
         var selectedProduct = this.data.getComponentProps().getSelectedProduct();
         var product = this.getProductById(selectedProduct.id);
         _.assign(product, selectedProduct);
-        this.setSavingState(true);
+        this.data.getComponentProps().setIsSaved(true);
         this.trigger('change');
     },
 

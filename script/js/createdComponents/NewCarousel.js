@@ -4,20 +4,24 @@ var CarouselItems = React.createClass({
         selectedIndex: React.PropTypes.number,
         items: React.PropTypes.arrayOf(React.PropTypes.element),
         wheeling: React.PropTypes.func,
-        handleThumbClick: React.PropTypes.func
+        handleThumbClick: React.PropTypes.func,
+        position: React.PropTypes.object
     },
 
     componentDidUpdate: function () {
         var itemWidth = this.getWidthOfSingleItem();
-        this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "width:" + itemWidth * this.props.items.length + "px");
+        this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "left:" + this.props.position.left + "; width:" + itemWidth * this.props.items.length + "px");
     },
+
     componentDidMount: function () {
         var itemWidth = this.getWidthOfSingleItem();
         this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "width:" + itemWidth * this.props.items.length + "px");
     },
+
     getWidthOfSingleItem: function () {
         return this.refs.item0.getDOMNode().offsetWidth;
     },
+
     render: function () {
         var that = this;
         var selectedIndex = that.props.selectedIndex;
@@ -57,7 +61,7 @@ var Carousel = React.createClass({
     propTypes: {
         items: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
         selectedIndex: React.PropTypes.number,
-        jump: React.PropTypes.bool
+        isSaved: React.PropTypes.bool
     },
 
     getInitialState: function () {
@@ -153,7 +157,7 @@ var Carousel = React.createClass({
         if(this.state.leftPosition == this.state.previousLeftPosition ) {
             this.jumpToSelectedProduct(this.props.selectedIndex);
         } else {
-            this.jumpToPreviousPosition();
+            //this.jumpToPreviousPosition();
             this.slideCarouselTo();
         }
     },
@@ -162,20 +166,23 @@ var Carousel = React.createClass({
         if(this.props.leftPosition == this.state.previousLeftPosition) {
             this.jumpToSelectedProduct(this.props.selectedIndex);
         } else {
-            this.jumpToPreviousPosition();
+            //this.jumpToPreviousPosition();
             this.slideCarouselTo();
         }
     },
 
-    shouldComponentUpdate: function (nextProps, nextState) {
-        return nextProps.isSaved;
+    /*shouldComponentUpdate: function (nextProps, nextState) {
+        return (nextProps.isSaved);
     },
-
+*/
     render: function () {
+        var carouselPosition = {
+            left: this.state.previousLeftPosition + 'px'
+        };
         return (
             <div className="carouselContainer">
                 <div className="carouselItemWrapper" key="itemWrapper">
-                    <CarouselItems items={this.props.items} wheeling={this.wheeling} handleThumbClick={this.thumbClick}
+                    <CarouselItems position={carouselPosition} items={this.props.items} wheeling={this.wheeling} handleThumbClick={this.thumbClick}
                                    selectedIndex={this.props.selectedIndex} key="items" ref="items"/>
                 </div>
                 <CarouselController key="controls" leftBtnClick={this.leftButtonClicked}

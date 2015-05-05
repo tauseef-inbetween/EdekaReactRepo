@@ -29,6 +29,17 @@ var ProductNoteList = React.createClass({
         }
     },
 
+    handleNoteClick: function (event) {
+        var targetClass = event.target.className;
+        if(targetClass == 'textArea' || targetClass == 'selectNote' || targetClass == 'textBox') {return}
+
+        var activeNote = document.getElementsByClassName('activeNote')[0];
+        if(activeNote) {
+            activeNote.className = 'noteContainer';
+        }
+        event.currentTarget.className += " activeNote";
+    },
+
     handleItemClick: function (item, event) {
         this.hidePopOver(event);
         addNoteToSelectedContent(item);
@@ -83,7 +94,8 @@ var ProductNoteList = React.createClass({
 
         var noteItems = _.map(productNotes, function (item, i) {
             var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
-            return (<div className="noteContainer" key={"item" + i}>
+
+            return (<div className="noteContainer" key={"item" + i} onClick={that.handleNoteClick}>
                 <button className="jDeletePimNotes" onClick={deleteNote}></button>
                 <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
                     <ProductNoteRows item={item} selectedProductClass={that.props.selectedProductClass}

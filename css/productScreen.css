@@ -636,6 +636,10 @@
     opacity: 1;
 }
 
-.noteControls {
-    /*margin-bottom: 30px;*/
+.activeNote {
+    box-shadow: 0 0 0 2px #4390DF inset, 2px 2px 5px -2px #1D1D1D !important;
+}
+
+.PIMThumbDescription {
+    font-weight: normal;
 }

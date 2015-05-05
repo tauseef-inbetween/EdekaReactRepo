@@ -16,7 +16,7 @@ var Content = React.createClass({
             contentViewMode: 'viewMode',
             selectedProduct: null,
             selectedIndex: 0,
-            isSaved: false
+            isSaved: true
         };
     },
 
@@ -32,7 +32,7 @@ var Content = React.createClass({
             contentViewMode: data.getComponentProps().getContentViewMode(),
             selectedProduct: data.getComponentProps().getSelectedProduct(),
             selectedIndex: data.getComponentProps().getSelectedIndex(),
-            isSaved: data.getComponentProps().getSavingState()
+            isSaved: data.getComponentProps().getIsSaved()
         });
     },
 
