@@ -4,15 +4,22 @@ var uniqueKey = 1;
 var ProductNoteList = React.createClass({
 
     propTypes: {
-        selectedProductClass: React.PropTypes.string.isRequired,
-        selectedProductNotes: React.PropTypes.array.isRequired,
-        productClasses: React.PropTypes.array
+        productClasses: React.PropTypes.array,
+        selectedProduct: React.PropTypes.object,
+        selectedNote: React.PropTypes.number
+    },
+
+    getInitialState: function () {
+        return {
+            selectedNote: -1,
+            selectedProductId: -1
+        }
     },
 
     getClassGroup: function () {
         var classes = this.props.productClasses;
         for (var productClass in classes) {
-            if (classes[productClass].label == this.props.selectedProductClass) {
+            if (classes[productClass].label == this.props.selectedProduct.class) {
                 return classes[productClass];
             }
         }
@@ -29,15 +36,14 @@ var ProductNoteList = React.createClass({
         }
     },
 
-    handleNoteClick: function (event) {
-        var targetClass = event.target.className;
-        if(targetClass == 'textArea' || targetClass == 'selectNote' || targetClass == 'textBox') {return}
+    handleNoteClick: function (index, event) {
 
-        var activeNote = document.getElementsByClassName('activeNote')[0];
-        if(activeNote) {
-            activeNote.className = 'noteContainer';
+        var targetClass = event.target.className;
+        if (targetClass == 'textArea' || targetClass == 'selectNote' || targetClass == 'textBox' || targetClass == 'jDeletePimNotes') {
+            return
         }
-        event.currentTarget.className += " activeNote";
+
+        this.setState({selectedProductId: this.props.selectedProduct.id, selectedNote: index});
     },
 
     handleItemClick: function (item, event) {
@@ -57,7 +63,7 @@ var ProductNoteList = React.createClass({
     componentDidUpdate: function () {
         this.refs.myPopover.hide();
 
-        if(!this.shouldScrollBottom) {
+        if (!this.shouldScrollBottom) {
             this.refs.goToTop.getDOMNode().style.opacity = 0;
         } else {
             this.refs.goToTop.getDOMNode().style.opacity = 0.8;
@@ -81,7 +87,7 @@ var ProductNoteList = React.createClass({
         var Popover = ReactBootstrap.Popover;
         var Glyphicon = ReactBootstrap.Glyphicon;
         var that = this;
-        var productNotes = that.props.selectedProductNotes;
+        var productNotes = that.props.selectedProduct.notes;
 
         var classGroup = this.getClassGroup();
         if (classGroup) {
@@ -93,12 +99,15 @@ var ProductNoteList = React.createClass({
         }
 
         var noteItems = _.map(productNotes, function (item, i) {
-            var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
 
-            return (<div className="noteContainer" key={"item" + i} onClick={that.handleNoteClick}>
+            var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
+            var noteClick = that.handleNoteClick.bind(that, i);
+            var noteClass = "noteContainer " + ((that.state.selectedNote == i && that.state.selectedProductId == that.props.selectedProduct.id) ? ' activeNote' : '');
+
+            return (<div className={noteClass} key={"item" + i} onClick={noteClick}>
                 <button className="jDeletePimNotes" onClick={deleteNote}></button>
                 <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
-                    <ProductNoteRows item={item} selectedProductClass={that.props.selectedProductClass}
+                    <ProductNoteRows item={item} selectedProductClass={that.props.selectedProduct.class}
                                      productClasses={that.props.productClasses}/>
                 </table>
             </div>);
@@ -116,7 +125,9 @@ var ProductNoteList = React.createClass({
                         <Button onClick={this.showPopOver} className="btnAddNote" bsSize='xsmall'
                                 bsStyle='primary'><Glyphicon glyph='plus-sign'/> Add</Button>
                     </OverlayTrigger>
-                    <div id="productNoteScrollTop" ref="goToTop" onClick={this.scrollToTop} title="Move to Top"><Glyphicon glyph='circle-arrow-up'/></div>
+
+                    <div id="productNoteScrollTop" ref="goToTop" onClick={this.scrollToTop} title="Move to Top">
+                        <Glyphicon glyph='circle-arrow-up'/></div>
                 </div>
             </div>
         );

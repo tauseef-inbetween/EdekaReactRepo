@@ -15,8 +15,6 @@ var ProductEditEastContent = React.createClass({
             selectedProduct.notes = [];
         }
         var productClasses = this.props.productClasses;
-        var selectedProductClass = selectedProduct.class;
-        var selectedProductNotes = selectedProduct.notes;
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
         return (
             <div id="eastDOM" className={"ui-layout-east " + editModeDisabledClass }>
@@ -27,8 +25,8 @@ var ProductEditEastContent = React.createClass({
                 <ProductNoteList
                     selectedProduct={selectedProduct}
                     productClasses={productClasses}
-                    selectedProductNotes={selectedProductNotes}
-                    selectedProductClass={selectedProductClass}/>
+                    selectedProduct={selectedProduct}
+                    selectedNote={-1}/>
 
             </div>
         );
