@@ -31,10 +31,14 @@ var backToViewMode = function () {
 };
 
 var changeSelectedProductProperty = function (property, value) {
+    CarouselStore.setPreviousLeftPosition(CarouselStore.getLeftPosition());
+    CarouselStore.setLeftPositionWithTrigger(CarouselStore.getLeftPosition());
     ContentListStore.setSelectedProductValue(property, value);
 };
 
 var saveProductInfo = function () {
+    CarouselStore.setPreviousLeftPosition(CarouselStore.getLeftPosition());
+    CarouselStore.setLeftPositionWithTrigger(CarouselStore.getLeftPosition());
     ContentListStore.saveSelectedProductInfo();
     alertify.success("Content successfully updated");
 };

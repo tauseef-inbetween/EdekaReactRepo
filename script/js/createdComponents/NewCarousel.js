@@ -4,13 +4,12 @@ var CarouselItems = React.createClass({
         selectedIndex: React.PropTypes.number,
         items: React.PropTypes.arrayOf(React.PropTypes.element),
         wheeling: React.PropTypes.func,
-        handleThumbClick: React.PropTypes.func,
-        position: React.PropTypes.object
+        handleThumbClick: React.PropTypes.func
     },
 
     componentDidUpdate: function () {
         var itemWidth = this.getWidthOfSingleItem();
-        this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "left:" + this.props.position.left + "; width:" + itemWidth * this.props.items.length + "px");
+        this.refs.carouselItemContainer.getDOMNode().setAttribute("style", "width:" + itemWidth * this.props.items.length + "px");
     },
 
     componentDidMount: function () {
@@ -68,14 +67,13 @@ var Carousel = React.createClass({
         return {
             moveDuration: 600,
             previousLeftPosition: 0,
-            leftPosition: 0,
-            buttonClicked: false
+            leftPosition: 0
         }
     },
 
     thumbClick: function () {
-        var left = this.state.leftPosition;
-        this.setState({previousLeftPosition: left, leftPosition: left});
+        CarouselStore.setPreviousLeftPosition(this.state.leftPosition);
+        CarouselStore.setLeftPositionWithTrigger(this.state.leftPosition);
     },
 
     wheeling: function (event) {
@@ -97,8 +95,7 @@ var Carousel = React.createClass({
 
     handleButtonClick: function (direction) {
         var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
-        var position = $container.position();
-        var left = position.left;
+        var left = this.state.leftPosition;
         var right = left + $container.outerWidth();
         var itemWidth = this.refs.items.getWidthOfSingleItem();
         var moveLength = itemWidth * 5;
@@ -108,29 +105,24 @@ var Carousel = React.createClass({
             } else if (left > (moveLength * -1)) {
                 moveLength = left * -1;
             }
-            this.setState({previousLeftPosition: left, leftPosition: (left + moveLength)});
+            CarouselStore.setPreviousLeftPosition(left);
+            CarouselStore.setLeftPositionWithTrigger(left + moveLength);
+            //this.setState({previousLeftPosition: left, leftPosition: (left + moveLength)});
         } else {
             if (right == moveLength) {
                 moveLength = left;
             } else if (right < 2 * moveLength) {
                 moveLength = right - moveLength;
             }
-            this.setState({previousLeftPosition: left, leftPosition: (left - moveLength)});
+            CarouselStore.setPreviousLeftPosition(left);
+            CarouselStore.setLeftPositionWithTrigger(left - moveLength);
+            //this.setState({previousLeftPosition: left, leftPosition: (left - moveLength)});
         }
     },
 
-    slideCarouselTo: function () {
-        var left = this.state.leftPosition;
-        this.moveCarouselToPosition(left);
-    },
-
-    jumpToPreviousPosition: function () {
-        var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
-        $container.css('left', (this.state.previousLeftPosition) + 'px');
-    },
-
-    moveCarouselToPosition: function (left) {
+    moveCarouselToPosition: function () {
         var that = this;
+        var left = that.state.leftPosition;
         var $container = $(that.refs.items.refs.carouselItemContainer.getDOMNode());
         $container.css('right', 'auto').animate({left: left + 'px'}, that.state.moveDuration, 'easeInOutCubic');
     },
@@ -153,28 +145,45 @@ var Carousel = React.createClass({
         $container.css('left', (left - moveLength) + 'px');
     },
 
-    componentDidMount () {
+    jumpToPreviousPosition: function () {
+        var $container = $(this.refs.items.refs.carouselItemContainer.getDOMNode());
+        $container.css('left', (this.state.previousLeftPosition) + 'px');
+    },
+
+    listStateChanged: function () {
+        this.setState({
+            moveDuration: CarouselStore.getMoveDuration(),
+            previousLeftPosition: CarouselStore.getPreviousLeftPosition(),
+            leftPosition: CarouselStore.getLeftPosition()
+        });
+    },
+
+    slideCarousel: function () {
         if(this.state.leftPosition == this.state.previousLeftPosition ) {
             this.jumpToSelectedProduct(this.props.selectedIndex);
         } else {
-            //this.jumpToPreviousPosition();
-            this.slideCarouselTo();
+            this.jumpToPreviousPosition();
+            this.moveCarouselToPosition();
         }
+    },
+
+    componentWillMount: function () {
+        this.listStateChanged();
     },
 
     componentDidUpdate: function () {
-        if(this.props.leftPosition == this.state.previousLeftPosition) {
-            this.jumpToSelectedProduct(this.props.selectedIndex);
-        } else {
-            //this.jumpToPreviousPosition();
-            this.slideCarouselTo();
-        }
+        this.slideCarousel();
     },
 
-    /*shouldComponentUpdate: function (nextProps, nextState) {
-        return (nextProps.isSaved);
+    componentDidMount () {
+        this.slideCarousel();
+        CarouselStore.bind('change', this.listStateChanged);
     },
-*/
+
+    componentWillUnmount: function () {
+        CarouselStore.unbind('change', this.listStateChanged);
+    },
+
     render: function () {
         var carouselPosition = {
             left: this.state.previousLeftPosition + 'px'
@@ -182,7 +191,7 @@ var Carousel = React.createClass({
         return (
             <div className="carouselContainer">
                 <div className="carouselItemWrapper" key="itemWrapper">
-                    <CarouselItems position={carouselPosition} items={this.props.items} wheeling={this.wheeling} handleThumbClick={this.thumbClick}
+                    <CarouselItems items={this.props.items} wheeling={this.wheeling} handleThumbClick={this.thumbClick}
                                    selectedIndex={this.props.selectedIndex} key="items" ref="items"/>
                 </div>
                 <CarouselController key="controls" leftBtnClick={this.leftButtonClicked}
