@@ -46,14 +46,17 @@ var saveProductInfo = function () {
 };
 
 var addNoteToSelectedContent = function (note) {
+    setDefaultValueForCarousel();
     ContentListStore.addProductNoteWithTrigger(note);
 };
 
 var deleteNoteFromSelectedProduct = function (note) {
+    setDefaultValueForCarousel();
     ContentListStore.deleteNoteById(note.id);
 };
 
 var changeNoteContent = function (groupItem, newNote) {
+    setDefaultValueForCarousel();
     ContentListStore.changeNoteDetails(groupItem, newNote);
 };
 
