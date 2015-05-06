@@ -45,6 +45,10 @@ var ContentStoreModel = (function () {
         contentViewMode: 'viewMode',
         selectedProduct: null,
         selectedIndex: 0,
+        carouselPosition :{
+            leftPosition: 0,
+            previousLeftPosition: 0
+        },
         //isSaved: true,
 
         getContentViewStyle: function () {
@@ -77,7 +81,13 @@ var ContentStoreModel = (function () {
 
         setSelectedIndex: function (selectedIndex) {
             this.selectedIndex = selectedIndex;
-        }/*,
+        },
+
+        getCarouselPosition: function () {
+            return this.carouselPosition;
+        }
+
+        /*,
 
         getIsSaved: function () {
             return this.isSaved;

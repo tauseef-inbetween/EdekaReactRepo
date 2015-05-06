@@ -12,6 +12,7 @@ var handleViewButtonClicked = function (viewStyleButtonEvent) {
 };
 
 var productThumbClicked = function (productId, index) {
+    setDefaultValueForCarousel();
     ContentListStore.setSelectedProduct(ContentListStore.getProductById(productId));
     ContentListStore.setSelectedIndex(index);
     ContentListStore.setContentViewModeWithTrigger('editMode');
@@ -26,19 +27,20 @@ var backToViewMode = function () {
     if($container && $container.data('owlCarousel')) {
         $container.data('owlCarousel').destroy();
     }
+
+    ContentListStore.setCarouselPreviousLeftPosition(0);
+    ContentListStore.setCarouselLeftPosition(0);
     ContentListStore.setSelectedProduct(null);
     ContentListStore.setContentViewModeWithTrigger('viewMode');
 };
 
 var changeSelectedProductProperty = function (property, value) {
-    CarouselStore.setPreviousLeftPosition(CarouselStore.getLeftPosition());
-    CarouselStore.setLeftPositionWithTrigger(CarouselStore.getLeftPosition());
+    setDefaultValueForCarousel();
     ContentListStore.setSelectedProductValue(property, value);
 };
 
 var saveProductInfo = function () {
-    CarouselStore.setPreviousLeftPosition(CarouselStore.getLeftPosition());
-    CarouselStore.setLeftPositionWithTrigger(CarouselStore.getLeftPosition());
+    setDefaultValueForCarousel();
     ContentListStore.saveSelectedProductInfo();
     alertify.success("Content successfully updated");
 };
@@ -53,6 +55,22 @@ var deleteNoteFromSelectedProduct = function (note) {
 
 var changeNoteContent = function (groupItem, newNote) {
     ContentListStore.changeNoteDetails(groupItem, newNote);
+};
+
+var carouselPositionChanged = function (newLeftPosition, previousLeftPosition) {
+    if(previousLeftPosition != undefined) {
+        ContentListStore.setCarouselPreviousLeftPosition(previousLeftPosition);
+    }
+    ContentListStore.setCarouselLeftPositionWithTrigger(newLeftPosition);
+};
+
+var carouselPreviousPositionChanges = function  (newPreviousPosition) {
+    ContentListStore.setCarouselPreviousLeftPosition(newPreviousPosition);
+};
+
+var setDefaultValueForCarousel = function () {
+    ContentListStore.setCarouselPreviousLeftPosition(ContentListStore.getData().getComponentProps().getCarouselPosition().leftPosition);
+    ContentListStore.setCarouselLeftPosition(ContentListStore.getData().getComponentProps().getCarouselPosition().leftPosition);
 };
 
 var initialiseLayouts = function (type) {

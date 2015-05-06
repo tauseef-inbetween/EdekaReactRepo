@@ -1,7 +1,7 @@
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Content = React.createClass({
 
-    propTypes:{
+    propTypes: {
         className: React.PropTypes.string
     },
 
@@ -16,7 +16,8 @@ var Content = React.createClass({
             contentViewMode: 'viewMode',
             selectedProduct: null,
             selectedIndex: 0,
-            isSaved: true
+            carouselLeftPosition: 0
+            //isSaved: true
         };
     },
 
@@ -32,7 +33,8 @@ var Content = React.createClass({
             contentViewMode: data.getComponentProps().getContentViewMode(),
             selectedProduct: data.getComponentProps().getSelectedProduct(),
             selectedIndex: data.getComponentProps().getSelectedIndex(),
-            isSaved: data.getComponentProps().getIsSaved()
+            carouselPosition: data.getComponentProps().getCarouselPosition()
+            //isSaved: data.getComponentProps().getIsSaved()
         });
     },
 
@@ -56,21 +58,23 @@ var Content = React.createClass({
         var productTypes = this.state.productTypes;
         var productClasses = this.state.productClasses;
         var selectedIndex = this.state.selectedIndex;
-        var isSaved = this.state.isSaved;
+        var carouselPosition = this.state.carouselPosition;
+        //var isSaved = this.state.isSaved;
         return (
             <div id="contentScreen" className={this.props.className}>
                 <ContentViewStyle contentViewStyle={this.state.contentViewStyle}
                                   contentViewMode={this.state.contentViewMode}/>
-                <div id="ProductInfoScreen" >
+
+                <div id="ProductInfoScreen">
                     <ProductInfoScreen productList={this.state.productList}
-                                           selectedProduct={this.state.selectedProduct}
-                                           productWorkFlowStatus={productWorkFlowStatus}
-                                           productTypes={productTypes}
-                                           productClasses={productClasses}
-                                           contentViewMode={contentViewMode}
-                                           contentViewStyle={contentViewStyle}
-                                           selectedIndex={selectedIndex}
-                                           isSaved={isSaved}/>
+                                       selectedProduct={this.state.selectedProduct}
+                                       productWorkFlowStatus={productWorkFlowStatus}
+                                       productTypes={productTypes}
+                                       productClasses={productClasses}
+                                       contentViewMode={contentViewMode}
+                                       contentViewStyle={contentViewStyle}
+                                       selectedIndex={selectedIndex}
+                                       carouselPosition={carouselPosition}/>
                 </div>
             </div>
         )

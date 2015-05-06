@@ -133,6 +133,22 @@ ContentListStore = {
         this.data.getComponentProps().getSelectedProduct().notes.push(newNote);
     },
 
+    setCarouselLeftPosition: function (leftPosition) {
+        this.data.getComponentProps().getCarouselPosition().leftPosition = leftPosition;
+    },
+
+    setCarouselPreviousLeftPosition: function (previousLeft) {
+        if(previousLeft == undefined) {
+            previousLeft = this.data.getComponentProps().getCarouselPosition().leftPosition;
+        }
+        this.data.getComponentProps().getCarouselPosition().previousLeftPosition = previousLeft;
+    },
+
+    setCarouselLeftPositionWithTrigger: function (leftPosition) {
+        this.setCarouselLeftPosition(leftPosition);
+        this.trigger('change');
+    },
+
     addProductNoteWithTrigger: function (note) {
         this.addProductNote(note);
         this.trigger('change');

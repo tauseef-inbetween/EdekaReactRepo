@@ -9,7 +9,8 @@ var ProductInfoScreen = React.createClass({
         contentViewMode: React.PropTypes.string.isRequired,
         contentViewStyle: React.PropTypes.string.isRequired,
         selectedIndex: React.PropTypes.number,
-        isSaved: React.PropTypes.bool
+        carouselPosition: React.PropTypes.object
+        //isSaved: React.PropTypes.bool
     },
 
     componentDidUpdate: function () {
@@ -28,7 +29,8 @@ var ProductInfoScreen = React.createClass({
         var contentViewMode = this.props.contentViewMode;
         var contentViewStyle = this.props.contentViewStyle;
         var selectedIndex = this.props.selectedIndex;
-        var isSaved = this.props.isSaved;
+        var carouselPosition = this.props.carouselPosition;
+        //var isSaved = this.props.isSaved;
         return (
             <div id="ProductEditInfoScreen" ref="ProductEditInfoScreen">
                 <div id="centerDOMMainContainer">
@@ -43,7 +45,7 @@ var ProductInfoScreen = React.createClass({
                         contentViewMode={contentViewMode}
                         contentViewStyle={contentViewStyle}
                         selectedIndex={selectedIndex}
-                        isSaved={isSaved}/>
+                        carouselPosition={carouselPosition}/>
 
                     <ProductEditCenterContent
                         contentViewMode={contentViewMode}
