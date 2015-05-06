@@ -6,11 +6,6 @@ ContentListStore = {
         return this.data;
     },
 
-    setData: function (data) {
-        this.data.setAppData(data.appData);
-        this.data.setComponentProps(data.componentProps);
-    },
-
     setProducts: function (products) {
         this.data.getAppData().setAllProducts(products);
         this.trigger('change');
@@ -18,11 +13,6 @@ ContentListStore = {
 
     setSelectedIndex: function (index) {
         this.data.getComponentProps().setSelectedIndex(index);
-    },
-
-    setSelectedIndexWithTrigger: function (index) {
-        this.setSelectedIndex(index);
-        this.trigger('change');
     },
 
     setSelectedProduct: function (oProduct) {
@@ -41,7 +31,7 @@ ContentListStore = {
         }
 
         var selectedProduct = this.data.getComponentProps().getSelectedProduct();
-        this.data.getComponentProps().setIsSaved(false);
+        //this.data.getComponentProps().setIsSaved(false);
         selectedProduct[property] = value;
         this.setSelectedProductWithTrigger(selectedProduct);
     },
@@ -68,7 +58,7 @@ ContentListStore = {
         var selectedProduct = this.data.getComponentProps().getSelectedProduct();
         var product = this.getProductById(selectedProduct.id);
         _.assign(product, selectedProduct);
-        this.data.getComponentProps().setIsSaved(true);
+        //this.data.getComponentProps().setIsSaved(true);
         this.trigger('change');
     },
 
@@ -127,7 +117,7 @@ ContentListStore = {
             return value.label < newNote.label;
         }), 'value');
 
-        value = newNote.value;
+        _.assign(value,newNote.value);
         this.trigger('change');
     },
 
