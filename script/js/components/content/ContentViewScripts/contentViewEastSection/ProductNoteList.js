@@ -9,13 +9,6 @@ var ProductNoteList = React.createClass({
         selectedNote: React.PropTypes.number
     },
 
-    getInitialState: function () {
-        return {
-            selectedNote: -1,
-            selectedProductId: -1
-        }
-    },
-
     getClassGroup: function () {
         var classes = this.props.productClasses;
         for (var productClass in classes) {
@@ -37,13 +30,11 @@ var ProductNoteList = React.createClass({
     },
 
     handleNoteClick: function (index, event) {
-
         var targetClass = event.target.className;
         if (targetClass == 'textArea' || targetClass == 'selectNote' || targetClass == 'textBox' || targetClass == 'jDeletePimNotes') {
             return
         }
-
-        this.setState({selectedProductId: this.props.selectedProduct.id, selectedNote: index});
+        setSelectedNote(index);
     },
 
     handleItemClick: function (item, event) {
@@ -102,7 +93,7 @@ var ProductNoteList = React.createClass({
 
             var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
             var noteClick = that.handleNoteClick.bind(that, i);
-            var noteClass = "noteContainer " + ((that.state.selectedNote == i && that.state.selectedProductId == that.props.selectedProduct.id) ? ' activeNote' : '');
+            var noteClass = "noteContainer " + ((that.props.selectedNote == i) ? ' activeNote' : '');
 
             return (<div className={noteClass} key={"item" + i} onClick={noteClick}>
                 <button className="jDeletePimNotes" onClick={deleteNote}></button>

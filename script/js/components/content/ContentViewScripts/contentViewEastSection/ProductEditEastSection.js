@@ -2,13 +2,14 @@ var ProductEditEastContent = React.createClass({
 
     propTypes: {
         contentViewMode: React.PropTypes.string.isRequired,
-        selectedProduct: React.PropTypes.object,
+        selectedProps: React.PropTypes.object,
         productClasses: React.PropTypes.array
     },
 
     render : function () {
         var Button = ReactBootstrap.Button;
-        var selectedProduct = this.props.selectedProduct;
+        var selectedProduct = this.props.selectedProps.selectedProduct;
+        var selectedNoteIndex = this.props.selectedProps.selectedNoteIndex;
         if(!selectedProduct) {
             selectedProduct = {};
             selectedProduct.class = '';
@@ -23,10 +24,9 @@ var ProductEditEastContent = React.createClass({
                     <Button className="btnSetDefault" bsSize='xsmall' bsStyle='primary'>Set As Default</Button>
                 </div>
                 <ProductNoteList
-                    selectedProduct={selectedProduct}
                     productClasses={productClasses}
                     selectedProduct={selectedProduct}
-                    selectedNote={-1}/>
+                    selectedNote={selectedNoteIndex}/>
 
             </div>
         );

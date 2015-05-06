@@ -1,7 +1,7 @@
 var ProductEditCenterContent = React.createClass({
 
     propTypes: {
-        selectedProduct: React.PropTypes.object,
+        selectedProps: React.PropTypes.object,
         contentViewMode: React.PropTypes.string.isRequired
     },
 
@@ -9,8 +9,8 @@ var ProductEditCenterContent = React.createClass({
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
 
         var items = [];
-        if(this.props.selectedProduct) {
-            items = _.map(this.props.selectedProduct.image, function (imageSRC, i){
+        if(this.props.selectedProps.selectedProduct) {
+            items = _.map(this.props.selectedProps.selectedProduct.image, function (imageSRC, i){
                 return (
                     <div className="contentImageWrapper" key={"item" + i}>
                         <img className="contentImage" src={imageSRC}/>

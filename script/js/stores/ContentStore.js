@@ -12,11 +12,11 @@ ContentListStore = {
     },
 
     setSelectedIndex: function (index) {
-        this.data.getComponentProps().setSelectedIndex(index);
+        this.data.getComponentProps().getSelectedProps().setSelectedIndex(index);
     },
 
     setSelectedProduct: function (oProduct) {
-        this.data.getComponentProps().setSelectedProduct(_.clone(oProduct, true));
+        this.data.getComponentProps().getSelectedProps().setSelectedProduct(_.clone(oProduct, true));
     },
 
     setSelectedProductWithTrigger: function (oProduct) {
@@ -30,7 +30,7 @@ ContentListStore = {
             this.addDefaultNotes(value);
         }
 
-        var selectedProduct = this.data.getComponentProps().getSelectedProduct();
+        var selectedProduct = this.data.getComponentProps().getSelectedProps().getSelectedProduct();
         //this.data.getComponentProps().setIsSaved(false);
         selectedProduct[property] = value;
         this.setSelectedProductWithTrigger(selectedProduct);
@@ -55,7 +55,7 @@ ContentListStore = {
     },
 
     saveSelectedProductInfo: function () {
-        var selectedProduct = this.data.getComponentProps().getSelectedProduct();
+        var selectedProduct = this.data.getComponentProps().getSelectedProps().getSelectedProduct();
         var product = this.getProductById(selectedProduct.id);
         _.assign(product, selectedProduct);
         //this.data.getComponentProps().setIsSaved(true);
@@ -103,7 +103,7 @@ ContentListStore = {
     addDefaultNotes: function (classValue) {
         var groups = _.result(_.find(this.data.getAppData().getProductClasses(),'label',classValue), 'groups');
         var defaultNotes = _.where(groups, { 'defaultValue': true});
-        var selectedProductNotes = this.data.getComponentProps().getSelectedProduct().notes;
+        var selectedProductNotes = this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes;
         var notesToAdd = _.filter(defaultNotes, function(obj){ return !_.findWhere(selectedProductNotes, {'type' : obj.label}); });
         var that = this;
         _.map(notesToAdd, function (note){
@@ -130,7 +130,7 @@ ContentListStore = {
 
     addProductNote: function (note) {
         var newNote = createDummyNote(note);
-        this.data.getComponentProps().getSelectedProduct().notes.push(newNote);
+        this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes.push(newNote);
     },
 
     setCarouselLeftPosition: function (leftPosition) {
@@ -151,6 +151,11 @@ ContentListStore = {
 
     addProductNoteWithTrigger: function (note) {
         this.addProductNote(note);
+        this.trigger('change');
+    },
+
+    setSelectedNoteIndexWithTrigger: function (index) {
+        this.data.getComponentProps().getSelectedProps().setSelectedNoteIndex(index);
         this.trigger('change');
     }
 };

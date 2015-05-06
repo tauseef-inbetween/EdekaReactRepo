@@ -2,27 +2,26 @@ var ProductEditNorthContent = React.createClass({
 
     propTypes: {
         productList: React.PropTypes.arrayOf(React.PropTypes.object),
-        selectedProduct: React.PropTypes.object,
+        selectedProps: React.PropTypes.object,
         productWorkFlowStatus: React.PropTypes.array.isRequired,
         productTypes: React.PropTypes.array.isRequired,
         productClasses: React.PropTypes.array.isRequired,
         contentViewMode: React.PropTypes.string.isRequired,
         contentViewStyle: React.PropTypes.string.isRequired,
-        selectedIndex: React.PropTypes.number,
         carouselPosition: React.PropTypes.object
         //isSaved: React.PropTypes.bool
     },
 
     render: function () {
         var contentViewStyle = this.props.contentViewStyle;
-        var selectedProduct = this.props.selectedProduct;
-        var selectedIndex = this.props.selectedIndex;
+        var selectedProps = this.props.selectedProps;
         var productWorkFlowStatus = this.props.productWorkFlowStatus;
         var productTypes = this.props.productTypes;
         var productClasses = this.props.productClasses;
         var productWrapperClass = (this.props.contentViewMode == 'editMode') ? 'owl-carousel' : 'ProductWrapper';
         var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
         var carouselPosition=  this.props.carouselPosition;
+        var selectedProduct = selectedProps.selectedProduct;
         var that = this;
         //var isSaved = this.props.isSaved;
 
@@ -41,7 +40,7 @@ var ProductEditNorthContent = React.createClass({
         });
 
         var productItemView = (this.props.contentViewMode == 'editMode') ?
-            <Carousel items={productItems} selectedIndex={selectedIndex} key="carousel" carouselPosition={carouselPosition}/> : (
+            <Carousel items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel" carouselPosition={carouselPosition}/> : (
             <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
 
         return (

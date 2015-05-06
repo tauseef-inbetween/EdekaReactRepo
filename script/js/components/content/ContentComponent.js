@@ -14,8 +14,7 @@ var Content = React.createClass({
 
             contentViewStyle: 'thumbnail',
             contentViewMode: 'viewMode',
-            selectedProduct: null,
-            selectedIndex: 0,
+            selectedProps: null,
             carouselLeftPosition: 0
             //isSaved: true
         };
@@ -31,8 +30,7 @@ var Content = React.createClass({
 
             contentViewStyle: data.getComponentProps().getContentViewStyle(),
             contentViewMode: data.getComponentProps().getContentViewMode(),
-            selectedProduct: data.getComponentProps().getSelectedProduct(),
-            selectedIndex: data.getComponentProps().getSelectedIndex(),
+            selectedProps: data.getComponentProps().getSelectedProps(),
             carouselPosition: data.getComponentProps().getCarouselPosition()
             //isSaved: data.getComponentProps().getIsSaved()
         });
@@ -57,7 +55,6 @@ var Content = React.createClass({
         var productWorkFlowStatus = this.state.productWorkFlowStatus;
         var productTypes = this.state.productTypes;
         var productClasses = this.state.productClasses;
-        var selectedIndex = this.state.selectedIndex;
         var carouselPosition = this.state.carouselPosition;
         //var isSaved = this.state.isSaved;
         return (
@@ -67,13 +64,12 @@ var Content = React.createClass({
 
                 <div id="ProductInfoScreen">
                     <ProductInfoScreen productList={this.state.productList}
-                                       selectedProduct={this.state.selectedProduct}
+                                       selectedProps={this.state.selectedProps}
                                        productWorkFlowStatus={productWorkFlowStatus}
                                        productTypes={productTypes}
                                        productClasses={productClasses}
                                        contentViewMode={contentViewMode}
                                        contentViewStyle={contentViewStyle}
-                                       selectedIndex={selectedIndex}
                                        carouselPosition={carouselPosition}/>
                 </div>
             </div>

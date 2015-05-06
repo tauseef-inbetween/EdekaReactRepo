@@ -43,13 +43,34 @@ var ContentStoreModel = (function () {
     var componentProps = {
         contentViewStyle: 'thumbnail',
         contentViewMode: 'viewMode',
-        selectedProduct: null,
-        selectedIndex: 0,
+
+        selectedProps: {
+            selectedProduct: null,
+            selectedIndex: 0,
+            selectedNoteIndex: -1,
+
+            getSelectedProduct: function () {
+                return this.selectedProduct;
+            },
+
+            setSelectedProduct: function (selectedProduct) {
+                this.selectedProduct = selectedProduct;
+                this.selectedNoteIndex = -1;
+            },
+
+            setSelectedIndex: function (selectedIndex) {
+                this.selectedIndex = selectedIndex;
+            },
+
+            setSelectedNoteIndex: function (selectedIndex) {
+                this.selectedNoteIndex = selectedIndex;
+            }
+        },
+
         carouselPosition :{
             leftPosition: 0,
             previousLeftPosition: 0
         },
-        //isSaved: true,
 
         getContentViewStyle: function () {
             return this.contentViewStyle;
@@ -67,35 +88,13 @@ var ContentStoreModel = (function () {
             this.contentViewMode = contentViewMode;
         },
 
-        getSelectedProduct: function () {
-            return this.selectedProduct;
-        },
-
-        setSelectedProduct: function (selectedProduct) {
-            this.selectedProduct = selectedProduct;
-        },
-
-        getSelectedIndex: function () {
-            return this.selectedIndex;
-        },
-
-        setSelectedIndex: function (selectedIndex) {
-            this.selectedIndex = selectedIndex;
+        getSelectedProps: function () {
+          return this.selectedProps;
         },
 
         getCarouselPosition: function () {
             return this.carouselPosition;
         }
-
-        /*,
-
-        getIsSaved: function () {
-            return this.isSaved;
-        },
-
-        setIsSaved: function (saveStatus) {
-            this.isSaved = saveStatus
-        }*/
     };
 
     return {

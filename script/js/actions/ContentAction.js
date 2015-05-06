@@ -76,6 +76,10 @@ var setDefaultValueForCarousel = function () {
     ContentListStore.setCarouselLeftPosition(ContentListStore.getData().getComponentProps().getCarouselPosition().leftPosition);
 };
 
+var setSelectedNote = function (index) {
+    ContentListStore.setSelectedNoteIndexWithTrigger(index);
+};
+
 var initialiseLayouts = function (type) {
     $('#northDOM').layout({
         applyDefaultStyles: true,
