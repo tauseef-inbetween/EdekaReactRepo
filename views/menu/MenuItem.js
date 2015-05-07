@@ -1,5 +1,6 @@
 var MenuItem = React.createClass({
 
+    //Required props to be passed
     propTypes: {
         menuItem: React.PropTypes.object.isRequired,
         onClick: React.PropTypes.func.isRequired

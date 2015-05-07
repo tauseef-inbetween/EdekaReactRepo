@@ -1,5 +1,6 @@
-var Report = React.createClass({
+var ReportScreenController = React.createClass({
 
+    //Required Props
     propTypes: {
         className: React.PropTypes.string
     },

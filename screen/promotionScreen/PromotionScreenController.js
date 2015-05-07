@@ -1,4 +1,4 @@
-var Promotion = React.createClass({
+var PromotionScreenController = React.createClass({
 
     propTypes: {
         className: React.PropTypes.string

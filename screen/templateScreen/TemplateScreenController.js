@@ -1,5 +1,6 @@
-var Template = React.createClass({
+var TemplateScreenController = React.createClass({
 
+    //Required Props
     propTypes: {
         className: React.PropTypes.string
     },

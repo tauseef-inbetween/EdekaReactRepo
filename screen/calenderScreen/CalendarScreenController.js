@@ -1,4 +1,6 @@
-var Calender = React.createClass({
+var CalendarScreenController = React.createClass({
+
+    //Required props
     propTypes: {
         className: React.PropTypes.string
     },

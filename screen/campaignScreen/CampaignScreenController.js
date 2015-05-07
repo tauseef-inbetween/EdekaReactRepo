@@ -1,4 +1,6 @@
-var Campaign = React.createClass({
+var CampaignScreenController = React.createClass({
+
+    //Required Props
     propTypes: {
         className: React.PropTypes.string
     },

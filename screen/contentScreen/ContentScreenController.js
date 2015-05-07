@@ -1,6 +1,6 @@
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-var Content = React.createClass({
+var ContentScreenController = React.createClass({
 
+    //Required props
     propTypes: {
         className: React.PropTypes.string
     },
@@ -76,3 +76,5 @@ var Content = React.createClass({
         )
     }
 });
+
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;

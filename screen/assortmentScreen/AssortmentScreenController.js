@@ -1,4 +1,4 @@
-var Assortment = React.createClass({
+var AssortmentScreenController = React.createClass({
     propTypes: {
         className: React.PropTypes.string
     },
