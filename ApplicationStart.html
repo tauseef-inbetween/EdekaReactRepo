@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Edeka</title>
+
+    <!--External Style Sheets-->
+    <link rel="stylesheet" href="libraries/css/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="libraries/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="libraries/css/alertify/alertify.core.css" type="text/css">
+    <link rel="stylesheet" href="libraries/css/alertify/alertify.bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="libraries/css/tooltipster/tooltipster.css" type="text/css">
+    <link rel="stylesheet" href="views/content/Thumbnails/carousel.css" type="text/css">
+
+    <!--Created Style Sheets-->
+    <link rel="stylesheet" href="screen/mainContainer/style.css">
+    <link rel="stylesheet" href="screen/contentScreen/productScreen.css">
+
+    <!--External Libraries-->
+    <script rel="script" type="text/javascript" src="libraries/js/alertify/alertify.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/flux/MicroEvent.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/flux/invariant.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/flux/Dispatcher.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/reactjs/JSXTransformer.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/reactjs/react-with-addons.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/react-bootstrap.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/lodash.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/jquery.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/jquery-ui.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/jquery.layout.min.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/bootstrap/bootstrap.js"></script>
+    <script rel="script" type="text/javascript" src="libraries/js/tooltipster/jquery.tooltipster.min.js"></script>
+
+    <!--Created Components-->
+    <script rel="script" type="text/jsx" src="views/content/Thumbnails/StatelessCarousel.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/ImageCarousel/sly.js"></script>
+
+    <!--Data Libraries-->
+    <script rel="script" type="text/javascript" src="tacks/MockDataForMarketVariants.js"></script>
+    <script rel="script" type="text/javascript" src="tacks/MockDataForTags.js"></script>
+    <script rel="script" type="text/javascript" src="tacks/MockDataForProducts.json"></script>
+    <script rel="script" type="text/javascript" src="tacks/MockDataForContent.js"></script>
+
+    <!--Utils Scripts-->
+    <script rel="script" type="text/jsx" src="screen/contentScreen/utils/ContentUtils.js"></script>
+    <script rel="script" type="text/jsx" src="screen/mainContainer/utils/ModuleDataLoader.js"></script>
+    <script rel="script" type="text/jsx" src="libraries/js/promise.js"></script>
+
+    <!--Internal Menu Libraries-->
+    <script rel="script" type="text/javascript" src="screen/menu/MenuActions.js"></script>
+    <script rel="script" type="text/javascript" src="screen/menu/MenuStoreModel.js"></script>
+    <script rel="script" type="text/javascript" src="screen/menu/MenuStore.js"></script>
+    <script rel="script" type="text/jsx" src="views/menu/MenuItemComponent.js"></script>
+    <script rel="script" type="text/jsx" src="screen/menu/MenuComponent.js"></script>
+
+    <!--Internal Content Libraries-->
+    <script rel="script" type="text/javascript" src="screen/contentScreen/ContentAction.js"></script>
+    <script rel="script" type="text/javascript" src="screen/contentScreen/ContentStoreModel.js"></script>
+    <script rel="script" type="text/javascript" src="screen/contentScreen/ContentStore.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/BasicInfo/BasicInfoForm.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/ImageCarousel/ImageCarousel.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/Notes/NoteRows.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/Notes/NoteList.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/Notes/NotesView.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/Thumbnails/ThumbnailView.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/Tags/ProductTags.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/ProductInfoScreen.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/ActionBar/ActionBar.js"></script>
+    <script rel="script" type="text/jsx" src="views/content/Thumbnails/ProductThumbnailItem.js"></script>
+    <script rel="script" type="text/jsx" src="screen/contentScreen/ContentComponent.js"></script>
+
+    <!--Internal Calender Libraries-->
+    <script rel="script" type="text/jsx" src="screen/calenderScreen/CalenderComponent.js"></script>
+
+    <!--Internal Campaign Libraries-->
+    <script rel="script" type="text/jsx" src="screen/campaignScreen/CampaignComponent.js"></script>
+
+    <!--Internal Template Libraries-->
+    <script rel="script" type="text/jsx" src="screen/templateScreen/TemplateComponent.js"></script>
+
+    <!--Internal Promotion Libraries-->
+    <script rel="script" type="text/jsx" src="screen/promotionScreen/PromotionComponent.js"></script>
+
+    <!--Internal Assortment Libraries-->
+    <script rel="script" type="text/jsx" src="screen/assortmentScreen/AssortmentComponent.js"></script>
+
+    <!--Internal Target Libraries-->
+    <script rel="script" type="text/jsx" src="screen/targetScreen/TargetComponent.js"></script>
+
+    <!--Internal Report Libraries-->
+    <script rel="script" type="text/jsx" src="screen/reportScreen/ReportComponent.js"></script>
+
+    <!--Internal MainContainer Libraries-->
+    <script rel="script" type="text/javascript" src="screen/mainContainer/MainCotnainerAction.js"></script>
+    <script rel="script" type="text/javascript" src="screen/mainContainer/MainContainerStoreModel.js"></script>
+    <script rel="script" type="text/javascript" src="screen/mainContainer/MainContainerStore.js"></script>
+    <script rel="script" type="text/jsx" src="screen/mainContainer/MainContainerComponent.js"></script>
+
+    <!--CallBacks-->
+    <script rel="script" type="text/jsx" src="screen/contentScreen/utils/ContentCallbacks.js"></script>
+
+    <!--Main Screen Script-->
+    <script rel="script" type="text/jsx" src="ApplicationStart.js"></script>
+
+</head>
+
+<body>
+
+    <div id="MainContainerBody"></div>
+    <div id="popUpContainer"></div>
+</body>
+
+</html>
