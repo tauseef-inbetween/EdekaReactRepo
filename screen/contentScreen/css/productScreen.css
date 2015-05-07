@@ -108,7 +108,7 @@
     width: 18px;
     top: -1px;
     right: -1px;
-    background: url("../../views/content/Thumbnails/images/delete-20.png") no-repeat;
+    background: url("../../../views/content/thumbnails/images/delete-20.png") no-repeat;
     opacity: 0;
     transition: all .2s;
     background-size: 18px;
@@ -414,7 +414,7 @@
 }
 
 #backToPimThumbsButton {
-    background: url("../../views/content/Thumbnails/images/psPrev.png") no-repeat;
+    background: url("../../../views/content/thumbnails/images/psPrev.png") no-repeat;
     cursor: pointer;
     background-size: 18px;
     height: 18px;
@@ -512,7 +512,7 @@
 }
 
 .jDeletePimNotes {
-    background: url("../../views/content/Thumbnails/images/delete-20.png") transparent;
+    background: url("../../../views/content/thumbnails/images/delete-20.png") transparent;
     top: -5px;
     float: right;
     border: 0;
