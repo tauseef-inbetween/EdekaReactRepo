@@ -20,7 +20,7 @@ var ProductEditCenterContent = React.createClass({
         }
         return (
             <div id="centerDOM" className={"ui-layout-center " + editModeDisabledClass}>
-
+                <Sly selectedProduct={this.props.selectedProduct} items={items}/>
             </div>
         );
     }

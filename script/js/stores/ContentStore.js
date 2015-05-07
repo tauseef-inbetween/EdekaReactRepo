@@ -69,7 +69,7 @@ ContentListStore = {
     },
 
     deleteNoteById: function (sNoteId) {
-        var notes = this.data.getComponentProps().getSelectedProduct().notes || [];
+        var notes = this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes || [];
         for (var iNoteCount = 0; iNoteCount < notes.length; iNoteCount++) {
             if (notes[iNoteCount].id == sNoteId) {
                 notes.splice(iNoteCount, 1);
@@ -122,7 +122,7 @@ ContentListStore = {
     },
 
     getSelectedProductNoteValuesById: function (groupId) {
-        var notes = this.data.getComponentProps().getSelectedProduct().notes || [];
+        var notes = this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes || [];
         return (_.result(_.find(notes, function (note) {
             return note.id < groupId;
         }), 'values'));
