@@ -1,4 +1,4 @@
-var ProductEditWestContent = React.createClass({
+var ProductTags = React.createClass({
 
     propTypes: {
         contentViewMode: React.PropTypes.string.isRequired

@@ -1,4 +1,4 @@
-var ProductEditEastContent = React.createClass({
+var ProductNotes = React.createClass({
 
     propTypes: {
         contentViewMode: React.PropTypes.string.isRequired,

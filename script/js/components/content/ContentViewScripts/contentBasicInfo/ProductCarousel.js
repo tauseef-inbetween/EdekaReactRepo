@@ -1,4 +1,4 @@
-var ProductEditNorthContent = React.createClass({
+var ProductCarousel = React.createClass({
 
     propTypes: {
         productList: React.PropTypes.arrayOf(React.PropTypes.object),

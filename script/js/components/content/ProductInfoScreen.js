@@ -33,7 +33,7 @@ var ProductInfoScreen = React.createClass({
             <div id="ProductEditInfoScreen" ref="ProductEditInfoScreen">
                 <div id="centerDOMMainContainer">
 
-                    <ProductEditNorthContent
+                    <ProductCarousel
                         productList={productList}
                         selectedProps={selectedProps}
                         productWorkFlowStatus={productWorkFlowStatus}
@@ -44,13 +44,13 @@ var ProductInfoScreen = React.createClass({
                         contentViewStyle={contentViewStyle}
                         carouselPosition={carouselPosition}/>
 
-                    <ProductEditCenterContent
+                    <ProductImageCarousel
                         contentViewMode={contentViewMode}
                         selectedProps={selectedProps}
                         ref="centerDOM"
                         key="1"/>
 
-                    <ProductEditEastContent
+                    <ProductNotes
                         contentViewMode={contentViewMode}
                         productClasses={productClasses}
                         selectedProps={selectedProps}
@@ -58,7 +58,7 @@ var ProductInfoScreen = React.createClass({
                         key="4"/>
 
                 </div>
-                <ProductEditWestContent
+                <ProductTags
                     contentViewMode={contentViewMode} selectedProps={selectedProps} ref="westDOM" key="5"/>
             </div>
         );

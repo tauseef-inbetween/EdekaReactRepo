@@ -1,4 +1,4 @@
-var ProductEditCenterContent = React.createClass({
+var ProductImageCarousel = React.createClass({
 
     propTypes: {
         selectedProps: React.PropTypes.object,

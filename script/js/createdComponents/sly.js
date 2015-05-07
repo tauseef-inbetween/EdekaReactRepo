@@ -19,7 +19,7 @@ var SlyItems = React.createClass({
         if (event.deltaY == 100) {
             newIndex = (this.state.selectedIndex + 1) % (this.props.items.length - 1);
         } else if (event.deltaY == -100) {
-            newIndex = (this.state.selectedIndex - 1) % (this.props.items.length - 1);
+            newIndex = (this.state.selectedIndex == 0) ? (this.props.items.length - 2) : (this.state.selectedIndex - 1);
         }
         this.setState({selectedIndex: newIndex});
     },
