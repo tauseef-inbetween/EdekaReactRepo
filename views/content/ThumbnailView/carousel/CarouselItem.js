@@ -25,16 +25,20 @@ var CarouselItem = React.createClass({
         return this.refs.item0.getDOMNode().offsetWidth;
     },
 
-    render: function () {
+    getCarouselItem: function (items) {
         var selectedIndex = this.props.selectedIndex;
-
-        //@push: number of carousel items in {carouselItem} variable
-        var carouselItem = _.map(this.props.items, function (item, i) {
+        return _.map(items, function (item, i) {
             return (
                 <div className={"carouselItem " + (selectedIndex == i ? 'selectedItem' : '') } key={"item" + i}
                      ref={"item" + i}>{item}</div>
             );
         });
+    },
+
+    render: function () {
+
+        //@get: number of carousel items in {carouselItem} variable
+        var carouselItem = this.getCarouselItem(this.props.items);
 
         //@return: actual component content
         return (

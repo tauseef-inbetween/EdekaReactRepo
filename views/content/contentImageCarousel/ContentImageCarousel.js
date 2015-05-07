@@ -6,6 +6,17 @@ var ContentImageCarousel = React.createClass({
         contentViewMode: React.PropTypes.string.isRequired
     },
 
+    getSelectedProductImages: function () {
+        return _.map(this.props.selectedProps.selectedProduct.image, function (imageSRC, i){
+            //@return: each image
+            return (
+                <div className="contentImageWrapper" key={"item" + i}>
+                    <img className="contentImage" src={imageSRC}/>
+                </div>
+            );
+        });
+    },
+
     render : function () {
 
         //@decide: class to show/hide image carousel based on the view mode
@@ -14,14 +25,7 @@ var ContentImageCarousel = React.createClass({
         var items = [];
         if(this.props.selectedProps.selectedProduct) {
             //@assigns @store: all images of selected product to variable {items}
-            items = _.map(this.props.selectedProps.selectedProduct.image, function (imageSRC, i){
-                //@return: each image
-                return (
-                    <div className="contentImageWrapper" key={"item" + i}>
-                        <img className="contentImage" src={imageSRC}/>
-                    </div>
-                );
-            });
+            items = this.getSelectedProductImages();
         }
 
         //@return: actual component content

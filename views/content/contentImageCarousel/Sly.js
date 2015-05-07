@@ -39,9 +39,9 @@ var SlyItems = React.createClass({
         this.refs.slyItemWrapper.getDOMNode().setAttribute("style", "transform: translateX(" + leftValue + "px) ;width:" + (itemWidth * this.props.items.length + 1 ) + "px");
     },
 
-    render: function () {
+    getImageItems: function (items) {
         var that = this;
-        var imageItems = _.map(this.props.items, function (item, i) {
+        return _.map(items, function (item, i) {
             var slyClass = "slyItem" + (i == that.state.selectedIndex ? ' active' : '');
             return (
                 <div key={"item" + i} ref={"item" + i} className={slyClass}>
@@ -49,6 +49,10 @@ var SlyItems = React.createClass({
                 </div>
             );
         });
+    },
+
+    render: function () {
+        var imageItems = this.getImageItems(this.props.items);
         return (
             <div className="slyItemWrapper" onWheel={this.wheeling} ref="slyItemWrapper" >{imageItems}</div>
         );

@@ -30,13 +30,38 @@ var ContentBasicInfoForm = React.createClass({
         }
     },
 
+    getSelectOptionsForCLasses: function (items) {
+        return _.map(items, function (item, i) {
+            return <option key={i}>{item.label}</option>
+        });
+    },
 
+    getSelectOptionsForTypes: function (items) {
+        return _.map(items, function (item, i) {
+            return <option key={i}>{item}</option>
+        });
+    },
 
-    render: function () {
-
+    getWorkFlowStatus: function (selectedProduct) {
         //@ThirdParty-component: React component used for workflow
         var SplitButton = ReactBootstrap.SplitButton;
         var MenuItem = ReactBootstrap.MenuItem;
+
+        //@internal function @return: Menu Items for Workflow status option
+        function renderDropdownButton (item, i) {
+            return (
+                <MenuItem key={"item" + i} eventKey={i}>{item}</MenuItem>
+            );
+        }
+
+        return (
+            <SplitButton id="pimScreenWorkflow" onSelect={this.handleWorkflowChange} bsSize='xsmall' key='workflow' title={selectedProduct.workflowStatus}>
+                {_.map(this.props.productWorkFlowStatus, renderDropdownButton)}
+            </SplitButton>
+        );
+    },
+
+    render: function () {
 
         //@decide: if no product selected initiate selected product with empty values
         var selectedProduct = this.props.selectedProduct;
@@ -49,30 +74,10 @@ var ContentBasicInfoForm = React.createClass({
             selectedProduct.comments = '';
         }
 
-        //@internal function @return: Menu Items for Workflow status option
-        function renderDropdownButton (item, i) {
-            return (
-                    <MenuItem key={"item" + i} eventKey={i}>{item}</MenuItem>
-            );
-        }
-
-        const productWorkFlowStatus = (
-                <SplitButton id="pimScreenWorkflow" onSelect={this.handleWorkflowChange} bsSize='xsmall' key='workflow' title={selectedProduct.workflowStatus}>
-                    {_.map(this.props.productWorkFlowStatus, renderDropdownButton)}
-                </SplitButton>
-        );
-
-        /*var productWorkFlowStatus = _.map(this.props.productWorkFlowStatus, function(item, i){
-            return <option key={i}>{item}</option>;
-        });*/
-
-        var productTypes = _.map(this.props.productTypes, function (item, i) {
-            return <option key={i}>{item}</option>
-        });
-
-        var productClasses = _.map(this.props.productClasses, function (item, i) {
-            return <option key={i}>{item.label}</option>
-        });
+        var productWorkFlowStatus = this.getWorkFlowStatus(selectedProduct);
+        //var productWorkFlowStatus = this.getSelectOptions(this.props.productWorkFlowStatus);
+        var productTypes = this.getSelectOptionsForTypes(this.props.productTypes);
+        var productClasses = this.getSelectOptionsForCLasses(this.props.productClasses);
 
         //@return: actualComponent content
         return (

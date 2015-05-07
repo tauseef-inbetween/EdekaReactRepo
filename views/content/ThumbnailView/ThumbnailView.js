@@ -12,22 +12,10 @@ var ThumbnailView = React.createClass({
         carouselPosition: React.PropTypes.object
     },
 
-    render: function () {
-        var contentViewStyle = this.props.contentViewStyle;
-        var selectedProps = this.props.selectedProps;
-        var productWorkFlowStatus = this.props.productWorkFlowStatus;
-        var productTypes = this.props.productTypes;
-        var productClasses = this.props.productClasses;
-        var productWrapperClass = (this.props.contentViewMode == 'editMode') ? 'owl-carousel' : 'ProductWrapper';
-        var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
-        var carouselPosition = this.props.carouselPosition;
-        var selectedProduct = selectedProps.selectedProduct;
+    getProductItems: function (productList) {
         var that = this;
-
-        //#LogicFlow #DataCreation
-        //Creating product thumbs and assigning in {productItems} variable
-        var productItems = _.map(that.props.productList, function (item, i) {
-
+        var contentViewStyle = that.props.contentViewStyle;
+        return _.map(productList, function (item, i) {
             //Binding delete button of thumb with contentId
             var productDeleteBtnClickBind = deleteProductButtonClicked.bind(that, item.id);
 
@@ -44,8 +32,24 @@ var ThumbnailView = React.createClass({
                                   contentViewStyle={contentViewStyle}/>
             );
         });
+    },
 
-        //Decision to show thumbnails in carousel or simple view mode
+    render: function () {
+        var selectedProps = this.props.selectedProps;
+        var productWorkFlowStatus = this.props.productWorkFlowStatus;
+        var productTypes = this.props.productTypes;
+        var productClasses = this.props.productClasses;
+        var productWrapperClass = (this.props.contentViewMode == 'editMode') ? 'owl-carousel' : 'ProductWrapper';
+        var editModeDisabledClass = (this.props.contentViewMode == 'editMode') ? '' : 'productViewMode';
+        var carouselPosition = this.props.carouselPosition;
+        var selectedProduct = selectedProps.selectedProduct;
+        var that = this;
+
+        //#LogicFlow #DataCreation
+        //@get: product thumbs and assigning in {productItems} variable
+        var productItems = this.getProductItems(that.props.productList);
+
+        //@decide: to show thumbnails in carousel or simple view mode
         var productItemView = (this.props.contentViewMode == 'editMode') ?
             <Carousel items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel"
                       carouselPosition={carouselPosition}/> : (

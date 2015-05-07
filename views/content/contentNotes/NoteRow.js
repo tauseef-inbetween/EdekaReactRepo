@@ -13,14 +13,12 @@ var NoteRow = React.createClass({
         changeNoteContent(this.props.item, item);
     },
 
-    render: function () {
+    getNoteItems: function () {
         var that = this;
-
         //@assign: get class group object from selected product class
         var selectedClassGroups = _.result(_.find(that.props.productClasses, 'label', that.props.item.groupName), 'groups');
 
-        //@assign: note item row based on the group
-        var noteItem = _.map(that.props.item.values, function (item, i) {
+        return _.map(that.props.item.values, function (item, i) {
                 //@bind: change of note content with note{item}
                 var changeContent = that.handleChange.bind(that, item);
 
@@ -66,6 +64,11 @@ var NoteRow = React.createClass({
                 );
             }
         );
+    },
+
+    render: function () {
+        //@assign: note item row based on the group
+        var noteItem = this.getNoteItems();
 
         //@return: actual component content
         return (

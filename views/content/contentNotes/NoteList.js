@@ -78,8 +78,36 @@ var NoteList = React.createClass({
         this.shouldScrollBottom = (node.scrollTop && (node.scrollTop + node.offsetHeight) === node.scrollHeight);
     },
 
-    render: function () {
+    getClassContents: function (groups) {
+        var that = this;
+        return _.map(groups, function (item, i) {
+            //@bind: popover item click with item data
+            var addNote = that.handleItemClick.bind(that, item);
+            return (<div className="productClassGroup" key={"item" + i} onClick={addNote}>{item.label}</div>);
+        });
+    },
 
+    getNoteItems: function (productNotes) {
+        var that = this;
+      return  _.map(productNotes, function (item, i) {
+          //@bind: delete button click with item
+          var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
+          //@bind: note click with index
+          var noteClick = that.handleNoteClick.bind(that, i);
+          //@decide: active note with respect to index
+          var noteClass = "noteContainer " + ((that.props.selectedNote == i) ? ' activeNote' : '');
+          //@return: each row of note and assign to variable {noteItems}
+          return (<div className={noteClass} key={"item" + i} onClick={noteClick}>
+              <button className="jDeletePimNotes" onClick={deleteNote}></button>
+              <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
+                  <NoteRow item={item} selectedProductClass={that.props.selectedProduct.class}
+                           productClasses={that.props.productClasses}/>
+              </table>
+          </div>);
+      });
+    },
+
+    render: function () {
         //@Bootstrap: React component
         var OverlayTrigger = ReactBootstrap.OverlayTrigger;
         var Button = ReactBootstrap.Button;
@@ -92,31 +120,11 @@ var NoteList = React.createClass({
 
         //@assign @add: items from class Group [standard, recipe, product] to PopOver
         if (classGroup) {
-            var classContents = _.map(classGroup.groups, function (item, i) {
-                //@bind: popover item click with item data
-                var addNote = that.handleItemClick.bind(that, item);
-                return (<div className="productClassGroup" key={"item" + i} onClick={addNote}>{item.label}</div>);
-            });
+            var classContents = this.getClassContents(classGroup.groups);
             var popOver = (<Popover>{classContents}</Popover>)
         }
-
         //@assign: product notes to variable {noteItems}
-        var noteItems = _.map(productNotes, function (item, i) {
-            //@bind: delete button click with item
-            var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
-            //@bind: note click with index
-            var noteClick = that.handleNoteClick.bind(that, i);
-            //@decide: active note with respect to index
-            var noteClass = "noteContainer " + ((that.props.selectedNote == i) ? ' activeNote' : '');
-            //@return: each row of note and assign to variable {noteItems}
-            return (<div className={noteClass} key={"item" + i} onClick={noteClick}>
-                <button className="jDeletePimNotes" onClick={deleteNote}></button>
-                <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
-                    <NoteRow item={item} selectedProductClass={that.props.selectedProduct.class}
-                                     productClasses={that.props.productClasses}/>
-                </table>
-            </div>);
-        });
+        var noteItems = this.getNoteItems(productNotes);
 
         //@return: actual Component content
         return (
