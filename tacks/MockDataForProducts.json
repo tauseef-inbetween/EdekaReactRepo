@@ -27,10 +27,10 @@
       }
     ],
     "label": "Untitled_19",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -137,10 +137,10 @@
       }
     ],
     "label": "Untitled_18",
-    "image": ["views/content/Thumbnails/images/delete-20.png", "views/content/Thumbnails/images/pouch.png", "views/content/Thumbnails/images/LeftCircularSmall.png", "views/content/Thumbnails/images/RightCircularSmall.png", "views/content/Thumbnails/images/psNext.png", "views/content/Thumbnails/images/psPrev.png"],
+    "image": ["views/content/thumbnailView/images/delete-20.png", "views/content/thumbnailView/images/pouch.png", "views/content/thumbnailView/images/LeftCircularSmall.png", "views/content/thumbnailView/images/RightCircularSmall.png", "views/content/thumbnailView/images/psNext.png", "views/content/thumbnailView/images/psPrev.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -235,10 +235,10 @@
       }
     ],
     "label": "Untitled_17",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -333,10 +333,10 @@
       }
     ],
     "label": "Untitled_16",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -431,10 +431,10 @@
       }
     ],
     "label": "Untitled_15",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -541,10 +541,10 @@
       }
     ],
     "label": "Untitled_14",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -651,10 +651,10 @@
       }
     ],
     "label": "Untitled_13",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -761,10 +761,10 @@
       }
     ],
     "label": "Untitled_12",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -871,10 +871,10 @@
       }
     ],
     "label": "Untitled_11",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -981,10 +981,10 @@
       }
     ],
     "label": "Untitled_18",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1079,10 +1079,10 @@
       }
     ],
     "label": "Untitled_9",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1189,10 +1189,10 @@
       }
     ],
     "label": "Untitled_8",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1299,10 +1299,10 @@
       }
     ],
     "label": "Untitled_7",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1409,10 +1409,10 @@
       }
     ],
     "label": "Untitled_6",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1519,10 +1519,10 @@
       }
     ],
     "label": "Untitled_5",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1629,10 +1629,10 @@
       }
     ],
     "label": "Untitled_4",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1739,10 +1739,10 @@
       }
     ],
     "label": "Untitled_3",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1848,10 +1848,10 @@
       }
     ],
     "label": "Untitled_2",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],
@@ -1945,10 +1945,10 @@
       }
     ],
     "label": "Untitled_1",
-    "image": ["views/content/Thumbnails/images/pouch.png"],
+    "image": ["views/content/thumbnailView/images/pouch.png"],
     "multimedia": [
       {
-        "image": "views/content/Thumbnails/images/pouch.png",
+        "image": "views/content/thumbnailView/images/pouch.png",
         "tags": {
           "Brand": [],
           "Market Cluster": [],

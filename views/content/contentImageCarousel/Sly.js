@@ -1,5 +1,8 @@
+
+//TODO: Still working
 var SlyItems = React.createClass({
 
+    //@require: Props
     propTypes: {
         items: React.PropTypes.array
     },
