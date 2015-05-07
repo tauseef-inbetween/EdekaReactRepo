@@ -1,46 +1,63 @@
-var Menu = React.createClass({
+var MenuBar = React.createClass({
 
     propTypes: {
-
     },
 
     getInitialState: function () {
         return {
-            menuList: MenuListStore.getData()
+            menuList: MenuStore.getData()
         };
     },
 
     listStateChanged: function () {
-        this.setState({menuList: MenuListStore.getData()});
+        this.setState({menuList: MenuStore.getData()});
     },
+
+    //Binding Store to state change on Mount of Component
     componentDidMount: function () {
-        MenuListStore.bind('change', this.listStateChanged);
+        MenuStore.bind('change', this.listStateChanged);
     },
+
+    //UnBinding Store to state change on UnMount of Component
     componentWillUnmount: function () {
-        MenuListStore.unbind('change', this.listStateChanged);
+        MenuStore.unbind('change', this.listStateChanged);
     },
 
 
     render: function () {
+
+        var that = this;
+
         var createButtonVisibilityClass = "btn btn-primary menuItem";
         var createButtonClickBound = '';
-        var menuItems = _.map(this.state.menuList, function (item, i) {
-            var boundClick = menuButtonClicked.bind(this, item.title);
+
+        //Loops through Menu Items and binds click handle on them
+        var menuItems = _.map(that.state.menuList, function (item, i) {
+
+            //Bind title with Menu-Item click
+            var menuClick = menuItemClicked.bind(that, item.title);
+
+            //Bind Create Button with Menu Title and show/hide create button based on active menu
             if (item.isActive) {
-                createButtonClickBound = createButtonClicked.bind(this, item.title);
+                createButtonClickBound = createButtonClicked.bind(that, item.title);
                 if (item.canCreate) {
                     createButtonVisibilityClass += " createButtonVisible";
                 } else {
                     createButtonVisibilityClass += " createButtonNotVisible";
                 }
             }
+
+            //return a menu item to {menuItems} variable
             return (
-                <MenuItem key={i} menuItem={item} onClick={boundClick}/>
+                <MenuItem key={i} menuItem={item} onClick={menuClick}/>
             );
         });
+
+
         return (
             <div className="Menu">
                 <div id="edekaCSHeaderLogo"></div>
+
                 {menuItems}
 
                 <div id="masterCreateNewButtonContainer">

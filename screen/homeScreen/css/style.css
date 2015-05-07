@@ -47,7 +47,7 @@
     margin-bottom: 0px;
 }
 
-.activeScreenButton {
+.activeMenu {
     box-shadow: 0 -4px 0 0 #87C6EB inset;
     color: #87C6EB !important;
 }
@@ -70,7 +70,7 @@
     visibility: hidden;
 }
 
-.screenNavButton:hover {
+.inActiveMenu:hover {
     background-color: #008fd0;
     box-shadow: inset 0 8px 8px -8px #333, inset 0 -8px 8px -8px #333;
 }

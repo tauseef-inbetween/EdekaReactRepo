@@ -1,5 +1,5 @@
-var menuButtonClicked = function (btnLabel) {
-    MenuListStore.setMenuItemActive(btnLabel);
+menuItemClicked = function (btnLabel) {
+    MenuStore.setMenuItemActive(btnLabel);
 };
 
 var createButtonClicked = function (btnLabel) {

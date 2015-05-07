@@ -1,4 +1,4 @@
-MenuListStore = {
+MenuStore = {
     data: MenuItemStoreModel.getMenuItemList(),
 
     getData: function () {
@@ -10,9 +10,9 @@ MenuListStore = {
         for (var iMenuCount = 0; iMenuCount < menus.length; iMenuCount++) {
             menus[iMenuCount].isActive = (menus[iMenuCount].title == sMenuTitle);
         }
-        MainContainerStore.loadScreen(sMenuTitle);
+        HomeScreenStore.loadScreen(sMenuTitle);
         this.trigger('change');
     }
 };
 
-MicroEvent.mixin(MenuListStore);
+MicroEvent.mixin(MenuStore);

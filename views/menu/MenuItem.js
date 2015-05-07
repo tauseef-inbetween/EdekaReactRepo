@@ -6,11 +6,12 @@ var MenuItem = React.createClass({
     },
 
     render: function () {
+
         var menuClass = "menuItem";
         if (this.props.menuItem.isActive) {
-            menuClass += " activeScreenButton";
+            menuClass += " activeMenu";
         } else {
-            menuClass += " screenNavButton";
+            menuClass += " inActiveMenu";
         }
 
         var iconClass = 'menuIcon ' + this.props.menuItem.iconClass;

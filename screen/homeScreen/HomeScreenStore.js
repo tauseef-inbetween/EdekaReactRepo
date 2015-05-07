@@ -1,4 +1,5 @@
-var MainContainerStore = {
+var HomeScreenStore = {
+
     data: MainContainerStoreModel,
 
     getAllData: function () {
@@ -16,4 +17,4 @@ var MainContainerStore = {
     }
 };
 
-MicroEvent.mixin(MainContainerStore);
+MicroEvent.mixin(HomeScreenStore);

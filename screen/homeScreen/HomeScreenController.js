@@ -1,7 +1,6 @@
-var MainContainer = React.createClass({
+var HomeScreenController = React.createClass({
 
     propTypes: {
-
     },
 
     getInitialState: function () {
@@ -11,30 +10,33 @@ var MainContainer = React.createClass({
     },
 
     listStateChanged: function () {
-        this.setState({screens: MainContainerStore.getAllData()});
+        this.setState({screens: HomeScreenStore.getAllData()});
     },
 
     componentWillMount: function () {
-        this.setState({screens: MainContainerStore.getAllData()});
+        this.setState({screens: HomeScreenStore.getAllData()});
     },
 
+    //Binding Store to state change on Mount of Component
     componentDidMount: function () {
-
-        MainContainerStore.bind('change', this.listStateChanged);
+        HomeScreenStore.bind('change', this.listStateChanged);
     },
 
+    //UnBinding Store to state change on UnMount of Component
     componentWillUnmount: function () {
-        MainContainerStore.unbind('change', this.listStateChanged);
+        HomeScreenStore.unbind('change', this.listStateChanged);
     },
 
     render: function () {
+
         var screenDisplayClasses = _.map(this.state.screens, function (item) {
             return ('screen ' + (item.isSelected ? 'showScreen' : 'hideScreen'));
         });
+
         return (
             <div id="MainContainer">
                 <div id="menuContainer">
-                    <Menu ref="menuBar"/>
+                    <MenuBar ref="menuBar"/>
                 </div>
                 <div id="moduleContainer">
                     <Calender ref="calenderScreen" key="0" className={screenDisplayClasses[0]}/>

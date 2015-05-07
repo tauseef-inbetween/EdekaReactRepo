@@ -7,6 +7,6 @@ $(document).ready(function () {
 function loadContent() {
 
     var $mainContainer = $('#MainContainerBody').get(0);
-    React.render(<MainContainer />, $mainContainer);
+    React.render(<HomeScreenController />, $mainContainer);
 
 }
