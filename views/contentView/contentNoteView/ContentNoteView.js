@@ -1,4 +1,4 @@
-var ContentNotes = React.createClass({
+var ContentNoteView = React.createClass({
 
     //@require: Props
     propTypes: {

@@ -1,4 +1,4 @@
-var ContentActionBar = React.createClass({
+var ContentActionBarView = React.createClass({
 
     //Required props
     propTypes: {

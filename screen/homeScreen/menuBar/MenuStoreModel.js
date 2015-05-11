@@ -1,4 +1,4 @@
-var MenuItemStoreModel = (function () {
+var MenuStoreModel = (function () {
     var MenuItemsList = [
         {title: "Calender", iconClass: "glyphicon glyphicon-calendar", isActive: true, canCreate: false},
         {title: "Campaign", iconClass: "glyphicon glyphicon-pencil", isActive: false, canCreate: true},

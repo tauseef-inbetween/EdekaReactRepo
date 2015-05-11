@@ -1,4 +1,4 @@
-var ContentBasicInfoForm = React.createClass({
+var ContentBasicInfoFormView = React.createClass({
 
     //@required: Props
     propTypes: {

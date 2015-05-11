@@ -1,5 +1,5 @@
 var createDummyProduct = function () {
-    var totalProducts = ContentListStore.getData().getAppData().getAllProducts();
+    var totalProducts = ContentStore.getData().getAppData().getAllProducts();
     var length = totalProducts.length;
     var id = totalProducts[length - 1].id + 100;
     return {

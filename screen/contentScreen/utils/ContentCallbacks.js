@@ -1,5 +1,5 @@
 var getAllProductsCallBack = function (aProducts) {
-    ContentListStore.setContentViewStyle('thumbnail');
-    ContentListStore.setProducts(JSON.parse(aProducts));
+    ContentStore.setContentViewStyle('thumbnail');
+    ContentStore.setProducts(JSON.parse(aProducts));
     backToViewMode();
 };

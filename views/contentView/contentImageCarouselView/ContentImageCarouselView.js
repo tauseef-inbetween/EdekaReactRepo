@@ -1,4 +1,4 @@
-var ContentImageCarousel = React.createClass({
+var ContentImageCarouselView = React.createClass({
 
     //@require: Props
     propTypes: {

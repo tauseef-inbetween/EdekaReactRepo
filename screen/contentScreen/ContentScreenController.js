@@ -23,7 +23,7 @@ var ContentScreenController = React.createClass({
 
     //@set: state
     listStateChanged: function () {
-        var data = ContentListStore.getData();
+        var data = ContentStore.getData();
         this.setState({
             productList: data.getAppData().getAllProducts(),
             productTypes: data.getAppData().getProductTypes(),
@@ -43,12 +43,12 @@ var ContentScreenController = React.createClass({
 
     //@Bind: Store with state
     componentDidMount: function () {
-        ContentListStore.bind('change', this.listStateChanged);
+        ContentStore.bind('change', this.listStateChanged);
     },
 
     //@UnBind: store with state
     componentWillUnmount: function () {
-        ContentListStore.unbind('change', this.listStateChanged);
+        ContentStore.unbind('change', this.listStateChanged);
     },
 
 
@@ -64,10 +64,10 @@ var ContentScreenController = React.createClass({
         //@return: actual component content
         return (
             <div id="contentScreen" className={this.props.className}>
-                <ContentActionBar contentViewStyle={this.state.contentViewStyle}
+                <ContentActionBarView contentViewStyle={this.state.contentViewStyle}
                                   contentViewMode={this.state.contentViewMode}/>
 
-                <ContentInfoScreen productList={this.state.productList}
+                <ContentInfoScreenView productList={this.state.productList}
                                    selectedProps={this.state.selectedProps}
                                    productWorkFlowStatus={productWorkFlowStatus}
                                    productTypes={productTypes}

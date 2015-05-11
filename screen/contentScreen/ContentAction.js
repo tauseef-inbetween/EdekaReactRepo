@@ -1,21 +1,21 @@
 var deleteProductButtonClicked = function (sProductId) {
     alertify.confirm("Do you really want to delete this product ?", function (eventDelete) {
         if (eventDelete) {
-            ContentListStore.deleteProductById(sProductId);
+            ContentStore.deleteProductById(sProductId);
             alertify.success("Product successfully deleted");
         }
     });
 };
 
 var handleViewButtonClicked = function (viewStyleButtonEvent) {
-    viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentListStore.setContentViewStyleWithTrigger('thumbnail') : ContentListStore.setContentViewStyleWithTrigger('detailView');
+    viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentStore.setContentViewStyleWithTrigger('thumbnail') : ContentStore.setContentViewStyleWithTrigger('detailView');
 };
 
 var productThumbClicked = function (productId, index) {
     setDefaultValueForCarousel();
-    ContentListStore.setSelectedProduct(ContentListStore.getProductById(productId));
-    ContentListStore.setSelectedIndex(index);
-    ContentListStore.setContentViewModeWithTrigger('editMode');
+    ContentStore.setSelectedProduct(ContentStore.getProductById(productId));
+    ContentStore.setSelectedIndex(index);
+    ContentStore.setContentViewModeWithTrigger('editMode');
 };
 
 var backToViewMode = function () {
@@ -28,56 +28,56 @@ var backToViewMode = function () {
         $container.data('owlCarousel').destroy();
     }
 
-    ContentListStore.setCarouselPreviousLeftPosition(0);
-    ContentListStore.setCarouselLeftPosition(0);
-    ContentListStore.setSelectedProduct(null);
-    ContentListStore.setContentViewModeWithTrigger('viewMode');
+    ContentStore.setCarouselPreviousLeftPosition(0);
+    ContentStore.setCarouselLeftPosition(0);
+    ContentStore.setSelectedProduct(null);
+    ContentStore.setContentViewModeWithTrigger('viewMode');
 };
 
 var changeSelectedProductProperty = function (property, value) {
     setDefaultValueForCarousel();
-    ContentListStore.setSelectedProductValue(property, value);
+    ContentStore.setSelectedProductValue(property, value);
 };
 
 var saveProductInfo = function () {
     setDefaultValueForCarousel();
-    ContentListStore.saveSelectedProductInfo();
+    ContentStore.saveSelectedProductInfo();
     alertify.success("Content successfully updated");
 };
 
 var addNoteToSelectedContent = function (note) {
     setDefaultValueForCarousel();
-    ContentListStore.addProductNoteWithTrigger(note);
+    ContentStore.addProductNoteWithTrigger(note);
 };
 
 var deleteNoteFromSelectedProduct = function (note) {
     setDefaultValueForCarousel();
-    ContentListStore.deleteNoteById(note.id);
+    ContentStore.deleteNoteById(note.id);
 };
 
 var changeNoteContent = function (groupItem, newNote) {
     setDefaultValueForCarousel();
-    ContentListStore.changeNoteDetails(groupItem, newNote);
+    ContentStore.changeNoteDetails(groupItem, newNote);
 };
 
 var carouselPositionChanged = function (newLeftPosition, previousLeftPosition) {
     if(previousLeftPosition != undefined) {
-        ContentListStore.setCarouselPreviousLeftPosition(previousLeftPosition);
+        ContentStore.setCarouselPreviousLeftPosition(previousLeftPosition);
     }
-    ContentListStore.setCarouselLeftPositionWithTrigger(newLeftPosition);
+    ContentStore.setCarouselLeftPositionWithTrigger(newLeftPosition);
 };
 
 var carouselPreviousPositionChanges = function  (newPreviousPosition) {
-    ContentListStore.setCarouselPreviousLeftPosition(newPreviousPosition);
+    ContentStore.setCarouselPreviousLeftPosition(newPreviousPosition);
 };
 
 var setDefaultValueForCarousel = function () {
-    ContentListStore.setCarouselPreviousLeftPosition(ContentListStore.getData().getComponentProps().getCarouselPosition().leftPosition);
-    ContentListStore.setCarouselLeftPosition(ContentListStore.getData().getComponentProps().getCarouselPosition().leftPosition);
+    ContentStore.setCarouselPreviousLeftPosition(ContentStore.getData().getComponentProps().getCarouselPosition().leftPosition);
+    ContentStore.setCarouselLeftPosition(ContentStore.getData().getComponentProps().getCarouselPosition().leftPosition);
 };
 
 var setSelectedNote = function (index) {
-    ContentListStore.setSelectedNoteIndexWithTrigger(index);
+    ContentStore.setSelectedNoteIndexWithTrigger(index);
 };
 
 var initialiseLayouts = function (type) {

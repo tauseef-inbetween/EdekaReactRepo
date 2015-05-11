@@ -1,4 +1,4 @@
-ContentListStore = {
+var ContentStore = {
 
     data: ContentStoreModel,
 
@@ -160,4 +160,4 @@ ContentListStore = {
     }
 };
 
-MicroEvent.mixin(ContentListStore);
+MicroEvent.mixin(ContentStore);

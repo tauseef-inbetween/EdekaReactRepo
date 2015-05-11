@@ -1,4 +1,4 @@
-var ContentTag = React.createClass({
+var ContentTagView = React.createClass({
 
     //@required: Props
     propTypes: {

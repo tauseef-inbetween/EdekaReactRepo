@@ -1,6 +1,6 @@
 var HomeScreenStore = {
 
-    data: MainContainerStoreModel,
+    data: HomeScreenStoreModel,
 
     getAllData: function () {
         return this.data.getAllScreens();

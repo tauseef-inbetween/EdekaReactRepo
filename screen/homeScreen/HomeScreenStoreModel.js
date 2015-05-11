@@ -1,4 +1,4 @@
-var MainContainerStoreModel = (function () {
+var HomeScreenStoreModel = (function () {
     var allScreens = [
         {title: "Calender", isSelected: true},
         {title: "Campaign", isSelected: false},

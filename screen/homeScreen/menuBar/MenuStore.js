@@ -1,5 +1,5 @@
-MenuStore = {
-    data: MenuItemStoreModel.getMenuItemList(),
+var MenuStore = {
+    data: MenuStoreModel.getMenuItemList(),
 
     getData: function () {
         return this.data;

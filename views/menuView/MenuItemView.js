@@ -1,4 +1,4 @@
-var MenuItem = React.createClass({
+var MenuItemView = React.createClass({
 
     //Required props to be passed
     propTypes: {
