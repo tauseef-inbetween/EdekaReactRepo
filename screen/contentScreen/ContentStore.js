@@ -112,17 +112,20 @@ var ContentStore = {
     changeNoteDetails: function (groupItem, newNote) {
         var values = this.getSelectedProductNoteValuesById(groupItem.id);
         var value = _.result(_.find(values, function (value) {
-            return value.label < newNote.label;
+            return value.label == newNote.label;
         }), 'value');
 
-        _.assign(value,newNote.value);
-        this.trigger('change');
+        value = newNote.value;
+        //_.assign(value,newNote.value);
+        var selectedProduct = this.data.componentProps.getSelectedProps().getSelectedProduct();
+        this.setSelectedProductWithTrigger(selectedProduct);
+        //this.trigger('change');
     },
 
     getSelectedProductNoteValuesById: function (groupId) {
         var notes = this.data.componentProps.getSelectedProps().getSelectedProduct().notes || [];
         return (_.result(_.find(notes, function (note) {
-            return note.id < groupId;
+            return note.id == groupId;
         }), 'values'));
     },
 
