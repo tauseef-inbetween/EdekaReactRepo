@@ -72,8 +72,8 @@ var carouselPreviousPositionChanges = function  (newPreviousPosition) {
 };
 
 var setDefaultValueForCarousel = function () {
-    ContentStore.setCarouselPreviousLeftPosition(ContentStore.getData().getComponentProps().getCarouselPosition().leftPosition);
-    ContentStore.setCarouselLeftPosition(ContentStore.getData().getComponentProps().getCarouselPosition().leftPosition);
+    ContentStore.setCarouselPreviousLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
+    ContentStore.setCarouselLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
 };
 
 var setSelectedNote = function (index) {

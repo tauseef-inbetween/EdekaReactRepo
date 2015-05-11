@@ -1,22 +1,22 @@
 var ContentStore = {
 
-    data: ContentStoreModel,
+    data: {appData: ContentApplicationData, componentProps: ContentComponentProperties},
 
     getData: function () {
         return this.data;
     },
 
     setProducts: function (products) {
-        this.data.getAppData().setAllProducts(products);
+        this.data.appData.setAllProducts(products);
         this.trigger('change');
     },
 
     setSelectedIndex: function (index) {
-        this.data.getComponentProps().getSelectedProps().setSelectedIndex(index);
+        this.data.componentProps.getSelectedProps().setSelectedIndex(index);
     },
 
     setSelectedProduct: function (oProduct) {
-        this.data.getComponentProps().getSelectedProps().setSelectedProduct(_.clone(oProduct, true));
+        this.data.componentProps.getSelectedProps().setSelectedProduct(_.clone(oProduct, true));
     },
 
     setSelectedProductWithTrigger: function (oProduct) {
@@ -30,14 +30,13 @@ var ContentStore = {
             this.addDefaultNotes(value);
         }
 
-        var selectedProduct = this.data.getComponentProps().getSelectedProps().getSelectedProduct();
-        //this.data.getComponentProps().setIsSaved(false);
+        var selectedProduct = this.data.componentProps.getSelectedProps().getSelectedProduct();
         selectedProduct[property] = value;
         this.setSelectedProductWithTrigger(selectedProduct);
     },
 
     setContentViewMode: function (sContentViewMode) {
-        this.data.getComponentProps().setContentViewMode(sContentViewMode);
+        this.data.componentProps.setContentViewMode(sContentViewMode);
     },
 
     setContentViewModeWithTrigger: function (sContentViewMode) {
@@ -46,7 +45,7 @@ var ContentStore = {
     },
 
     setContentViewStyle: function (sViewStyle) {
-        this.data.getComponentProps().setContentViewStyle(sViewStyle);
+        this.data.componentProps.setContentViewStyle(sViewStyle);
     },
 
     setContentViewStyleWithTrigger: function (sViewStyle) {
@@ -55,21 +54,20 @@ var ContentStore = {
     },
 
     saveSelectedProductInfo: function () {
-        var selectedProduct = this.data.getComponentProps().getSelectedProps().getSelectedProduct();
+        var selectedProduct = this.data.componentProps.getSelectedProps().getSelectedProduct();
         var product = this.getProductById(selectedProduct.id);
         _.assign(product, selectedProduct);
-        //this.data.getComponentProps().setIsSaved(true);
         this.trigger('change');
     },
 
     createProduct: function () {
         var dummyProduct = createDummyProduct();
-        this.data.getAppData().getAllProducts().push(dummyProduct);
+        this.data.appData.getAllProducts().push(dummyProduct);
         this.trigger('change');
     },
 
     deleteNoteById: function (sNoteId) {
-        var notes = this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes || [];
+        var notes = this.data.componentProps.getSelectedProps().getSelectedProduct().notes || [];
         for (var iNoteCount = 0; iNoteCount < notes.length; iNoteCount++) {
             if (notes[iNoteCount].id == sNoteId) {
                 notes.splice(iNoteCount, 1);
@@ -80,7 +78,7 @@ var ContentStore = {
     },
 
     deleteProductById: function (sProductId) {
-        var products = this.data.getAppData().getAllProducts() || [];
+        var products = this.data.appData.getAllProducts() || [];
         for (var iProductCount = 0; iProductCount < products.length; iProductCount++) {
             if (products[iProductCount].id === sProductId) {
                 products.splice(iProductCount, 1);
@@ -91,7 +89,7 @@ var ContentStore = {
     },
 
     getProductById: function (sProductId) {
-        var products = this.data.getAppData().getAllProducts() || [];
+        var products = this.data.appData.getAllProducts() || [];
         for (var iProductCount = 0; iProductCount < products.length; iProductCount++) {
             if (products[iProductCount].id === sProductId) {
                 return products[iProductCount];
@@ -101,9 +99,9 @@ var ContentStore = {
     },
 
     addDefaultNotes: function (classValue) {
-        var groups = _.result(_.find(this.data.getAppData().getProductClasses(),'label',classValue), 'groups');
+        var groups = _.result(_.find(this.data.appData.getProductClasses(),'label',classValue), 'groups');
         var defaultNotes = _.where(groups, { 'defaultValue': true});
-        var selectedProductNotes = this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes;
+        var selectedProductNotes = this.data.componentProps.getSelectedProps().getSelectedProduct().notes;
         var notesToAdd = _.filter(defaultNotes, function(obj){ return !_.findWhere(selectedProductNotes, {'type' : obj.label}); });
         var that = this;
         _.map(notesToAdd, function (note){
@@ -122,7 +120,7 @@ var ContentStore = {
     },
 
     getSelectedProductNoteValuesById: function (groupId) {
-        var notes = this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes || [];
+        var notes = this.data.componentProps.getSelectedProps().getSelectedProduct().notes || [];
         return (_.result(_.find(notes, function (note) {
             return note.id < groupId;
         }), 'values'));
@@ -130,18 +128,18 @@ var ContentStore = {
 
     addProductNote: function (note) {
         var newNote = createDummyNote(note);
-        this.data.getComponentProps().getSelectedProps().getSelectedProduct().notes.push(newNote);
+        this.data.componentProps.getSelectedProps().getSelectedProduct().notes.push(newNote);
     },
 
     setCarouselLeftPosition: function (leftPosition) {
-        this.data.getComponentProps().getCarouselPosition().leftPosition = leftPosition;
+        this.data.componentProps.getCarouselPosition().leftPosition = leftPosition;
     },
 
     setCarouselPreviousLeftPosition: function (previousLeft) {
         if(previousLeft == undefined) {
-            previousLeft = this.data.getComponentProps().getCarouselPosition().leftPosition;
+            previousLeft = this.data.componentProps.getCarouselPosition().leftPosition;
         }
-        this.data.getComponentProps().getCarouselPosition().previousLeftPosition = previousLeft;
+        this.data.componentProps.getCarouselPosition().previousLeftPosition = previousLeft;
     },
 
     setCarouselLeftPositionWithTrigger: function (leftPosition) {
@@ -155,7 +153,7 @@ var ContentStore = {
     },
 
     setSelectedNoteIndexWithTrigger: function (index) {
-        this.data.getComponentProps().getSelectedProps().setSelectedNoteIndex(index);
+        this.data.componentProps.getSelectedProps().setSelectedNoteIndex(index);
         this.trigger('change');
     }
 };

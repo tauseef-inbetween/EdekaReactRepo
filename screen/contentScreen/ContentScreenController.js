@@ -7,68 +7,54 @@ var ContentScreenController = React.createClass({
 
     getInitialState: function () {
         return {
-            //App Data
-            productList: [],
-            productTypes: [],
-            productClasses: [],
-            productWorkFlowStatus: [],
-
-            //Component Data
-            contentViewStyle: 'thumbnail',
-            contentViewMode: 'viewMode',
-            selectedProps: null,
-            carouselLeftPosition: 0
+            appData: {},
+            componentProps: {}
         };
     },
 
     //@set: state
-    listStateChanged: function () {
-        var data = ContentStore.getData();
+    contentStateChanged: function () {
         this.setState({
-            productList: data.getAppData().getAllProducts(),
-            productTypes: data.getAppData().getProductTypes(),
-            productClasses: data.getAppData().getProductClasses(),
-            productWorkFlowStatus: data.getAppData().getProductWorkflowStatus(),
-
-            contentViewStyle: data.getComponentProps().getContentViewStyle(),
-            contentViewMode: data.getComponentProps().getContentViewMode(),
-            selectedProps: data.getComponentProps().getSelectedProps(),
-            carouselPosition: data.getComponentProps().getCarouselPosition()
+            appData: ContentStore.getData().appData,
+            componentProps: ContentStore.getData().componentProps
         });
     },
 
     componentWillMount: function () {
-        this.listStateChanged();
+        this.contentStateChanged();
     },
 
     //@Bind: Store with state
     componentDidMount: function () {
-        ContentStore.bind('change', this.listStateChanged);
+        ContentStore.bind('change', this.contentStateChanged);
     },
 
     //@UnBind: store with state
     componentWillUnmount: function () {
-        ContentStore.unbind('change', this.listStateChanged);
+        ContentStore.unbind('change', this.contentStateChanged);
     },
 
 
     render: function () {
 
-        var contentViewStyle = this.state.contentViewStyle;
-        var contentViewMode = this.state.contentViewMode;
-        var productWorkFlowStatus = this.state.productWorkFlowStatus;
-        var productTypes = this.state.productTypes;
-        var productClasses = this.state.productClasses;
-        var carouselPosition = this.state.carouselPosition;
+        var productWorkFlowStatus = this.state.appData.getProductWorkflowStatus();
+        var productTypes = this.state.appData.getProductTypes();
+        var productClasses = this.state.appData.getProductClasses();
+        var productList = this.state.appData.getAllProducts();
+
+        var contentViewStyle = this.state.componentProps.getContentViewStyle();
+        var contentViewMode = this.state.componentProps.getContentViewMode();
+        var carouselPosition = this.state.componentProps.getCarouselPosition();
+        var selectedProps = this.state.componentProps.getSelectedProps();
 
         //@return: actual component content
         return (
             <div id="contentScreen" className={this.props.className}>
-                <ContentActionBarView contentViewStyle={this.state.contentViewStyle}
-                                  contentViewMode={this.state.contentViewMode}/>
+                <ContentActionBarView contentViewStyle={contentViewStyle}
+                                  contentViewMode={contentViewMode}/>
 
-                <ContentInfoScreenView productList={this.state.productList}
-                                   selectedProps={this.state.selectedProps}
+                <ContentInfoScreenView productList={productList}
+                                   selectedProps={selectedProps}
                                    productWorkFlowStatus={productWorkFlowStatus}
                                    productTypes={productTypes}
                                    productClasses={productClasses}
