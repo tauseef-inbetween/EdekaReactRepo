@@ -2,12 +2,12 @@ var HomeScreenStore = {
 
     data: HomeScreenStoreModel,
 
-    getAllData: function () {
+    getData: function () {
         return this.data.getAllScreens();
     },
 
     loadScreen: function (screenName) {
-        var screens = this.getAllData();
+        var screens = this.getData();
         for (var iScreenCount = 0; iScreenCount < screens.length; iScreenCount++) {
             screens[iScreenCount].isSelected = (screens[iScreenCount].title == screenName);
         }

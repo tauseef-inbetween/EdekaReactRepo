@@ -1,26 +1,31 @@
 var MenuBar = React.createClass({
 
     propTypes: {
+        store: React.PropTypes.object
     },
 
     getInitialState: function () {
         return {
-            menuList: MenuStore.getData()
+            menuList: []
         };
     },
 
-    listStateChanged: function () {
-        this.setState({menuList: MenuStore.getData()});
+    menuStateChanged: function () {
+        this.setState({menuList: this.props.store.getData()});
     },
 
     //Binding Store to state change on Mount of Component
     componentDidMount: function () {
-        MenuStore.bind('change', this.listStateChanged);
+        this.props.store.bind('change', this.menuStateChanged);
     },
 
     //UnBinding Store to state change on UnMount of Component
     componentWillUnmount: function () {
-        MenuStore.unbind('change', this.listStateChanged);
+        this.props.store.unbind('change', this.menuStateChanged);
+    },
+
+    componentWillMount: function () {
+        this.menuStateChanged();
     },
 
     getMenuItems: function (menuList) {

@@ -2,7 +2,8 @@ var ContentScreenController = React.createClass({
 
     //@required: Props
     propTypes: {
-        className: React.PropTypes.string
+        className: React.PropTypes.string,
+        store: React.PropTypes.object
     },
 
     getInitialState: function () {
@@ -15,8 +16,8 @@ var ContentScreenController = React.createClass({
     //@set: state
     contentStateChanged: function () {
         this.setState({
-            appData: ContentStore.getData().appData,
-            componentProps: ContentStore.getData().componentProps
+            appData: this.props.store.getData().appData,
+            componentProps: this.props.store.getData().componentProps
         });
     },
 
@@ -26,12 +27,12 @@ var ContentScreenController = React.createClass({
 
     //@Bind: Store with state
     componentDidMount: function () {
-        ContentStore.bind('change', this.contentStateChanged);
+        this.props.store.bind('change', this.contentStateChanged);
     },
 
     //@UnBind: store with state
     componentWillUnmount: function () {
-        ContentStore.unbind('change', this.contentStateChanged);
+        this.props.store.unbind('change', this.contentStateChanged);
     },
 
 
