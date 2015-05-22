@@ -20,3 +20,5 @@ var HomeScreenStoreModel = (function () {
         }
     };
 })();
+
+module.exports = HomeScreenStoreModel;

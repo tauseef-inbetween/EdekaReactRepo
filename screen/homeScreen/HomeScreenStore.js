@@ -1,3 +1,6 @@
+var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
+var HomeScreenStoreModel = require('./HomeScreenStoreModel.js');
+
 var HomeScreenStore = {
 
     data: HomeScreenStoreModel,
@@ -18,3 +21,5 @@ var HomeScreenStore = {
 };
 
 MicroEvent.mixin(HomeScreenStore);
+
+module.exports = HomeScreenStore;
