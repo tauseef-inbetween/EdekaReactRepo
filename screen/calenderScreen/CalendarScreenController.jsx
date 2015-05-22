@@ -1,3 +1,5 @@
+var React = require('react');
+
 var CalendarScreenController = React.createClass({
 
     //Required props
@@ -14,3 +16,5 @@ var CalendarScreenController = React.createClass({
         );
     }
 });
+
+module.exports = CalendarScreenController;

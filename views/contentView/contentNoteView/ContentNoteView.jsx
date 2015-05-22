@@ -1,3 +1,7 @@
+var React = require('react');
+var NoteList = require('./NoteList');
+var Button = require('react-bootstrap').Button;
+
 var ContentNoteView = React.createClass({
 
     //@require: Props
@@ -9,7 +13,7 @@ var ContentNoteView = React.createClass({
 
     render : function () {
         //@Bootstrap: React Component
-        var Button = ReactBootstrap.Button;
+        //var Button = ReactBootstrap.Button;
 
         var selectedNoteIndex = this.props.selectedProps.selectedNoteIndex;
         var selectedProduct = this.props.selectedProps.selectedProduct;
@@ -37,3 +41,5 @@ var ContentNoteView = React.createClass({
         );
     }
 });
+
+module.exports = ContentNoteView;

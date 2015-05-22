@@ -1,3 +1,12 @@
+var React = require('react');
+var _ = require('lodash');
+var $ = require('jquery');
+var NoteRow = require('./NoteRow');
+var OverlayTrigger = require('react-bootstrap').OverlayTrigger;
+var Button = require('react-bootstrap').Button;
+var Glyphicon = require('react-bootstrap').Glyphicon;
+var Popover = require('react-bootstrap').Popover;
+
 var NoteList = React.createClass({
 
     //@require: Props
@@ -109,10 +118,10 @@ var NoteList = React.createClass({
 
     render: function () {
         //@Bootstrap: React component
-        var OverlayTrigger = ReactBootstrap.OverlayTrigger;
+        /*var OverlayTrigger = ReactBootstrap.OverlayTrigger;
         var Button = ReactBootstrap.Button;
         var Popover = ReactBootstrap.Popover;
-        var Glyphicon = ReactBootstrap.Glyphicon;
+        var Glyphicon = ReactBootstrap.Glyphicon;*/
 
         var that = this;
         var productNotes = that.props.selectedProduct.notes;
@@ -147,3 +156,5 @@ var NoteList = React.createClass({
         );
     }
 });
+
+module.exports = NoteList;

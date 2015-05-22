@@ -1,3 +1,6 @@
+//var MicroEvent = require('../../../libraries/js/flux/MicroEvent.js');
+//var HomeScreenStore = require('../HomeScreenStore');
+
 var MenuStore = {
     data: MenuStoreModel.getMenuItemList(),
 
@@ -16,3 +19,4 @@ var MenuStore = {
 };
 
 MicroEvent.mixin(MenuStore);
+//module.exports = MenuStore;

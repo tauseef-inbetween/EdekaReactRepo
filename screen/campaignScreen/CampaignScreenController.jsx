@@ -1,3 +1,5 @@
+var React = require('react');
+
 var CampaignScreenController = React.createClass({
 
     //Required Props
@@ -14,3 +16,5 @@ var CampaignScreenController = React.createClass({
         );
     }
 });
+
+module.exports = CampaignScreenController;

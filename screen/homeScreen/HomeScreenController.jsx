@@ -1,3 +1,15 @@
+var React = require('react');
+var _ = require('lodash');
+var CalendarScreenController = require('./../calenderScreen/CalendarScreenController');
+var CampaignScreenController = require('../campaignScreen/CampaignScreenController');
+var TemplateScreenController = require('../templateScreen/TemplateScreenController');
+var PromotionScreenController = require('../promotionScreen/PromotionScreenController');
+var AssortmentScreenController = require('../assortmentScreen/AssortmentScreenController');
+var ContentScreenController = require('../contentScreen/ContentScreenController');
+var TargetScreenController = require('../targetScreen/TargetScreenController');
+var ReportScreenController = require('../reportScreen/ReportScreenController');
+var MenuBar = require('./menuBar/MenuBar');
+
 var HomeScreenController = React.createClass({
 
     propTypes: {
@@ -53,3 +65,5 @@ var HomeScreenController = React.createClass({
         );
     }
 });
+
+module.exports = HomeScreenController;

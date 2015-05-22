@@ -1,3 +1,7 @@
+var React = require('react');
+var MenuItemView = require('../../../views/menuView/MenuItemView.jsx');
+var _ = require('lodash');
+
 var MenuBar = React.createClass({
 
     propTypes: {
@@ -78,3 +82,5 @@ var MenuBar = React.createClass({
         )
     }
 });
+
+module.exports = MenuBar;

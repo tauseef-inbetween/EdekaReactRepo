@@ -1,3 +1,5 @@
+var React = require('react');
+
 var ContentActionBarView = React.createClass({
 
     //Required props
@@ -36,3 +38,5 @@ var ContentActionBarView = React.createClass({
         );
     }
 });
+
+module.exports = ContentActionBarView;

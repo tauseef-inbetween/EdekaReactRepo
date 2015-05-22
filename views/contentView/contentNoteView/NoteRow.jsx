@@ -1,3 +1,7 @@
+var React = require('react');
+var _ = require('lodash');
+
+
 var NoteRow = React.createClass({
 
     //@required: Props
@@ -76,3 +80,5 @@ var NoteRow = React.createClass({
         );
     }
 });
+
+module.exports = NoteRow;

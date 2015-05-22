@@ -1,3 +1,6 @@
+var React = require('react');
+var _ = require('lodash');
+
 var ContentThumbnail = React.createClass({
 
     //@required: Props
@@ -53,3 +56,5 @@ var ContentThumbnail = React.createClass({
         )
     }
 });
+
+module.exports = ContentThumbnail;

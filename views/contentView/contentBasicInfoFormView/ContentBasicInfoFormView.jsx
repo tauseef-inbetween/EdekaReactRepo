@@ -1,3 +1,8 @@
+var React = require('react');
+var _ = require('lodash');
+var SplitButton = require('react-bootstrap').SplitButton;
+var MenuItem = require('react-bootstrap').MenuItem;
+
 var ContentBasicInfoFormView = React.createClass({
 
     //@required: Props
@@ -44,9 +49,9 @@ var ContentBasicInfoFormView = React.createClass({
 
     getWorkFlowStatus: function (selectedProduct) {
         //@ThirdParty-component: React component used for workflow
-        var SplitButton = ReactBootstrap.SplitButton;
+        /*var SplitButton = ReactBootstrap.SplitButton;
         var MenuItem = ReactBootstrap.MenuItem;
-
+*/
         //@internal function @return: Menu Items for Workflow status option
         function renderDropdownButton (item, i) {
             return (
@@ -146,3 +151,5 @@ var ContentBasicInfoFormView = React.createClass({
         );
     }
 });
+
+module.exports = ContentBasicInfoFormView;

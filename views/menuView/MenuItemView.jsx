@@ -1,3 +1,5 @@
+var React = require('react');
+
 var MenuItemView = React.createClass({
 
     //Required props to be passed
@@ -24,3 +26,5 @@ var MenuItemView = React.createClass({
         )
     }
 });
+
+module.exports = MenuItemView;

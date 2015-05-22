@@ -1,3 +1,5 @@
+var React = require('react');
+
 var TemplateScreenController = React.createClass({
 
     //Required Props
@@ -14,3 +16,5 @@ var TemplateScreenController = React.createClass({
         );
     }
 });
+
+module.exports = TemplateScreenController;

@@ -1,5 +1,5 @@
-var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
-var HomeScreenStoreModel = require('./HomeScreenStoreModel.js');
+//var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
+//var HomeScreenStoreModel = require('./HomeScreenStoreModel.js');
 
 var HomeScreenStore = {
 
@@ -15,11 +15,11 @@ var HomeScreenStore = {
             screens[iScreenCount].isSelected = (screens[iScreenCount].title == screenName);
         }
 
-        loadDataFromNetwork(screenName);
+        ModuleDataLoader.loadDataFromNetwork(screenName);
         this.trigger('change');
     }
 };
 
 MicroEvent.mixin(HomeScreenStore);
 
-module.exports = HomeScreenStore;
+//module.exports = HomeScreenStore;

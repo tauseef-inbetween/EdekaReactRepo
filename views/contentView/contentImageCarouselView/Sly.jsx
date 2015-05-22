@@ -1,3 +1,5 @@
+var React = require('react');
+var _ = require('lodash');
 
 //TODO: Still working
 var SlyItems = React.createClass({
@@ -94,3 +96,5 @@ var Sly = React.createClass({
         );
     }
 });
+
+module.exports = Sly;

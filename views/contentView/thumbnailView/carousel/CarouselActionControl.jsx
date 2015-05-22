@@ -1,3 +1,5 @@
+var React = require('react');
+
 var CarouselActionControl = React.createClass({
 
     //@required: props
@@ -15,3 +17,5 @@ var CarouselActionControl = React.createClass({
         );
     }
 });
+
+module.exports = CarouselActionControl;

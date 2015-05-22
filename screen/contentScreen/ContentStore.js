@@ -1,3 +1,5 @@
+//var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
+
 var ContentStore = {
 
     data: {appData: ContentApplicationData, componentProps: ContentComponentProperties},
@@ -162,3 +164,5 @@ var ContentStore = {
 };
 
 MicroEvent.mixin(ContentStore);
+
+//module.exports = ContentStore;

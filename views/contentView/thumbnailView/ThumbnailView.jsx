@@ -1,3 +1,11 @@
+var React = require('react');
+var _ = require('lodash');
+var ContentThumbnail = require('./ContentThumbnail');
+var ContentBasicInfoFormView = require('../contentBasicInfoFormView/ContentBasicInfoFormView');
+var Carousel = require('./carousel/Carousel');
+var ReactAddons = require('react/addons');
+var ReactCSSTransitionGroup = ReactAddons.addons.CSSTransitionGroup;
+
 var ThumbnailView = React.createClass({
 
     //Required props
@@ -70,3 +78,5 @@ var ThumbnailView = React.createClass({
         );
     }
 });
+
+module.exports  =ThumbnailView;

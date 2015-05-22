@@ -1,3 +1,9 @@
+var React = require('react');
+var $ = require('jquery');
+require('jquery-ui');
+var CarouselItem = require('./CarouselItem');
+var CarouselActionControl = require('./CarouselActionControl');
+
 var Carousel = React.createClass({
 
     //@Required Props
@@ -136,3 +142,5 @@ var Carousel = React.createClass({
         );
     }
 });
+
+module.exports = Carousel;

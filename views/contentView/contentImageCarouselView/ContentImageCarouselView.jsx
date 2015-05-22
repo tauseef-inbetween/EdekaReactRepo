@@ -1,3 +1,7 @@
+var _ = require('lodash');
+var React = require('react');
+var Sly = require('./Sly');
+
 var ContentImageCarouselView = React.createClass({
 
     //@require: Props
@@ -36,3 +40,5 @@ var ContentImageCarouselView = React.createClass({
         );
     }
 });
+
+module.exports = ContentImageCarouselView;

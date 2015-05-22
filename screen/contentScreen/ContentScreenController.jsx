@@ -1,3 +1,7 @@
+var React = require('react');
+var ContentActionBarView = require('../../views/contentView/contentActionBarView/ContentActionBarView.jsx');
+var ContentInfoScreenView = require('../../views/contentView/contentInfoScreenView/ContentInfoScreenView.jsx');
+
 var ContentScreenController = React.createClass({
 
     //@required: Props
@@ -67,4 +71,4 @@ var ContentScreenController = React.createClass({
     }
 });
 
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+module.exports = ContentScreenController;

@@ -1,3 +1,5 @@
+var React = require('react');
+
 var ReportScreenController = React.createClass({
 
     //Required Props
@@ -14,3 +16,5 @@ var ReportScreenController = React.createClass({
         );
     }
 });
+
+module.exports = ReportScreenController;

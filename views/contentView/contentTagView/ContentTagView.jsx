@@ -1,3 +1,5 @@
+var React = require('react');
+
 var ContentTagView = React.createClass({
 
     //@required: Props
@@ -14,3 +16,5 @@ var ContentTagView = React.createClass({
         );
     }
 });
+
+module.exports = ContentTagView;

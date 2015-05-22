@@ -1,8 +1,8 @@
 var $ = require('jquery');
-var React = require('react/addons');
+var React = require('react');
 
-var HomeScreenController = require('./screen/homeScreen/HomeScreenController.js');
-var HomeScreenStore = require('./screen/homeScreen/HomeScreenStore.js');
+var HomeScreenController = require('./screen/homeScreen/HomeScreenController');
+//var HomeScreenStore = require('./screen/homeScreen/HomeScreenStore');
 
 $(document).ready(function () {
     loadContent();

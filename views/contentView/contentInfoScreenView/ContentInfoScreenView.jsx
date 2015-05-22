@@ -1,3 +1,10 @@
+var React = require('react');
+var ThumbnailView = require('../thumbnailView/ThumbnailView');
+var ContentImageCarouselView = require('../contentImageCarouselView/ContentImageCarouselView');
+var ContentNoteView = require('../contentNoteView/ContentNoteView');
+var ContentTagView = require('../contentTagView/ContentTagView');
+
+
 var ContentInfoScreenView = React.createClass({
 
     //@required: props
@@ -67,3 +74,5 @@ var ContentInfoScreenView = React.createClass({
         );
     }
 });
+
+module.exports = ContentInfoScreenView;

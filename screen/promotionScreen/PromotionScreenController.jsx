@@ -1,3 +1,5 @@
+var React = require('react');
+
 var PromotionScreenController = React.createClass({
 
     propTypes: {
@@ -13,3 +15,5 @@ var PromotionScreenController = React.createClass({
         );
     }
 });
+
+module.exports = PromotionScreenController;

@@ -21,4 +21,4 @@ var HomeScreenStoreModel = (function () {
     };
 })();
 
-module.exports = HomeScreenStoreModel;
+//module.exports = HomeScreenStoreModel;

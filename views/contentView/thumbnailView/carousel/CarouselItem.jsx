@@ -1,3 +1,6 @@
+var React = require('react');
+var _ = require('lodash');
+
 var CarouselItem = React.createClass({
 
     //@required: props
@@ -48,3 +51,5 @@ var CarouselItem = React.createClass({
         );
     }
 });
+
+module.exports = CarouselItem;

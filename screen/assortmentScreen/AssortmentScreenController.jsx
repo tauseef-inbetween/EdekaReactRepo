@@ -1,3 +1,4 @@
+var React = require('react');
 var AssortmentScreenController = React.createClass({
     propTypes: {
         className: React.PropTypes.string
@@ -14,3 +15,5 @@ var AssortmentScreenController = React.createClass({
         );
     }
 });
+
+module.exports = AssortmentScreenController;
