@@ -2,6 +2,7 @@ var React = require('react');
 var _ = require('lodash');
 var SplitButton = require('react-bootstrap').SplitButton;
 var MenuItem = require('react-bootstrap').MenuItem;
+var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
 
 var ContentBasicInfoFormView = React.createClass({
 
@@ -23,15 +24,15 @@ var ContentBasicInfoFormView = React.createClass({
         var targetId = DOMEvent.currentTarget.id;
         var targetValue = DOMEvent.target.value || DOMEvent.target.innerText;
         if(targetId == 'pimScreenProductName') {
-            changeSelectedProductProperty('label', targetValue);
+            ContentAction.changeSelectedProductProperty('label', targetValue);
         } else if(targetId == 'pimScreenType') {
-            changeSelectedProductProperty('type', targetValue);
+            ContentAction.changeSelectedProductProperty('type', targetValue);
         } else if(targetId == 'pimScreenWorkflow') {
-            changeSelectedProductProperty('workflowStatus', targetValue);
+            ContentAction.changeSelectedProductProperty('workflowStatus', targetValue);
         } else if(targetId == 'pimScreenClasses') {
-            changeSelectedProductProperty('class', targetValue);
+            ContentAction.changeSelectedProductProperty('class', targetValue);
         } else if(targetId == 'pimScreenComments') {
-            changeSelectedProductProperty('comments', targetValue);
+            ContentAction.changeSelectedProductProperty('comments', targetValue);
         }
     },
 

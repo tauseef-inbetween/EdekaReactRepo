@@ -2,7 +2,7 @@ var $ = require('jquery');
 var React = require('react');
 
 var HomeScreenController = require('./screen/homeScreen/HomeScreenController');
-//var HomeScreenStore = require('./screen/homeScreen/HomeScreenStore');
+var HomeScreenStore = require('./screen/homeScreen/HomeScreenStore');
 
 $(document).ready(function () {
     loadContent();

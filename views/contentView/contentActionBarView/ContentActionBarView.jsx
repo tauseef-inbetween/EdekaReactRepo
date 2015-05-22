@@ -1,4 +1,5 @@
 var React = require('react');
+var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
 
 var ContentActionBarView = React.createClass({
 
@@ -23,16 +24,16 @@ var ContentActionBarView = React.createClass({
             <div id="topToolsPanel">
                 <div id="contentViewContainer">
                     <div id="pimViewThumbnail" title="Thumbnail View" className={thumbnailClass}
-                         onClick={handleViewButtonClicked}></div>
+                         onClick={ContentAction.handleViewButtonClicked}></div>
                     <div id="pimViewDetail" title="Detail View" className={detailClass}
-                         onClick={handleViewButtonClicked}></div>
+                         onClick={ContentAction.handleViewButtonClicked}></div>
                 </div>
 
                 <span>Content</span>
 
                 <div id="contentEditController" className={modeClass}>
-                    <button id="productSaveButton" className="saveContent btn btn-primary" tabIndex="-1" onClick={saveProductInfo}>Save</button>
-                    <div id="backToPimThumbsButton" title="Back" onClick={backToViewMode}></div>
+                    <button id="productSaveButton" className="saveContent btn btn-primary" tabIndex="-1" onClick={ContentAction.saveProductInfo}>Save</button>
+                    <div id="backToPimThumbsButton" title="Back" onClick={ContentAction.backToViewMode}></div>
                 </div>
             </div>
         );

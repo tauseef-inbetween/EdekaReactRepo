@@ -1,4 +1,7 @@
-//var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
+var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
+var ContentApplicationData = require('./ContentApplicationData');
+var ContentComponentProperties = require('./ContentComponentProperties');
+var ContentUtils = require('./utils/ContentUtils');
 
 var ContentStore = {
 
@@ -63,7 +66,7 @@ var ContentStore = {
     },
 
     createProduct: function () {
-        var dummyProduct = createDummyProduct();
+        var dummyProduct = ContentUtils.createDummyProduct();
         this.data.appData.getAllProducts().push(dummyProduct);
         this.trigger('change');
     },
@@ -132,7 +135,7 @@ var ContentStore = {
     },
 
     addProductNote: function (note) {
-        var newNote = createDummyNote(note);
+        var newNote = ContentUtils.createDummyNote(note);
         this.data.componentProps.getSelectedProps().getSelectedProduct().notes.push(newNote);
     },
 
@@ -165,4 +168,4 @@ var ContentStore = {
 
 MicroEvent.mixin(ContentStore);
 
-//module.exports = ContentStore;
+module.exports = ContentStore;

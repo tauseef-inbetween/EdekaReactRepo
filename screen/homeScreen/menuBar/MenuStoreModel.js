@@ -20,3 +20,5 @@ var MenuStoreModel = (function () {
         }
     };
 })();
+
+module.exports = MenuStoreModel;

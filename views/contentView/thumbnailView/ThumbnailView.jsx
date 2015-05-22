@@ -5,6 +5,7 @@ var ContentBasicInfoFormView = require('../contentBasicInfoFormView/ContentBasic
 var Carousel = require('./carousel/Carousel');
 var ReactAddons = require('react/addons');
 var ReactCSSTransitionGroup = ReactAddons.addons.CSSTransitionGroup;
+var ContentAction = require('../../../screen/contentScreen/ContentAction');
 
 var ThumbnailView = React.createClass({
 
@@ -25,10 +26,10 @@ var ThumbnailView = React.createClass({
         var contentViewStyle = that.props.contentViewStyle;
         return _.map(productList, function (item, i) {
             //Binding delete button of thumb with contentId
-            var productDeleteBtnClickBind = deleteProductButtonClicked.bind(that, item.id);
+            var productDeleteBtnClickBind = ContentAction.deleteProductButtonClicked.bind(that, item.id);
 
             //Binding thumb click with contentId
-            var productThumbnailBtnClicked = productThumbClicked.bind(that, item.id, i);
+            var productThumbnailBtnClicked = ContentAction.productThumbClicked.bind(that, item.id, i);
 
             //Returns thumbnail of single content and stores in productItems variable
             return (

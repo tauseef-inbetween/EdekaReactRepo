@@ -54,3 +54,5 @@ var ContentComponentProperties = {
         return this.carouselPosition;
     }
 };
+
+module.exports = ContentComponentProperties;

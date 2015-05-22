@@ -9,6 +9,8 @@ var ContentScreenController = require('../contentScreen/ContentScreenController'
 var TargetScreenController = require('../targetScreen/TargetScreenController');
 var ReportScreenController = require('../reportScreen/ReportScreenController');
 var MenuBar = require('./menuBar/MenuBar');
+var ContentStore = require('../contentScreen/ContentStore');
+var MenuStore = require('./menuBar/MenuStore');
 
 var HomeScreenController = React.createClass({
 

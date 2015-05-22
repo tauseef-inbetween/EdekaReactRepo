@@ -1,5 +1,5 @@
-//var MicroEvent = require('../../../libraries/js/flux/MicroEvent.js');
-//var HomeScreenStore = require('../HomeScreenStore');
+var MicroEvent = require('../../../libraries/js/flux/MicroEvent.js');
+var MenuStoreModel = require('./MenuStoreModel');
 
 var MenuStore = {
     data: MenuStoreModel.getMenuItemList(),
@@ -13,10 +13,12 @@ var MenuStore = {
         for (var iMenuCount = 0; iMenuCount < menus.length; iMenuCount++) {
             menus[iMenuCount].isActive = (menus[iMenuCount].title == sMenuTitle);
         }
+
+        var HomeScreenStore = require('../HomeScreenStore');
         HomeScreenStore.loadScreen(sMenuTitle);
         this.trigger('change');
     }
 };
 
 MicroEvent.mixin(MenuStore);
-//module.exports = MenuStore;
+module.exports = MenuStore;

@@ -37,3 +37,5 @@ var ContentApplicationData = {
     }
 
 };
+
+module.exports = ContentApplicationData;

@@ -3,6 +3,7 @@ var $ = require('jquery');
 require('jquery-ui');
 var CarouselItem = require('./CarouselItem');
 var CarouselActionControl = require('./CarouselActionControl');
+var ContentAction = require('../../../../screen/contentScreen/ContentAction.js');
 
 var Carousel = React.createClass({
 
@@ -59,7 +60,7 @@ var Carousel = React.createClass({
         }
 
         //@sets: next left and previous left positions in store
-        carouselPositionChanged(this.getNextLeftPosition(), previousLeft);
+        ContentAction.carouselPositionChanged(this.getNextLeftPosition(), previousLeft);
     },
 
     rightButtonClicked: function () {
@@ -72,7 +73,7 @@ var Carousel = React.createClass({
         }
 
         //@sets: next left and previous left positions in store
-        carouselPositionChanged(this.getNextRightPosition(),previousLeft);
+        ContentAction.carouselPositionChanged(this.getNextRightPosition(),previousLeft);
     },
 
     //@handle: Mouse wheel handled

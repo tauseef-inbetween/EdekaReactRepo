@@ -3,7 +3,7 @@ var ThumbnailView = require('../thumbnailView/ThumbnailView');
 var ContentImageCarouselView = require('../contentImageCarouselView/ContentImageCarouselView');
 var ContentNoteView = require('../contentNoteView/ContentNoteView');
 var ContentTagView = require('../contentTagView/ContentTagView');
-
+var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
 
 var ContentInfoScreenView = React.createClass({
 
@@ -23,7 +23,7 @@ var ContentInfoScreenView = React.createClass({
         //#LogicFlow Check
         //@Initiate: jQuery Layout on based of mode
         if (this.props.contentViewMode == 'editMode') {
-            initialiseLayouts(this.props.selectedProps.selectedProduct.type);
+            ContentAction.initialiseLayouts(this.props.selectedProps.selectedProduct.type);
         }
     },
 

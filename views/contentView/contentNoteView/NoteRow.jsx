@@ -1,6 +1,6 @@
 var React = require('react');
 var _ = require('lodash');
-
+var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
 
 var NoteRow = React.createClass({
 
@@ -14,7 +14,7 @@ var NoteRow = React.createClass({
     //@handle: change of note content
     handleChange: function (item, DOMEvent) {
         item.value = DOMEvent.target.value || DOMEvent.target.innerText;
-        changeNoteContent(this.props.item, item);
+        ContentAction.changeNoteContent(this.props.item, item);
     },
 
     getNoteItems: function () {

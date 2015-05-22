@@ -6,6 +6,7 @@ var OverlayTrigger = require('react-bootstrap').OverlayTrigger;
 var Button = require('react-bootstrap').Button;
 var Glyphicon = require('react-bootstrap').Glyphicon;
 var Popover = require('react-bootstrap').Popover;
+var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
 
 var NoteList = React.createClass({
 
@@ -45,13 +46,13 @@ var NoteList = React.createClass({
         if (targetClass == 'textArea' || targetClass == 'selectNote' || targetClass == 'textBox' || targetClass == 'jDeletePimNotes') {
             return
         }
-        setSelectedNote(index);
+        ContentAction.setSelectedNote(index);
     },
 
     //@handle: item click on PopOver element to add note
     handleItemClick: function (item, event) {
         this.hidePopOver(event);
-        addNoteToSelectedContent(item);
+        ContentAction.addNoteToSelectedContent(item);
     },
 
     //@handle: to scroll to top of note list
@@ -100,7 +101,7 @@ var NoteList = React.createClass({
         var that = this;
       return  _.map(productNotes, function (item, i) {
           //@bind: delete button click with item
-          var deleteNote = deleteNoteFromSelectedProduct.bind(that, item);
+          var deleteNote = ContentAction.deleteNoteFromSelectedProduct.bind(that, item);
           //@bind: note click with index
           var noteClick = that.handleNoteClick.bind(that, i);
           //@decide: active note with respect to index

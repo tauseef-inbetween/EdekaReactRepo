@@ -1,6 +1,7 @@
 var React = require('react');
 var MenuItemView = require('../../../views/menuView/MenuItemView.jsx');
 var _ = require('lodash');
+var MenuAction = require('./MenuActions');
 
 var MenuBar = React.createClass({
 
@@ -39,11 +40,11 @@ var MenuBar = React.createClass({
         var menuItems = _.map(menuList, function (item, i) {
 
             //Bind title with Menu-Item click
-            var menuClick = menuItemClicked.bind(that, item.title);
+            var menuClick = MenuAction.menuItemClicked.bind(that, item.title);
 
             //Bind Create Button with Menu Title and show/hide create button based on active menu
             if (item.isActive) {
-                createButtonClick = createButtonClicked.bind(that, item.title);
+                createButtonClick = MenuAction.createButtonClicked.bind(that, item.title);
                 if (item.canCreate) {
                     createButtonVisibilityClass += " createButtonVisible";
                 } else {

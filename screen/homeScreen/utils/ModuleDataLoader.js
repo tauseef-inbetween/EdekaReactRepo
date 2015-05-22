@@ -1,3 +1,5 @@
+var ContentCallbacks = require('../../contentScreen/utils/ContentCallbacks');
+
 var ModuleDataLoader = (function () {
     return {
         loadDataFromNetwork: function (moduleName) {
@@ -5,7 +7,7 @@ var ModuleDataLoader = (function () {
                 case 'Content':
                     $http('tacks/MockDataForProducts.json')
                         .get()
-                        .then(getAllProductsCallBack)
+                        .then(ContentCallbacks.getAllProductsCallBack)
                         .catch(callback.error);
                     break;
                 default:
@@ -14,3 +16,5 @@ var ModuleDataLoader = (function () {
         }
     }
 })();
+
+module.exports = ModuleDataLoader;
