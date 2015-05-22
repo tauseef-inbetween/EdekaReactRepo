@@ -256,13 +256,12 @@
     height: 597px;
     width: 1365px;
     border: none;
-    overflow: hidden;
 }
 
 #northDOM {
     width: 100%;
     border: none;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .ui-layout-east, .ui-layout-west, .ui-layout-north, .ui-layout-center, .ui-layout-south, .ui-layout-container, .ui-layout-pane {
@@ -460,7 +459,8 @@
 }
 
 #centerDOMMainContainer {
-    overflow: hidden;
+    /*overflow: hidden;*/
+    width: 100%;
 }
 
 .productViewMode {

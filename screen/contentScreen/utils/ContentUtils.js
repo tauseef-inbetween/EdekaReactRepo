@@ -1,7 +1,5 @@
 var createDummyProduct = function () {
-    var totalProducts = ContentStore.getData().appData.getAllProducts();
-    var length = totalProducts.length;
-    var id = totalProducts[length - 1].id + 100;
+    var id = getUniqueId();
     return {
         "notes": [
             {
@@ -30,9 +28,9 @@ var createDummyProduct = function () {
             }
         ],
         "label": "Untitled_" + id,
-        "image": ["images/pouch.png"],
+        "image": ["views/contentView/thumbnailView/images/pouch.png"],
         "multimedia": [{
-            "image": "images/pouch.png",
+            "image": "views/contentView/thumbnailView/images/pouch.png",
             "tags": {
                 "Brand": [],
                 "Market Cluster": [],
@@ -102,6 +100,17 @@ var createDummyProduct = function () {
             "Quality": {}
         }
     }
+};
+
+var getUniqueId = function () {
+    var currentDate = new Date();
+    return currentDate.getFullYear() + ""
+        + currentDate.getMonth() + ""
+        + currentDate.getDay() + ""
+        + currentDate.getHours() + ""
+        + currentDate.getMinutes() + ""
+        + currentDate.getSeconds() + ""
+        + currentDate.getMilliseconds();
 };
 
 var createDummyNote = function (note) {
