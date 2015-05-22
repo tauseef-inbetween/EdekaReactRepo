@@ -153,3 +153,5 @@ MockData.productClasses = [
         ]
     }
 ];
+
+module.exports = MockData;

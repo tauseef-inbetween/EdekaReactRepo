@@ -77,3 +77,5 @@ var callback = {
 };
 // End B
 
+module.exports.$http = $http;
+module.exports.callback = callback;

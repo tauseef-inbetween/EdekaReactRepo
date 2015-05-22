@@ -1,3 +1,5 @@
+var MockData = require('../../tacks/MockDataForContent');
+
 var ContentApplicationData = {
     allProducts: [],
     productTypes: MockData.productTypes,

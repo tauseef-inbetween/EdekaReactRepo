@@ -1,4 +1,6 @@
 var ContentCallbacks = require('../../contentScreen/utils/ContentCallbacks');
+var $http = require('../../../libraries/js/promise/promise.js').$http;
+var callback = require('../../../libraries/js/promise/promise.js').callback;
 
 var ModuleDataLoader = (function () {
     return {
