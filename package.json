@@ -21,10 +21,6 @@
     "jsx-loader": "*"
   },
 
-  "scripts": {
-    "test": "jest"
-  },
-
   "jest": {
     "scriptPreprocessor": "preprocessor.js",
     "unmockedModulePathPatterns": ["react"]
