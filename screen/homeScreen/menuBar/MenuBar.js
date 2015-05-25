@@ -53,7 +53,7 @@ var MenuBar = React.createClass({
             }
             //return a menu item [view] to {menuItems} variable
             return (
-                <MenuItemView key={i} menuItem={item} onClick={menuClick}/>
+                <MenuItemView key={i} ref={"item" + i} menuItem={item} onClick={menuClick}/>
             );
         });
 
