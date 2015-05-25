@@ -37,13 +37,14 @@ describe('Menu Bar', function () {
         var menuBar = TestUtils.renderIntoDocument(
             <MenuBar store={MenuStore} />
         );
-        console.log(menuBar.getDOMNode());
 
-        /*var menuItem = menuBar.refs.item0.getDOMNode();
+        //console.log(menuBar);
+        //console.log(menuBar.refs);
 
-        TestUtils.Simulate.click(menuItem);
+        var singleMenuItem = menuBar.refs.item0;
 
-        expect(menuItem.props.menuItem.isActive).toBe(true);*/
+        TestUtils.Simulate.click(singleMenuItem.getDOMNode());
+        expect(singleMenuItem.props.menuItem.isActive).toBe(true);
     });
 
 });

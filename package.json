@@ -18,11 +18,8 @@
     "gulp-webpack": "*",
     "gulp": "*",
     "gulp-uglify": "*",
-    "jsx-loader": "*"
-  },
-
-  "jest": {
-    "scriptPreprocessor": "preprocessor.js",
-    "unmockedModulePathPatterns": ["react"]
+    "jsx-loader": "*",
+    "gulp-jest": "*"
   }
+
 }

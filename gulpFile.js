@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     sourceFile = './ApplicationStart.js',
     destFolder = './',
     destFile = './gulpApplication.js',
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    jest = require('gulp-jest');
 
 
 //To minify remove comment of uglify() and commnet [devtool & debig mode]
@@ -19,7 +20,7 @@ gulp.task('webpack', function () {
                 },
                 module: {
                     loaders: [
-                        { test: /\.js$/, loader: 'jsx-loader?harmony' } // loaders can take parameters as a querystring
+                        {test: /\.js$/, loader: 'jsx-loader?harmony'} // loaders can take parameters as a querystring
                     ]
                 },
                 resolve: {
@@ -31,8 +32,23 @@ gulp.task('webpack', function () {
         .pipe(gulp.dest(destFolder));
 });
 
-gulp.task('watch', function () {
-    gulp.watch(['./*.js,./*.jsx', '!./gulpApplication.jsx'], ['webpack']);
+
+gulp.task('jest', function () {
+    return gulp.src('__tests__').pipe(jest({
+        scriptPreprocessor: "../preprocessor",
+        unmockedModulePathPatterns: [
+            "react"
+        ]
+    }));
 });
 
-gulp.task('default', ['webpack', 'watch']);
+
+gulp.task('watchComp', function () {
+    gulp.watch(["./*.js", "./screen/*.js", "./views/*.js", "!./gulpApplication.js", "!./gulpApplication.js.map"], ['webpack']);
+});
+
+gulp.task('watchTest', function () {
+    gulp.watch(["./__tests__/*.js"], ['jest']);
+});
+
+gulp.task('default', ['jest', 'webpack', 'watchTest', 'watchComp']);
