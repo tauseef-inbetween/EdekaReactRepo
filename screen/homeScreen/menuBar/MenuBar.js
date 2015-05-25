@@ -1,5 +1,5 @@
 var React = require('react');
-var MenuItemView = require('../../../views/menuView/MenuItemView.jsx');
+var MenuItemView = require('../../../views/menuView/MenuItemView.js');
 var _ = require('lodash');
 var MenuAction = require('./MenuActions');
 

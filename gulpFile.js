@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     webpack = require('gulp-webpack'),
-    sourceFile = './ApplicationStart.jsx',
+    sourceFile = './ApplicationStart.js',
     destFolder = './',
     destFile = './gulpApplication.js',
     uglify = require('gulp-uglify');
@@ -19,7 +19,7 @@ gulp.task('webpack', function () {
                 },
                 module: {
                     loaders: [
-                        { test: /\.jsx$/, loader: 'jsx-loader?harmony' } // loaders can take parameters as a querystring
+                        { test: /\.js$/, loader: 'jsx-loader?harmony' } // loaders can take parameters as a querystring
                     ]
                 },
                 resolve: {

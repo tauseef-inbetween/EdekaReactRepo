@@ -1,6 +1,6 @@
 var React = require('react');
-var ContentActionBarView = require('../../views/contentView/contentActionBarView/ContentActionBarView.jsx');
-var ContentInfoScreenView = require('../../views/contentView/contentInfoScreenView/ContentInfoScreenView.jsx');
+var ContentActionBarView = require('../../views/contentView/contentActionBarView/ContentActionBarView.js');
+var ContentInfoScreenView = require('../../views/contentView/contentInfoScreenView/ContentInfoScreenView.js');
 
 var ContentScreenController = React.createClass({
 
