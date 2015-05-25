@@ -9,13 +9,24 @@
     "react-addons": "*",
     "react-bootstrap": "*"
   },
+
   "devDependencies": {
     "jest-cli": "*",
     "react-jest-util": "*",
+    "react": "*",
     "react-tools": "*",
     "gulp-webpack": "*",
     "gulp": "*",
     "gulp-uglify": "*",
     "jsx-loader": "*"
+  },
+
+  "scripts": {
+    "test": "jest"
+  },
+
+  "jest": {
+    "scriptPreprocessor": "preprocessor.js",
+    "unmockedModulePathPatterns": ["react"]
   }
 }
