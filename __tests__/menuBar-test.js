@@ -37,14 +37,13 @@ describe('Menu Bar', function () {
         var menuBar = TestUtils.renderIntoDocument(
             <MenuBar store={MenuStore} />
         );
+        console.log(menuBar.getDOMNode());
 
-        var elem = React.createElement('div');
-        expect(TestUtils.isElement (elem)).toBe(true);
+        /*var menuItem = menuBar.refs.item0.getDOMNode();
 
-        expect(TestUtils.isElement (menuBar)).not.toBe(true);
-        expect(TestUtils.isDOMComponent (menuBar)).not.toBe(true);
-        expect(TestUtils.isCompositeComponent  (menuBar)).toBe(true);
+        TestUtils.Simulate.click(menuItem);
 
+        expect(menuItem.props.menuItem.isActive).toBe(true);*/
     });
 
 });

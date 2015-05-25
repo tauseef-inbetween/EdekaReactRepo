@@ -109,7 +109,7 @@ var Carousel = React.createClass({
     },
 
     //@check: to jump on selected product or slide to next left or right
-    componentDidMount () {
+    componentDidMount: function () {
         if(this.props.carouselPosition.leftPosition == this.props.carouselPosition.previousLeftPosition) {
             this.jumpToSelectedProduct(this.props.selectedIndex);
         } else {
