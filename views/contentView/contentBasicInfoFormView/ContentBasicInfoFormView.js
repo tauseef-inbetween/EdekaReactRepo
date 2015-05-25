@@ -16,7 +16,7 @@ var ContentBasicInfoFormView = React.createClass({
 
     //@handle: workflow change [React UI Component used for workflow]
     handleWorkflowChange: function (index) {
-        changeSelectedProductProperty('workflowStatus', this.props.productWorkFlowStatus[index]);
+        ContentAction.changeSelectedProductProperty('workflowStatus', this.props.productWorkFlowStatus[index]);
     },
 
     //@handle: data change for content properties
