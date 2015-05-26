@@ -2,6 +2,7 @@ var MicroEvent = require('../../libraries/js/flux/MicroEvent.js');
 var ContentApplicationData = require('./ContentApplicationData');
 var ContentComponentProperties = require('./ContentComponentProperties');
 var ContentUtils = require('./utils/ContentUtils');
+var _ = require('lodash');
 
 var ContentStore = {
 

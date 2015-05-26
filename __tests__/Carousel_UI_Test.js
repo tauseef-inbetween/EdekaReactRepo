@@ -12,7 +12,7 @@ var ContentThumbnail = require('../views/contentView/thumbnailView/ContentThumbn
 var Carousel = require('../views/contentView/thumbnailView/carousel/Carousel');
 var CarouselActionControl = require('../views/contentView/thumbnailView/carousel/CarouselActionControl');
 var carouselItem = require('../views/contentView/thumbnailView/carousel/carouselItem');
-var _ = require('underscore');
+var _ = require('lodash');
 var $ = require('jquery');
 var Component;
 var productItems;

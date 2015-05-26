@@ -41,12 +41,14 @@ describe("Content Store", function () {
     );
   });
 
+
   it("has '19' Products",function(){
     expect(Component.state.appData.allProducts.length).toEqual(19);
   });
 });
 
-describe("When we click on next button 5 times then",function(){
+
+/*describe("When we click on next button 5 times then",function(){
   beforeEach(function() {
     Component = TestUtils.renderIntoDocument(
         <ContentScreenController key="5" className='screen showScreen' store={ContentStore}/>
@@ -54,6 +56,7 @@ describe("When we click on next button 5 times then",function(){
   });
   it("will call 'carouselPositionChanged' methods",function(){
     //ReactJestUtil.log(Component.refs.contentInfoScrnView.refs.northDOM.refs.owlCarousel.refs.controller,1);
+
     var nextBtn = Component.refs.contentInfoScrnView.refs.northDOM.refs.owlCarousel.refs.controller.refs.nextBtn;
     expect(ContentAction.carouselPositionChanged.mock.calls.length).toEqual(0);
     TestUtils.Simulate.click(nextBtn.getDOMNode());
@@ -65,9 +68,9 @@ describe("When we click on next button 5 times then",function(){
     expect(ContentAction.carouselPositionChanged).toBeCalled();
     ContentAction.carouselPositionChanged.mockClear();
   });
-});
+});*/
 
-
+/*
 describe("1. When we click on previous button 5 times then",function(){
   beforeEach(function() {
     products = JSON.stringify(MockDataForProducts);
@@ -106,3 +109,4 @@ describe("Simulate Wheel(i.e. scroll)", function () {
     expect(Component.refs.contentInfoScrnView.refs.northDOM.refs.owlCarousel.wheeling).toBeCalled();
   });
 });
+*/
