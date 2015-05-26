@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     webpack = require('gulp-webpack'),
     sourceFile = './ApplicationStart.js',
-    destFolder = './',
+    destFolder = './generatedScript',
     destFile = './gulpApplication.js',
     uglify = require('gulp-uglify'),
     jest = require('gulp-jest');
@@ -35,7 +35,7 @@ gulp.task('webpack', function () {
 
 gulp.task('jest', function () {
     return gulp.src('__tests__').pipe(jest({
-        scriptPreprocessor: "../preprocessor",
+        scriptPreprocessor: "./libraries/buildDependency/preprocessor",
         unmockedModulePathPatterns: [
             "react"
         ]

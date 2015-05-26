@@ -4,11 +4,12 @@
   "main": "application.js",
   "dependencies": {
     "jquery": "*",
+    "jquery-layout": "^1.0.0",
     "jquery-ui": "*",
     "lodash": "*",
+    "promise": "*",
     "react-addons": "*",
-    "react-bootstrap": "*",
-    "promise": "*"
+    "react-bootstrap": "*"
   },
   "devDependencies": {
     "jest-cli": "*",
@@ -21,9 +22,10 @@
     "jsx-loader": "*",
     "gulp-jest": "*"
   },
-
   "jest": {
-    "scriptPreprocessor": "preprocessor.js",
-    "unmockedModulePathPatterns": ["react"]
+    "scriptPreprocessor": "./libraries/buildDependency/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "react"
+    ]
   }
 }
