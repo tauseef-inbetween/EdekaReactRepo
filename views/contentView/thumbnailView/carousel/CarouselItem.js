@@ -1,5 +1,5 @@
 var React = require('react');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var CarouselItem = React.createClass({
 

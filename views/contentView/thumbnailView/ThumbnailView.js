@@ -1,5 +1,5 @@
 var React = require('react');
-var _ = require('underscore');
+var _ = require('lodash');
 var ContentThumbnail = require('./ContentThumbnail');
 var ContentBasicInfoFormView = require('../contentBasicInfoFormView/ContentBasicInfoFormView');
 var Carousel = require('./carousel/Carousel');
