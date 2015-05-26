@@ -1,3 +1,5 @@
+var Promise = require('promise');
+
 // A-> $http function is implemented in order to follow the standard Adapter pattern
 function $http(url){
 
