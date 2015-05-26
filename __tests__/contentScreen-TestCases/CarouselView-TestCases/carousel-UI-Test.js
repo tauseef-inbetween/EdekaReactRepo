@@ -1,17 +1,17 @@
 jest.dontMock('jquery').dontMock('jquery-ui').dontMock('lodash')
-    .dontMock('../../views/contentView/thumbnailView/carousel/CarouselActionControl')
-    .dontMock('../../views/contentView/thumbnailView/ContentThumbnail')
-    .dontMock('../../views/contentView/thumbnailView/carousel/CarouselItem')
-    .dontMock('../../libraries/js/flux/MicroEvent')
-    .dontMock('../../views/contentView/thumbnailView/carousel/Carousel');
+    .dontMock('../../../views/contentView/thumbnailView/carousel/CarouselActionControl')
+    .dontMock('../../../views/contentView/thumbnailView/ContentThumbnail')
+    .dontMock('../../../views/contentView/thumbnailView/carousel/CarouselItem')
+    .dontMock('../../../libraries/js/flux/MicroEvent')
+    .dontMock('../../../views/contentView/thumbnailView/carousel/Carousel');
 
 var React = require('react/addons');
 var ReactJestUtil = require('react-jest-util');
 var TestUtils = React.addons.TestUtils;
-var ContentThumbnail = require('../../views/contentView/thumbnailView/ContentThumbnail');
-var Carousel = require('../../views/contentView/thumbnailView/carousel/Carousel');
-var CarouselActionControl = require('../../views/contentView/thumbnailView/carousel/CarouselActionControl');
-var carouselItem = require('../../views/contentView/thumbnailView/carousel/carouselItem');
+var ContentThumbnail = require('../../../views/contentView/thumbnailView/ContentThumbnail');
+var Carousel = require('../../../views/contentView/thumbnailView/carousel/Carousel');
+var CarouselActionControl = require('../../../views/contentView/thumbnailView/carousel/CarouselActionControl');
+var carouselItem = require('../../../views/contentView/thumbnailView/carousel/carouselItem');
 var _ = require('lodash');
 var $ = require('jquery');
 var Component;
