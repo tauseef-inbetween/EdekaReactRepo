@@ -4,6 +4,7 @@ require('jquery-ui');
 var CarouselItem = require('./CarouselItem');
 var CarouselActionControl = require('./CarouselActionControl');
 var ContentAction = require('../../../../screen/contentScreen/ContentAction.js');
+var ReactJestUtil = require('react-jest-util');
 
 var Carousel = React.createClass({
 
@@ -130,7 +131,6 @@ var Carousel = React.createClass({
     //@reconsider: Carousel Item inside wrapper because of css positioning [absolute, relative]
     //@binding: of event handlers on wheeling and left/right click
     render: function () {
-
         return (
             <div className="carouselContainer">
                 <div className="carouselItemWrapper" key="itemWrapper">
@@ -138,7 +138,7 @@ var Carousel = React.createClass({
                                    selectedIndex={this.props.selectedIndex} key="items" ref="items"/>
                 </div>
                 <CarouselActionControl key="controls" leftBtnClick={this.leftButtonClicked}
-                                    rightBtnClick={this.rightButtonClicked}/>
+                    ref="controller" rightBtnClick={this.rightButtonClicked}/>
             </div>
         );
     }

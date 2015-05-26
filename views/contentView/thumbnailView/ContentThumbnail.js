@@ -38,8 +38,8 @@ var ContentThumbnail = React.createClass({
 
         //@return: actual component content
         return (
-            <div className="PIMThumbContainer" title={productTitle} key={product.id} data-type={product.type}
-                 data-workflow-status={product.workflowStatus}>
+            <div className="PIMThumbContainer" title={productTitle} data-product-id={product.id} key={product.id}
+                 data-type={product.type} data-workflow-status={product.workflowStatus}>
                 <div className="PIMProductThumbDelete" title="Delete" onClick={this.props.onDeleteClick}></div>
                 <div className={viewTypeClass} onClick={this.props.onProductClick}>
                     {imageDiv}

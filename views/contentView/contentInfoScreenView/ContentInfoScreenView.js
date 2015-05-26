@@ -23,7 +23,10 @@ var ContentInfoScreenView = React.createClass({
         //#LogicFlow Check
         //@Initiate: jQuery Layout on based of mode
         if (this.props.contentViewMode == 'editMode') {
-            ContentAction.initialiseLayouts(this.props.selectedProps.selectedProduct.type);
+            //ContentAction.initialiseLayouts(this.props.selectedProps.selectedProduct.type);
+          var selectedProduct = this.props.selectedProps.selectedProduct;
+          var type = selectedProduct != null? selectedProduct.type : '';
+          ContentAction.initialiseLayouts(type);
         }
     },
 
