@@ -1,5 +1,5 @@
 var React = require('react');
-var _ = require('lodash');
+var _ = require('underscore');
 var ContentThumbnail = require('./ContentThumbnail');
 var ContentBasicInfoFormView = require('../contentBasicInfoFormView/ContentBasicInfoFormView');
 var Carousel = require('./carousel/Carousel');
@@ -60,13 +60,13 @@ var ThumbnailView = React.createClass({
 
         //@decide: to show thumbnails in carousel or simple view mode
         var productItemView = (this.props.contentViewMode == 'editMode') ?
-            <Carousel items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel"
+            <Carousel items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel" ref="owlCarousel"
                       carouselPosition={carouselPosition}/> : (
             <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
 
         return (
-            <div id="northDOM" className="ui-layout-north ">
-                <div id="centerOwlContainer" className={productWrapperClass}>
+            <div id="northDOM" className="ui-layout-north">
+                <div id="centerOwlContainer" className={productWrapperClass} ref="owlContainer">
                     {productItemView}
                 </div>
                 <div id="basicProductInfoContainer" className={editModeDisabledClass}>

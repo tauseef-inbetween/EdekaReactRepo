@@ -58,7 +58,7 @@ var ContentScreenController = React.createClass({
                 <ContentActionBarView contentViewStyle={contentViewStyle}
                                   contentViewMode={contentViewMode}/>
 
-                <ContentInfoScreenView productList={productList}
+                <ContentInfoScreenView ref='contentInfoScrnView' productList={productList}
                                    selectedProps={selectedProps}
                                    productWorkFlowStatus={productWorkFlowStatus}
                                    productTypes={productTypes}

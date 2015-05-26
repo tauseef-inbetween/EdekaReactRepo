@@ -11,8 +11,8 @@ var CarouselActionControl = React.createClass({
     render: function () {
         return (
             <div className="carouselController">
-                <span className="previousController" onClick={this.props.leftBtnClick}></span>
-                <span className="nextController" onClick={this.props.rightBtnClick}></span>
+                <span className="previousController" ref="previousBtn" onClick={this.props.leftBtnClick}></span>
+                <span className="nextController" ref="nextBtn" onClick={this.props.rightBtnClick}></span>
             </div>
         );
     }
