@@ -35,7 +35,8 @@ var ContentNoteView = React.createClass({
                 <NoteList
                     productClasses={productClasses}
                     selectedProduct={selectedProduct}
-                    selectedNote={selectedNoteIndex}/>
+                    selectedNote={selectedNoteIndex}
+                    ref="noteList"/>
 
             </div>
         );

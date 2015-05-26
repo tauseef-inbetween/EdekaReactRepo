@@ -93,7 +93,7 @@ var NoteList = React.createClass({
         return _.map(groups, function (item, i) {
             //@bind: popover item click with item data
             var addNote = that.handleItemClick.bind(that, item);
-            return (<div className="productClassGroup" key={"item" + i} onClick={addNote}>{item.label}</div>);
+            return (<div className="productClassGroup" key={"item" + i} ref={"popup" + i} onClick={addNote}>{item.label}</div>);
         });
     },
 
@@ -110,7 +110,7 @@ var NoteList = React.createClass({
           return (<div className={noteClass} key={"item" + i} onClick={noteClick}>
               <button className="jDeletePimNotes" onClick={deleteNote}></button>
               <table className="table table-bordered table-condensed" style={{margin: 0 + " auto"}}>
-                  <NoteRow item={item} selectedProductClass={that.props.selectedProduct.class}
+                  <NoteRow item={item} selectedProductClass={that.props.selectedProduct.class} ref={"item" + i}
                            productClasses={that.props.productClasses}/>
               </table>
           </div>);

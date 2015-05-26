@@ -1,5 +1,5 @@
 jest.dontMock('jquery').dontMock('jquery-ui')
-    .dontMock('../../libraries/js/jquery/jquery.layout.min.js').dontMock('lodash')
+    .dontMock('lodash')
     .dontMock('../../screen/homeScreen/menuBar/MenuBar')
     .dontMock('../../screen/homeScreen/menuBar/MenuStore')
     .dontMock('../../screen/homeScreen/menuBar/MenuActions')
@@ -39,7 +39,7 @@ describe('Menu Bar', function () {
             <MenuBar store={MenuStore} />
         );
 
-        var singleMenuItem = menuBar.refs.item0;
+        var singleMenuItem = menuBar.refs.item5;
 
         TestUtils.Simulate.click(singleMenuItem.getDOMNode());
         expect(singleMenuItem.props.menuItem.isActive).toBe(true);

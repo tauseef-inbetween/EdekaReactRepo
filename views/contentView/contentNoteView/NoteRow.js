@@ -34,6 +34,7 @@ var NoteRow = React.createClass({
                                           onChange={changeContent}
                                           cols="25"
                                           value={item.value}
+                                          ref={"item" + i}
                                           className="textArea"/>
                     );
 
@@ -43,7 +44,7 @@ var NoteRow = React.createClass({
                     var selectedNoteFromMock = _.result(_.find(selectedClassGroups, 'label', that.props.item.type), 'contents');
                     var defaultValuesOfMock = _.result(_.find(selectedNoteFromMock, 'label', item.label), 'defaultValues');
                     content = (
-                        <select className="selectNote" onChange={changeContent}
+                        <select className="selectNote" onChange={changeContent} ref={"item" + i}
                                 value={item.value.length > 0 ? item.value : defaultValuesOfMock[0]}>
                             {_.map(defaultValuesOfMock, function (value, i) {
                                 return (<option key={"value" + i}>{value}</option>)
@@ -52,7 +53,7 @@ var NoteRow = React.createClass({
                     );
 
                 } else {
-                    content = (<input type="text"
+                    content = (<input type="text" ref={"item" + i}
                                       onChange={changeContent}
                                       value={item.value}
                                       className="textBox"/>);

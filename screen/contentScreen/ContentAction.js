@@ -1,6 +1,10 @@
 var ContentStore = require('./ContentStore');
 var ContentUtils = require('./utils/ContentUtils');
 
+//TODO: comment jquery require line while webpacking because of dependency issue
+
+var $ = require('jquery');
+
 var ContentAction = (function () {
     var setDefaultValueForCarousel = function () {
         ContentStore.setCarouselPreviousLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
