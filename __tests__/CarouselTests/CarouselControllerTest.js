@@ -1,33 +1,33 @@
 //ContentScreenController
-jest.dontMock('jquery')
-    .dontMock('../screen/contentScreen/ContentStore')
-    .dontMock('../screen/contentScreen/ContentApplicationData')
-    .dontMock('../screen/contentScreen/ContentComponentProperties')
-    .dontMock('../views/contentView/thumbnailView/carousel/Carousel')
-    .dontMock('../screen/contentScreen/ContentScreenController')
-    .dontMock('../libraries/js/flux/MicroEvent')
-    .dontMock('../views/contentView/contentInfoScreenView/ContentInfoScreenView')
-    .dontMock('../views/contentView/thumbnailView/ThumbnailView')
-    .dontMock('../screen/homeScreen/menuBar/MenuActions')
-    .dontMock('../screen/contentScreen/utils/ContentUtils')
-    .dontMock('../screen/homeScreen/utils/ModuleDataLoader')
-    .dontMock('../screen/contentScreen/utils/ContentCallbacks')
-    .dontMock('../views/contentView/thumbnailView/carousel/CarouselActionControl')
-    .dontMock('../views/contentView/thumbnailView/carousel/CarouselItem')
-    .dontMock('../tacks/MockDataForProducts.json');
+jest.dontMock('jquery').dontMock('jquery-ui').dontMock('lodash')
+    .dontMock('../../screen/contentScreen/ContentStore')
+    .dontMock('../../screen/contentScreen/ContentApplicationData')
+    .dontMock('../../screen/contentScreen/ContentComponentProperties')
+    .dontMock('../../views/contentView/thumbnailView/carousel/Carousel')
+    .dontMock('../../screen/contentScreen/ContentScreenController')
+    .dontMock('../../libraries/js/flux/MicroEvent')
+    .dontMock('../../views/contentView/contentInfoScreenView/ContentInfoScreenView')
+    .dontMock('../../views/contentView/thumbnailView/ThumbnailView')
+    .dontMock('../../screen/homeScreen/menuBar/MenuActions')
+    .dontMock('../../screen/contentScreen/utils/ContentUtils')
+    .dontMock('../../screen/homeScreen/utils/ModuleDataLoader')
+    .dontMock('../../screen/contentScreen/utils/ContentCallbacks')
+    .dontMock('../../views/contentView/thumbnailView/carousel/CarouselActionControl')
+    .dontMock('../../views/contentView/thumbnailView/carousel/CarouselItem')
+    .dontMock('../../tacks/MockDataForProducts.json');
 
 var React = require('react/addons');
 var ReactJestUtil = require('react-jest-util');
 var TestUtils = React.addons.TestUtils;
 var $ = require('jquery');
-var ContentAction = require('../screen/contentScreen/ContentAction');
-var MenuAction = require('../screen/homeScreen/menuBar/MenuActions');
-var loadDataFromNetwork = require('../screen/homeScreen/utils/ModuleDataLoader');
-var ContentScreenController = require('../screen/contentScreen/ContentScreenController');
-var ContentStore = require('../screen/contentScreen/ContentStore');
-var ContentCallbacks = require('../screen/contentScreen/utils/ContentCallbacks');
-var MockDataForProducts = require('../tacks/MockDataForProducts.json');
-var ContentComponentProperties = require('../screen/contentScreen/ContentComponentProperties');
+var ContentAction = require('../../screen/contentScreen/ContentAction');
+var MenuAction = require('../../screen/homeScreen/menuBar/MenuActions');
+var loadDataFromNetwork = require('../../screen/homeScreen/utils/ModuleDataLoader');
+var ContentScreenController = require('../../screen/contentScreen/ContentScreenController');
+var ContentStore = require('../../screen/contentScreen/ContentStore');
+var ContentCallbacks = require('../../screen/contentScreen/utils/ContentCallbacks');
+var MockDataForProducts = require('../../tacks/MockDataForProducts.json');
+var ContentComponentProperties = require('../../screen/contentScreen/ContentComponentProperties');
 var Component;
 var products;
 
@@ -48,7 +48,7 @@ describe("Content Store", function () {
 });
 
 
-/*describe("When we click on next button 5 times then",function(){
+describe("When we click on next button 5 times then",function(){
   beforeEach(function() {
     Component = TestUtils.renderIntoDocument(
         <ContentScreenController key="5" className='screen showScreen' store={ContentStore}/>
@@ -68,9 +68,9 @@ describe("Content Store", function () {
     expect(ContentAction.carouselPositionChanged).toBeCalled();
     ContentAction.carouselPositionChanged.mockClear();
   });
-});*/
+});
 
-/*
+
 describe("1. When we click on previous button 5 times then",function(){
   beforeEach(function() {
     products = JSON.stringify(MockDataForProducts);
@@ -109,4 +109,4 @@ describe("Simulate Wheel(i.e. scroll)", function () {
     expect(Component.refs.contentInfoScrnView.refs.northDOM.refs.owlCarousel.wheeling).toBeCalled();
   });
 });
-*/
+
