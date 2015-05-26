@@ -33,15 +33,11 @@ describe('Menu Bar', function () {
     });
 
     it('should allow to click on Menu Item', function () {
-
         var menuBar = TestUtils.renderIntoDocument(
             <MenuBar store={MenuStore} />
         );
 
-        //console.log(menuBar);
-        //console.log(menuBar.refs);
-
-        var singleMenuItem = menuBar.refs.item0;
+        var singleMenuItem = menuBar.refs.item5;
 
         TestUtils.Simulate.click(singleMenuItem.getDOMNode());
         expect(singleMenuItem.props.menuItem.isActive).toBe(true);

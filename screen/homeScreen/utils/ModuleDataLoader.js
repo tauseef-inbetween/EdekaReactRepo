@@ -7,9 +7,9 @@ var ModuleDataLoader = (function () {
         loadDataFromNetwork: function (moduleName) {
             switch(moduleName) {
                 case 'Content':
-                    $http('tacks/MockDataForProducts.json')
+                    $http('http://localhost:63342/EdekaReactRepo/tacks/MockDataForProducts.json')
                         .get()
-                        .then(ContentCallbacks.getAllProductsCallBack)
+                        .then(ContentCallbacks.getAllProductsCallBack, callback.error)
                         .catch(callback.error);
                     break;
                 default:

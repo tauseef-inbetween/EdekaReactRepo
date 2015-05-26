@@ -44,7 +44,7 @@ gulp.task('jest', function () {
 
 
 gulp.task('watchComp', function () {
-    gulp.watch(["./*.js", "./screen/*.js", "./views/*.js", "!./gulpApplication.js", "!./gulpApplication.js.map"], ['webpack']);
+    gulp.watch(["./**/*.js", "!./gulpApplication.*","!./__tests__"], ['webpack']);
 });
 
 gulp.task('watchTest', function () {

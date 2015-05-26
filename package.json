@@ -7,7 +7,8 @@
     "jquery-ui": "*",
     "lodash": "*",
     "react-addons": "*",
-    "react-bootstrap": "*"
+    "react-bootstrap": "*",
+    "promise": "*"
   },
 
   "devDependencies": {
