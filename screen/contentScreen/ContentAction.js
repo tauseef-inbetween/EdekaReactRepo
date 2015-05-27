@@ -1,8 +1,8 @@
 var ContentStore = require('./ContentStore');
 var ContentUtils = require('./utils/ContentUtils');
 var alertify = require('../../libraries/js/alertify/alertify');
-require('../../libraries/js/jquery/jquery.layout.js');
 var $ = require('jquery');
+require('../../libraries/js/jquery/jquery.layout.js');
 
 var ContentAction = (function () {
     var setDefaultValueForCarousel = function () {

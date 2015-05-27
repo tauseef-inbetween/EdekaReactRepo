@@ -97,7 +97,7 @@ var ContentBasicInfoFormView = React.createClass({
                     <div className="pimScreenFormSectionAttribute">Name* :</div>
                     <div className="pimScreenFormSectionInputWrapper">
                         <input id="pimScreenProductName" className="pimScreenWizardFormInput" type="text"
-                               name="name" required=""
+                               name="name" required="" ref="productName"
                                value={selectedProduct.label}
                                tabIndex="-1"
                                onChange={this.handleChange}/>
@@ -107,7 +107,7 @@ var ContentBasicInfoFormView = React.createClass({
                 <div className="pimScreenFormSection">
                     <div className="pimScreenFormSectionAttribute">Type* :</div>
                     <div className="pimScreenFormSectionInputWrapper">
-                        <select id="pimScreenType"
+                        <select id="pimScreenType" ref="productType"
                                 className="pimScreenWizardFormInput pimScreenWizardInput"
                                 value={selectedProduct.type}
                                 tabIndex="-1"
