@@ -9,7 +9,7 @@ var ContentActionBarView = React.createClass({
         contentViewMode: React.PropTypes.oneOf(['editMode', 'viewMode'])
     },
 
-    eventLists: {
+    eventList: {
         view_change_event: "Event to change the view style",
         save_product_event: "Save Button clicked",
         back_view_mode_event: "Back Button clicked to go to Basic View"
