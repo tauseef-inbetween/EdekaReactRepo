@@ -20,7 +20,9 @@
     "gulp": "*",
     "gulp-uglify": "*",
     "jsx-loader": "*",
-    "gulp-jest": "*"
+    "gulp-jest": "*",
+    "style-loader": "*",
+    "css-loader": "*"
   },
   "jest": {
     "scriptPreprocessor": "./libraries/buildDependency/preprocessor.js",

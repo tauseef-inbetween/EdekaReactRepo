@@ -137,7 +137,7 @@
       }
     ],
     "label": "Untitled_18",
-    "image": ["views/contentView/thumbnailView/images/delete-20.png", "views/contentView/thumbnailView/images/pouch.png", "views/contentView/thumbnailView/images/LeftCircularSmall.png", "views/contentView/thumbnailView/images/RightCircularSmall.png", "views/contentView/thumbnailView/images/psNext.png", "views/contentView/thumbnailView/images/psPrev.png"],
+    "image": ["views/contentView/thumbnailView/images/delete-20.png", "views/contentView/thumbnailView/images/pouch.png", "views/contentView/thumbnailView/images/psNext.png", "views/contentView/thumbnailView/images/psPrev.png"],
     "multimedia": [
       {
         "image": "views/contentView/thumbnailView/images/pouch.png",

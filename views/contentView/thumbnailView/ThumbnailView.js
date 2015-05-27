@@ -2,7 +2,7 @@ var React = require('react');
 var _ = require('lodash');
 var ContentThumbnail = require('./ContentThumbnail');
 var ContentBasicInfoFormView = require('../contentBasicInfoFormView/ContentBasicInfoFormView');
-var Carousel = require('./carousel/Carousel');
+var CarouselView = require('../carouselView/CarouselView');
 var ReactAddons = require('react/addons');
 var ReactCSSTransitionGroup = ReactAddons.addons.CSSTransitionGroup;
 var ContentAction = require('../../../screen/contentScreen/ContentAction');
@@ -60,7 +60,7 @@ var ThumbnailView = React.createClass({
 
         //@decide: to show thumbnails in carousel or simple view mode
         var productItemView = (this.props.contentViewMode == 'editMode') ?
-            <Carousel items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel" ref="owlCarousel"
+            <CarouselView items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel" ref="owlCarousel"
                       carouselPosition={carouselPosition}/> : (
             <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
 

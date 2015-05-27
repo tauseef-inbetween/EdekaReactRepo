@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var React = require('react');
-var Sly = require('./Sly');
+var SlyView = require('../slyView/SlyView');
 
 var ContentImageCarouselView = React.createClass({
 
@@ -35,7 +35,7 @@ var ContentImageCarouselView = React.createClass({
         //@return: actual component content
         return (
             <div id="centerDOM" className={"ui-layout-center " + editModeDisabledClass}>
-                <Sly selectedProduct={this.props.selectedProduct} items={items}/>
+                <SlyView selectedProduct={this.props.selectedProduct} items={items}/>
             </div>
         );
     }

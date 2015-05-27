@@ -4,7 +4,9 @@ var alertify = require('../../libraries/js/alertify/alertify');
 var $ = require('jquery');
 require('../../libraries/js/jquery/jquery.layout.js');
 
+var EventBus = require('../../libraries/js/flux/EventDispatcher.js');
 var ContentAction = (function () {
+
     var setDefaultValueForCarousel = function () {
         ContentStore.setCarouselPreviousLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
         ContentStore.setCarouselLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
@@ -20,7 +22,8 @@ var ContentAction = (function () {
             });
         },
 
-        handleViewButtonClicked: function (viewStyleButtonEvent) {
+        handleViewButtonClicked: function (custom_event, viewStyleButtonEvent) {
+            console.log(viewStyleButtonEvent);
             viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentStore.setContentViewStyleWithTrigger('thumbnail') : ContentStore.setContentViewStyleWithTrigger('detailView');
         },
 
@@ -137,6 +140,12 @@ var ContentAction = (function () {
             }
         }
     }
+})();
+
+(function () {
+    EventBus.addEventListener("view_change_event", ContentAction.handleViewButtonClicked);
+    EventBus.addEventListener("save_product_event", ContentAction.saveProductInfo);
+    EventBus.addEventListener("back_view_mode_event", ContentAction.backToViewMode);
 })();
 
 module.exports = ContentAction;

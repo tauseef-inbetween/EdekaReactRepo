@@ -1,5 +1,5 @@
 var React = require('react');
-var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
+var EventBus = require('../../../libraries/js/flux/EventDispatcher.js');
 
 var ContentActionBarView = React.createClass({
 
@@ -7,6 +7,18 @@ var ContentActionBarView = React.createClass({
     propTypes: {
         contentViewStyle: React.PropTypes.oneOf(['thumbnail', 'detailView']),
         contentViewMode: React.PropTypes.oneOf(['editMode', 'viewMode'])
+    },
+
+    handleViewButtonClicked: function (event) {
+        EventBus.dispatch("view_change_event", this, event);
+    },
+
+    saveProductInfo: function (event) {
+        EventBus.dispatch("save_product_event", this, event);
+    },
+
+    backToViewMode: function (event) {
+        EventBus.dispatch("back_view_mode_event", this, event);
     },
 
     render: function () {
@@ -24,16 +36,16 @@ var ContentActionBarView = React.createClass({
             <div id="topToolsPanel">
                 <div id="contentViewContainer">
                     <div id="pimViewThumbnail" title="Thumbnail View" className={thumbnailClass}
-                         onClick={ContentAction.handleViewButtonClicked}></div>
+                         onClick={this.handleViewButtonClicked}></div>
                     <div id="pimViewDetail" title="Detail View" className={detailClass}
-                         onClick={ContentAction.handleViewButtonClicked}></div>
+                         onClick={this.handleViewButtonClicked}></div>
                 </div>
 
                 <span>Content</span>
 
                 <div id="contentEditController" className={modeClass}>
-                    <button id="productSaveButton" className="saveContent btn btn-primary" tabIndex="-1" onClick={ContentAction.saveProductInfo}>Save</button>
-                    <div id="backToPimThumbsButton" title="Back" onClick={ContentAction.backToViewMode}></div>
+                    <button id="productSaveButton" className="saveContent btn btn-primary" tabIndex="-1" onClick={this.saveProductInfo}>Save</button>
+                    <div id="backToPimThumbsButton" title="Back" onClick={this.backToViewMode}></div>
                 </div>
             </div>
         );

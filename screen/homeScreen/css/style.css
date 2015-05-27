@@ -2,6 +2,10 @@
     font-family: Trebuchet, Tahoma, Arial, Helvetica, sans-serif;
 }
 
+body{
+    overflow: hidden;
+}
+
 .menuItem {
     height: 103%;
     width: 75px;
