@@ -84,5 +84,5 @@ describe("Content Note view", function () {
 function setSelectedProduct(productId, index) {
     ContentStore.setSelectedProduct(ContentStore.getProductById(productId));
     ContentStore.setSelectedIndex(index);
-    ContentStore.setContentViewModeWithTrigger('editMode');
+    ContentStore.changeContentViewMode('editMode');
 }

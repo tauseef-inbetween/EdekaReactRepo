@@ -14,7 +14,7 @@ var ContentStore = {
 
     setProducts: function (products) {
         this.data.appData.setAllProducts(products);
-        this.trigger('change');
+        this.triggerChange();
     },
 
     setSelectedIndex: function (index) {
@@ -25,11 +25,6 @@ var ContentStore = {
         this.data.componentProps.getSelectedProps().setSelectedProduct(_.clone(oProduct, true));
     },
 
-    setSelectedProductWithTrigger: function (oProduct) {
-        this.setSelectedProduct(oProduct);
-        this.trigger('change');
-    },
-
     setSelectedProductValue: function (property, value) {
 
         if (property == 'class') {
@@ -38,38 +33,39 @@ var ContentStore = {
 
         var selectedProduct = this.data.componentProps.getSelectedProps().getSelectedProduct();
         selectedProduct[property] = value;
-        this.setSelectedProductWithTrigger(selectedProduct);
+        this.setSelectedProduct(selectedProduct);
+        this.triggerChange();
     },
 
     setContentViewMode: function (sContentViewMode) {
         this.data.componentProps.setContentViewMode(sContentViewMode);
     },
 
-    setContentViewModeWithTrigger: function (sContentViewMode) {
+    changeContentViewMode: function (sContentViewMode) {
         this.setContentViewMode(sContentViewMode);
-        this.trigger('change');
+        this.triggerChange();
     },
 
     setContentViewStyle: function (sViewStyle) {
         this.data.componentProps.setContentViewStyle(sViewStyle);
     },
 
-    setContentViewStyleWithTrigger: function (sViewStyle) {
+    changeContentViewStyle: function (sViewStyle) {
         this.setContentViewStyle(sViewStyle);
-        this.trigger('change');
+        this.triggerChange();
     },
 
     saveSelectedProductInfo: function () {
         var selectedProduct = this.data.componentProps.getSelectedProps().getSelectedProduct();
         var product = this.getProductById(selectedProduct.id);
         _.assign(product, selectedProduct);
-        this.trigger('change');
+        this.triggerChange();
     },
 
     createProduct: function () {
         var dummyProduct = ContentUtils.createDummyProduct();
         this.data.appData.getAllProducts().push(dummyProduct);
-        this.trigger('change');
+        this.triggerChange();
     },
 
     deleteNoteById: function (sNoteId) {
@@ -77,7 +73,7 @@ var ContentStore = {
         for (var iNoteCount = 0; iNoteCount < notes.length; iNoteCount++) {
             if (notes[iNoteCount].id == sNoteId) {
                 notes.splice(iNoteCount, 1);
-                this.trigger('change');
+                this.triggerChange();
                 return;
             }
         }
@@ -88,7 +84,7 @@ var ContentStore = {
         for (var iProductCount = 0; iProductCount < products.length; iProductCount++) {
             if (products[iProductCount].id === sProductId) {
                 products.splice(iProductCount, 1);
-                this.trigger('change');
+                this.triggerChange();
                 return;
             }
         }
@@ -124,8 +120,8 @@ var ContentStore = {
         value = newNote.value;
         //_.assign(value,newNote.value);
         var selectedProduct = this.data.componentProps.getSelectedProps().getSelectedProduct();
-        this.setSelectedProductWithTrigger(selectedProduct);
-        //this.trigger('change');
+        this.setSelectedProduct(selectedProduct);
+        this.triggerChange();
     },
 
     getSelectedProductNoteValuesById: function (groupId) {
@@ -151,20 +147,32 @@ var ContentStore = {
         this.data.componentProps.getCarouselPosition().previousLeftPosition = previousLeft;
     },
 
-    setCarouselLeftPositionWithTrigger: function (leftPosition) {
+    changeCarouselLeftPosition: function (leftPosition) {
         this.setCarouselLeftPosition(leftPosition);
-        this.trigger('change');
+        this.triggerChange();
     },
 
-    addProductNoteWithTrigger: function (note) {
+    changeProductNoteList: function (note) {
         this.addProductNote(note);
-        this.trigger('change');
+        this.triggerChange();
     },
 
-    setSelectedNoteIndexWithTrigger: function (index) {
+    changeSelectedNoteIndex: function (index) {
         this.data.componentProps.getSelectedProps().setSelectedNoteIndex(index);
+        this.triggerChange();
+    },
+
+    changeSelectedProductOnThumbClick: function (productId, index) {
+        this.setSelectedProduct(this.getProductById(productId));
+        this.setSelectedIndex(index);
+        this.setContentViewMode('editMode');
+        this.triggerChange();
+    },
+
+    triggerChange: function () {
         this.trigger('change');
     }
+
 };
 
 MicroEvent.mixin(ContentStore);

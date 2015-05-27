@@ -24,21 +24,17 @@ var ContentAction = (function () {
 
         handleViewButtonClicked: function (custom_event, viewStyleButtonEvent) {
             console.log(viewStyleButtonEvent);
-            viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentStore.setContentViewStyleWithTrigger('thumbnail') : ContentStore.setContentViewStyleWithTrigger('detailView');
+            viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentStore.changeContentViewStyle('thumbnail') : ContentStore.changeContentViewStyle('detailView');
         },
 
         productThumbClicked: function (productId, index) {
             setDefaultValueForCarousel();
-            ContentStore.setSelectedProduct(ContentStore.getProductById(productId));
-            ContentStore.setSelectedIndex(index);
-            ContentStore.setContentViewModeWithTrigger('editMode');
+            ContentStore.changeSelectedProductOnThumbClick(productId, index);
         },
 
         backToViewMode: function () {
 
-            ContentUtils.destroyLayout('#northDOM');
-            ContentUtils.destroyLayout('#centerDOMMainContainer');
-            ContentUtils.destroyLayout('#ProductEditInfoScreen');
+            ContentUtils.destroyAllLayout();
             var $container = $('#centerOwlContainer');
             if($container && $container.data('owlCarousel')) {
                 $container.data('owlCarousel').destroy();
@@ -47,7 +43,7 @@ var ContentAction = (function () {
             ContentStore.setCarouselPreviousLeftPosition(0);
             ContentStore.setCarouselLeftPosition(0);
             ContentStore.setSelectedProduct(null);
-            ContentStore.setContentViewModeWithTrigger('viewMode');
+            ContentStore.changeContentViewMode('viewMode');
         },
 
         changeSelectedProductProperty: function (property, value) {
@@ -63,7 +59,7 @@ var ContentAction = (function () {
 
         addNoteToSelectedContent: function (note) {
             setDefaultValueForCarousel();
-            ContentStore.addProductNoteWithTrigger(note);
+            ContentStore.changeProductNoteList(note);
         },
 
         deleteNoteFromSelectedProduct: function (note) {
@@ -80,7 +76,7 @@ var ContentAction = (function () {
             if(previousLeftPosition != undefined) {
                 ContentStore.setCarouselPreviousLeftPosition(previousLeftPosition);
             }
-            ContentStore.setCarouselLeftPositionWithTrigger(newLeftPosition);
+            ContentStore.changeCarouselLeftPosition(newLeftPosition);
         },
 
         carouselPreviousPositionChanges: function  (newPreviousPosition) {
@@ -88,7 +84,7 @@ var ContentAction = (function () {
         },
 
         setSelectedNote: function (index) {
-            ContentStore.setSelectedNoteIndexWithTrigger(index);
+            ContentStore.changeSelectedNoteIndex(index);
         },
 
         initialiseLayouts: function (type) {

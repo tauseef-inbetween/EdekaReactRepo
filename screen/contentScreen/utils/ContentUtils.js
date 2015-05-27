@@ -151,6 +151,12 @@ var ContentUtils = (function () {
             var $C = $(containerSelector);
             if ($C.data("layoutContainer"))
                 $C.layout().destroy();
+        },
+
+        destroyAllLayout: function () {
+            this.destroyLayout('#northDOM');
+            this.destroyLayout('#centerDOMMainContainer');
+            this.destroyLayout('#ProductEditInfoScreen');
         }
     }
 })();
