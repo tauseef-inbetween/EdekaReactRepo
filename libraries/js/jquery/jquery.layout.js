@@ -1,3 +1,4 @@
+var $ = require('jquery');
 /**
  * @preserve
  * jquery.layout 1.3.0 - Release Candidate 30.79
@@ -25,15 +26,14 @@
  * {number=}	optional parameter
  * {*}			ALL types
  */
-/*	TODO for jQ 2.0 
+/*	TODO for jQ 2.0
  *	change .andSelf() to .addBack()
  *	$.fn.disableSelection won't work
  */
 
 // NOTE: For best readability, view with a fixed-width font and tabs equal to 4-chars
 
-;
-(function ($) {
+;(function () {
 
 // alias Math methods - used a lot!
     var min = Math.min
@@ -77,7 +77,7 @@
         // $.layout.browser REPLACES $.browser
         , browser: {} // set below
 
-        // *PREDEFINED* EFFECTS & DEFAULTS 
+        // *PREDEFINED* EFFECTS & DEFAULTS
         // MUST list effect here - OR MUST set an fxSettings option (can be an empty hash: {})
         , effects: {
 
@@ -703,7 +703,7 @@
         , panes: { // default options for 'all panes' - will be overridden by 'per-pane settings'
             applyDemoStyles: false		// NOTE: renamed from applyDefaultStyles for clarity
             , closable: true		// pane can open & close
-            , resizable: true		// when open, pane can be resized 
+            , resizable: true		// when open, pane can be resized
             , slidable: true		// when closed, pane can 'slide open' over other panes - closes on mouse-out
             , initClosed: false		// true = init pane as 'closed'
             , initHidden: false 		// true = init pane as 'hidden' - no resizer-bar/spacing
@@ -730,7 +730,7 @@
             , togglerContent_open: ""			// text or HTML to put INSIDE the toggler
             , togglerContent_closed: ""			// ditto
             //	RESIZING OPTIONS
-            , resizerDblClickToggle: true		// 
+            , resizerDblClickToggle: true		//
             , autoResize: true		// IF size is 'auto' or a percentage, then recalc 'pixel size' whenever the layout resizes
             , autoReopen: true		// IF a pane was auto-closed due to noRoom, reopen it when there is room? False = leave it closed
             , resizerDragOpacity: 1			// option for ui.draggable
@@ -1141,7 +1141,7 @@
                         // convert function name (string) to function object
                         if (isStr(fn)) {
                             if (fn.match(/,/)) {
-                                // function name cannot contain a comma, 
+                                // function name cannot contain a comma,
                                 // so must be a function name AND a parameter to pass
                                 args = fn.split(",")
                                     , fn = eval(args[0]);
@@ -2191,7 +2191,7 @@
          * @param {Object=}        evt
          */
             , initPanes = function (evt) {
-                // stopPropagation if called by trigger("layoutinitpanes") - use evtPane utility 
+                // stopPropagation if called by trigger("layoutinitpanes") - use evtPane utility
                 evtPane(evt);
 
                 // NOTE: do north & south FIRST so we can measure their height - do center LAST
@@ -2214,7 +2214,7 @@
                 sizeMidPanes("center");
 
                 //	Chrome/Webkit sometimes fires callbacks BEFORE it completes resizing!
-                //	Before RC30.3, there was a 10ms delay here, but that caused layout 
+                //	Before RC30.3, there was a 10ms delay here, but that caused layout
                 //	to load asynchrously, which is BAD, so try skipping delay for now
 
                 // process pane contents and callbacks, and init/resize child-layout if exists
@@ -2350,7 +2350,7 @@
                 // init pane positioning
                 setPanePosition(pane);
 
-                // if pane is not visible, 
+                // if pane is not visible,
                 if (dir === "horz") // north or south pane
                     CSS.height = cssH($P, size);
                 else if (dir === "vert") // east or west pane
@@ -3001,7 +3001,7 @@
                 $(document).unbind("." + sID);	// keyDown (hotkeys)
 
                 if (typeof evt_or_destroyChildren === "object")
-                // stopPropagation if called by trigger("layoutdestroy") - use evtPane utility 
+                // stopPropagation if called by trigger("layoutdestroy") - use evtPane utility
                     evtPane(evt_or_destroyChildren);
                 else // no event, so transfer 1st param to destroyChildren param
                     destroyChildren = evt_or_destroyChildren;
@@ -3871,7 +3871,7 @@
                 if (!enable)
                     timer.clear(pane + "_closeSlider");
                 else if (evtName === "click" && !o.resizable) {
-                    // IF pane is not resizable (which already has a cursor and tip) 
+                    // IF pane is not resizable (which already has a cursor and tip)
                     // then set the a cursor & title/tip on resizer when sliding
                     $R.css("cursor", enable ? o.sliderCursor : "default");
                     $R.attr("title", enable ? o.tips.Close : ""); // use Toggler-tip, eg: "Close Pane"
@@ -4063,7 +4063,7 @@
                     else { // no animation
                         $P.css(dimName, newSize);	// resize pane
                         delete s.newSize;
-                        // if pane is visible, then 
+                        // if pane is visible, then
                         if ($P.is(":visible"))
                             sizePane_2(); // continue
                         else {
@@ -4201,7 +4201,7 @@
                         CSS = newCenter;
                         s.newWidth = CSS.width;
                         s.newHeight = CSS.height;
-                        // convert OUTER width/height to CSS width/height 
+                        // convert OUTER width/height to CSS width/height
                         CSS.width = cssW($P, CSS.width);
                         // NEW - allow pane to extend 'below' visible area rather than hide it
                         CSS.height = cssH($P, CSS.height);
@@ -4316,7 +4316,7 @@
                 var oldW = sC.innerWidth
                     , oldH = sC.innerHeight
                     ;
-                // stopPropagation if called by trigger("layoutdestroy") - use evtPane utility 
+                // stopPropagation if called by trigger("layoutdestroy") - use evtPane utility
                 evtPane(evt_or_refresh);
 
                 // cannot size layout when 'container' is hidden or collapsed
@@ -4525,7 +4525,7 @@
 
                     // Resizer Bar is ALWAYS same width/height of pane it is attached to
                     if (dir === "horz") { // north/south
-                        //paneLen = $P.outerWidth(); // s.outerWidth || 
+                        //paneLen = $P.outerWidth(); // s.outerWidth ||
                         paneLen = sC.innerWidth; // handle offscreen-panes
                         s.resizerLength = paneLen;
                         left = $.layout.cssNum($P, "left")
@@ -4536,7 +4536,7 @@
                         });
                     }
                     else { // east/west
-                        paneLen = $P.outerHeight(); // s.outerHeight || 
+                        paneLen = $P.outerHeight(); // s.outerHeight ||
                         s.resizerLength = paneLen;
                         $R.css({
                             height: cssH($R, paneLen) // account for borders & padding
@@ -4982,7 +4982,7 @@
                 ;
 
             // if pane is already raised, then reset it before doing it again!
-            // this would happen if allowOverflow is attached to BOTH the pane and an element 
+            // this would happen if allowOverflow is attached to BOTH the pane and an element
             if (s.cssSaved)
                 resetOverflow(pane); // reset previous CSS before continuing
 
@@ -5160,12 +5160,12 @@
     }
 
 
-})(jQuery);
+})();
 // END Layout - keep internal vars internal!
 
 
 // START Plugins - shared wrapper, no global vars
-(function ($) {
+(function () {
 
 
     /**
@@ -6042,4 +6042,4 @@
     $.layout.onReady.push($.layout.browserZoom._init);
 
 
-})(jQuery);
+})();

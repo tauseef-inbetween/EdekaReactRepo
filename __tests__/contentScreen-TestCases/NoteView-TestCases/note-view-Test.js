@@ -1,5 +1,5 @@
 jest.dontMock('jquery').dontMock('jquery-ui')
-    .dontMock('../../../libraries/js/jquery/jquery.layout.min.js').dontMock('lodash')
+    .dontMock('../../../libraries/js/jquery/jquery.layout.js').dontMock('lodash')
     .dontMock('../../../views/contentView/contentNoteView/ContentNoteView.js')
     .dontMock('../../../views/contentView/contentNoteView/NoteList')
     .dontMock('../../../views/contentView/contentNoteView/NoteRow')

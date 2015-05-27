@@ -1,8 +1,7 @@
 var ContentStore = require('./ContentStore');
 var ContentUtils = require('./utils/ContentUtils');
-
-//TODO: comment jquery require line while webpacking because of dependency issue
-
+var alertify = require('../../libraries/js/alertify/alertify');
+require('../../libraries/js/jquery/jquery.layout.js');
 var $ = require('jquery');
 
 var ContentAction = (function () {

@@ -4,12 +4,12 @@
   "main": "application.js",
   "dependencies": {
     "jquery": "*",
-    "jquery-layout": "^1.0.0",
     "jquery-ui": "*",
     "lodash": "*",
     "promise": "*",
     "react-addons": "*",
-    "react-bootstrap": "*"
+    "react-bootstrap": "*",
+    "alertify-webpack": "*"
   },
   "devDependencies": {
     "jest-cli": "*",
