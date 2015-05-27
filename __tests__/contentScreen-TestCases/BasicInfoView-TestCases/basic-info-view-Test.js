@@ -58,9 +58,7 @@ describe("Content Basic Section check", function () {
   it("Will check Comments of Content", function () {
     expect(Component.state.componentProps.getSelectedProps().selectedProduct.comments).toBe('');
   });
-
-  it("find Thumb")
-
+  
 });
 
 describe("Content Basic Section change Check", function () {
