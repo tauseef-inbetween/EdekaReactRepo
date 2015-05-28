@@ -1,4 +1,4 @@
-jest.dontMock('jquery').dontMock('jquery-ui')
+jest.dontMock('jquery').dontMock('jquery-ui').dontMock('promise')
     .dontMock('../../../libraries/js/jquery/jquery.layout.js').dontMock('lodash')
     .dontMock('../../../views/contentView/contentNoteView/ContentNoteView.js')
     .dontMock('../../../views/contentView/contentNoteView/NoteList')
@@ -29,9 +29,8 @@ var products = [];
 describe("Content Note view", function () {
 
     beforeEach(function () {
-        products = JSON.stringify(MockDataForProducts);
-        ContentCallbacks.getAllProductsCallBack(products);
-        setSelectedProduct(19, 0);
+      ContentStore.setProducts(MockDataForProducts);
+      setSelectedProduct(19, 0);
 
         this.data = ContentStore.getData();
         this.contentViewMode = this.data.componentProps.getContentViewMode();
@@ -82,7 +81,5 @@ describe("Content Note view", function () {
 });
 
 function setSelectedProduct(productId, index) {
-    ContentStore.setSelectedProduct(ContentStore.getProductById(productId));
-    ContentStore.setSelectedIndex(index);
-    ContentStore.changeContentViewMode('editMode');
+  ContentStore.changeSelectedProductOnThumbClick(productId, index);
 }

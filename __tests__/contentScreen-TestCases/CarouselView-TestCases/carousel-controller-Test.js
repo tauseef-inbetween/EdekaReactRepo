@@ -34,7 +34,7 @@ var products;
 describe("Content Store", function () {
   beforeEach(function() {
     products = JSON.stringify(MockDataForProducts);
-    ContentCallbacks.getAllProductsCallBack(products);
+    ContentStore.setProducts(MockDataForProducts);
     ContentComponentProperties.contentViewMode = 'editMode';
     Component = TestUtils.renderIntoDocument(
         <ContentScreenController key="5" className='screen showScreen' store={ContentStore}/>

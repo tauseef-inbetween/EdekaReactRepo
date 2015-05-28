@@ -42,7 +42,7 @@ var ContentAction = (function () {
                         } catch(error) {
                             reject(error);
                         }
-                    }).then(showAlertifySuccessMessage, showAlerifyFailureMessage).catch(showPromiseFailureInfo);
+                    }).then(showAlertifySuccessMessage, showAlerifyFailureMessage)/*.catch(showPromiseFailureInfo)*/;
                 }
             });
         },
@@ -70,7 +70,7 @@ var ContentAction = (function () {
                 } catch (err){
                     reject(err);
                 }
-            }).then(showAlertifySuccessMessage, showAlerifyFailureMessage).catch(showPromiseFailureInfo);
+            }).then(showAlertifySuccessMessage, showAlerifyFailureMessage)/*.catch(showPromiseFailureInfo)*/;
         },
 
         changeSelectedProductProperty: function (property, value) {
@@ -88,7 +88,7 @@ var ContentAction = (function () {
                     reject(error);
                 }
             }).then(showAlertifySuccessMessage, showAlerifyFailureMessage)
-              .catch(showPromiseFailureInfo);
+              /*.catch(showPromiseFailureInfo)*/;
         },
 
         addNoteToSelectedContent: function (note) {

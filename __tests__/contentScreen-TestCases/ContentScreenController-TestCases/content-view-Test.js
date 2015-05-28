@@ -1,6 +1,6 @@
 jest.dontMock('jquery').dontMock('jquery-ui').dontMock('lodash')
     .dontMock('../../../screen/contentScreen/ContentStore')
-    /*.dontMock('../../../screen/contentScreen/ContentAction')*/
+    //.dontMock('../../../screen/contentScreen/ContentAction')
     .dontMock('../../../screen/contentScreen/ContentApplicationData')
     .dontMock('../../../screen/contentScreen/ContentComponentProperties')
     .dontMock('../../../screen/contentScreen/ContentScreenController')
@@ -44,8 +44,7 @@ describe("Content Screen Controller", function () {
   describe("Carousel UI Test", function () {
 
     beforeEach(function () {
-      products = JSON.stringify(MockDataForProducts);
-      ContentCallbacks.getAllProductsCallBack(products);
+      ContentStore.setProducts(MockDataForProducts);
       setSelectedProduct(19, 0);
       Component = TestUtils.renderIntoDocument(
           <ContentScreenController key="5" className='screen showScreen' store={ContentStore}/>
@@ -276,7 +275,5 @@ describe("Content Screen Controller", function () {
 
 
 function setSelectedProduct(productId, index) {
-  ContentStore.setSelectedProduct(ContentStore.getProductById(productId));
-  ContentStore.setSelectedIndex(index);
-  ContentStore.changeContentViewMode('editMode');
+  ContentStore.changeSelectedProductOnThumbClick(productId, index);
 }

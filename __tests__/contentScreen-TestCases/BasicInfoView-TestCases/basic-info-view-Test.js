@@ -26,8 +26,7 @@ var products;
 
 describe("Content Basic Section check", function () {
   beforeEach(function () {
-    products = JSON.stringify(MockDataForProducts);
-    ContentCallbacks.getAllProductsCallBack(products);
+    ContentStore.setProducts(MockDataForProducts);
     setSelectedProduct(19, 0);
     Component = TestUtils.renderIntoDocument(
         <ContentScreenController key="5" className='screen showScreen' store={ContentStore}/>
@@ -122,7 +121,5 @@ describe("Content Basic Section change Check", function () {
 
 
 function setSelectedProduct(productId, index) {
-  ContentStore.setSelectedProduct(ContentStore.getProductById(productId));
-  ContentStore.setSelectedIndex(index);
-  ContentStore.changeContentViewMode('editMode');
+  ContentStore.changeSelectedProductOnThumbClick(productId, index);
 }
