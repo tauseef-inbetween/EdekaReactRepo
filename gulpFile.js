@@ -22,15 +22,14 @@ gulp.task('webpack', function () {
                     loaders: [
                         {test: /\.css$/, loader: "style-loader!css-loader" },
                         {test: /\.(eot|woff)$/, loader: "file-loader"},
-                        { test: /\.css$/, loader: "style-loader!css-loader" },
                         { test: /\.png$/, loader: "url-loader?limit=100000" },
                         { test: /\.jpg$/, loader: "file-loader" },
-                        {test: /\.js$/, loader: 'jsx-loader?harmony'} // loaders can take parameters as a querystring
+                        {test: /\.js$/, loader: 'jsx-loader?harmony'}
                     ]
                 },
                 resolve: {
-                    // you can now require('file') instead of require('file.coffee')
-                    extensions: ['', '.js', '.json', '.jsx']
+                    // you can now require('file') instead of require('file.js')
+                    extensions: ['', '.js', '.json', '.jsx', '.css']
                 }
             }))
         //.pipe(uglify())
@@ -49,7 +48,7 @@ gulp.task('jest', function () {
 
 
 gulp.task('watchComp', function () {
-    gulp.watch(["**", "!./generatedScript/gulpApplication.*", "!./__tests__"], ['webpack']);
+    gulp.watch(["./*.*", "./**/*.*", "!./generatedScript/*.*", "!./__tests__"], ['webpack']);
 });
 
 gulp.task('watchTest', function () {

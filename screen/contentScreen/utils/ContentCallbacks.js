@@ -4,9 +4,7 @@ var ContentAction = require('../ContentAction');
 var ContentCallbacks = (function () {
     return {
         getAllProductsCallBack: function (aProducts) {
-            ContentStore.setContentViewStyle('thumbnail');
-            ContentStore.setProducts(JSON.parse(aProducts));
-            ContentAction.backToViewMode();
+            ContentAction.setAllProduct(aProducts);
         }
     }
 })();

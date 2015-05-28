@@ -11,16 +11,38 @@ var EventBus = require('../../libraries/js/flux/EventDispatcher.js');
 var ContentAction = (function () {
 
     var setDefaultValueForCarousel = function () {
-        ContentStore.setCarouselPreviousLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
-        ContentStore.setCarouselLeftPosition(ContentStore.getData().componentProps.getCarouselPosition().leftPosition);
+        ContentStore.setDefaultValueForCarousel();
+    };
+
+    var showAlertifySuccessMessage = function (msg) {
+        if(msg) {
+            alertify.success(msg);
+        }
+    };
+
+    var showAlerifyFailureMessage = function (error) {
+        if(!error) {
+            error = "Uncaught Exception";
+        }
+        alertify.error(error);
+    };
+
+    var showPromiseFailureInfo = function () {
+        alertify.error("Promise failed");
     };
 
     return {
         deleteProductButtonClicked: function (sProductId) {
             alertify.confirm("Do you really want to delete this product ?", function (eventDelete) {
                 if (eventDelete) {
-                    ContentStore.deleteProductById(sProductId);
-                    alertify.success("Product successfully deleted");
+                    new Promise(function (resolve, reject) {
+                        try {
+                            ContentStore.deleteProductById(sProductId);
+                            resolve("Product successfully deleted");
+                        } catch(error) {
+                            reject(error);
+                        }
+                    }).then(showAlertifySuccessMessage, showAlerifyFailureMessage).catch(showPromiseFailureInfo);
                 }
             });
         },
@@ -35,32 +57,20 @@ var ContentAction = (function () {
         },
 
         backToViewMode: function () {
-
             ContentUtils.destroyAllLayout();
             var $container = $('#centerOwlContainer');
             if($container && $container.data('owlCarousel')) {
                 $container.data('owlCarousel').destroy();
             }
 
-            var promise = new Promise(function (resolve, reject) {
+            new Promise(function (resolve, reject) {
                 try {
-                    ContentStore.setSelectedProduct(null);
-                    ContentStore.setCarouselPosition(0,0);
-                    ContentStore.setContentViewMode('viewMode');
+                    ContentStore.setMainControllerView();
                     resolve();
                 } catch (err){
                     reject(err);
                 }
-            });
-
-            promise.then(
-                function () {
-                    ContentStore.triggerChange();
-                },
-                function (msg) {
-                    console.log(msg);
-                }
-            ).catch(function() { console.log('Promise was rejected');});
+            }).then(showAlertifySuccessMessage, showAlerifyFailureMessage).catch(showPromiseFailureInfo);
         },
 
         changeSelectedProductProperty: function (property, value) {
@@ -70,8 +80,15 @@ var ContentAction = (function () {
 
         saveProductInfo: function () {
             setDefaultValueForCarousel();
-            ContentStore.saveSelectedProductInfo();
-            alertify.success("Content successfully updated");
+            new Promise(function (resolve, reject) {
+                try {
+                    ContentStore.saveSelectedProductInfo();
+                    resolve("Content successfully updated");
+                } catch (error) {
+                    reject(error);
+                }
+            }).then(showAlertifySuccessMessage, showAlerifyFailureMessage)
+              .catch(showPromiseFailureInfo);
         },
 
         addNoteToSelectedContent: function (note) {
@@ -90,18 +107,20 @@ var ContentAction = (function () {
         },
 
         carouselPositionChanged: function (newLeftPosition, previousLeftPosition) {
-            if(previousLeftPosition != undefined) {
-                ContentStore.setCarouselPreviousLeftPosition(previousLeftPosition);
-            }
-            ContentStore.changeCarouselLeftPosition(newLeftPosition);
+            ContentStore.changeCarouselPosition(newLeftPosition, previousLeftPosition);
         },
 
         carouselPreviousPositionChanges: function  (newPreviousPosition) {
-            ContentStore.setCarouselPreviousLeftPosition(newPreviousPosition);
+            ContentStore.changeCarouselPreviousLeftPosition(newPreviousPosition);
         },
 
         setSelectedNote: function (index) {
             ContentStore.changeSelectedNoteIndex(index);
+        },
+
+        setAllProduct: function (aProducts) {
+            ContentStore.setProducts(JSON.parse(aProducts));
+            ContentAction.backToViewMode();
         },
 
         initialiseLayouts: function (type) {

@@ -142,10 +142,10 @@ var NoteList = React.createClass({
                 {noteItems}
                 <div className="noteControls">
                     <OverlayTrigger
+                        overlay={popOver}
                         trigger='manual'
                         placement='right'
-                        ref='myPopover'
-                        overlay={popOver}>
+                        ref='myPopover'>
                         <Button onClick={this.showPopOver} className="btnAddNote" bsSize='xsmall'
                                 bsStyle='primary'><Glyphicon glyph='plus-sign'/> Add</Button>
                     </OverlayTrigger>
