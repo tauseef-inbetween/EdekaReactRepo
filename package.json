@@ -22,7 +22,9 @@
     "jsx-loader": "*",
     "gulp-jest": "*",
     "style-loader": "*",
-    "css-loader": "*"
+    "css-loader": "*",
+    "file-loader": "*",
+    "url-loader": "*"
   },
   "jest": {
     "scriptPreprocessor": "./libraries/buildDependency/preprocessor.js",

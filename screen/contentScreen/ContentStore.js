@@ -147,6 +147,11 @@ var ContentStore = {
         this.data.componentProps.getCarouselPosition().previousLeftPosition = previousLeft;
     },
 
+    setCarouselPosition: function (currLeft, previousLeft) {
+        this.setCarouselLeftPosition(currLeft);
+        this.setCarouselPreviousLeftPosition(previousLeft);
+    },
+
     changeCarouselLeftPosition: function (leftPosition) {
         this.setCarouselLeftPosition(leftPosition);
         this.triggerChange();

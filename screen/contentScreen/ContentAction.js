@@ -4,6 +4,9 @@ var alertify = require('../../libraries/js/alertify/alertify');
 var $ = require('jquery');
 require('../../libraries/js/jquery/jquery.layout.js');
 
+var Promise = require('promise');
+
+
 var EventBus = require('../../libraries/js/flux/EventDispatcher.js');
 var ContentAction = (function () {
 
@@ -23,7 +26,6 @@ var ContentAction = (function () {
         },
 
         handleViewButtonClicked: function (custom_event, viewStyleButtonEvent) {
-            console.log(viewStyleButtonEvent);
             viewStyleButtonEvent.currentTarget.id == 'pimViewThumbnail' ? ContentStore.changeContentViewStyle('thumbnail') : ContentStore.changeContentViewStyle('detailView');
         },
 
@@ -40,10 +42,25 @@ var ContentAction = (function () {
                 $container.data('owlCarousel').destroy();
             }
 
-            ContentStore.setCarouselPreviousLeftPosition(0);
-            ContentStore.setCarouselLeftPosition(0);
-            ContentStore.setSelectedProduct(null);
-            ContentStore.changeContentViewMode('viewMode');
+            var promise = new Promise(function (resolve, reject) {
+                try {
+                    ContentStore.setSelectedProduct(null);
+                    ContentStore.setCarouselPosition(0,0);
+                    ContentStore.setContentViewMode('viewMode');
+                    resolve();
+                } catch (err){
+                    reject(err);
+                }
+            });
+
+            promise.then(
+                function () {
+                    ContentStore.triggerChange();
+                },
+                function (msg) {
+                    console.log(msg);
+                }
+            ).catch(function() { console.log('Promise was rejected');});
         },
 
         changeSelectedProductProperty: function (property, value) {
