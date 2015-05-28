@@ -1,9 +1,9 @@
 jest.dontMock('jquery').dontMock('jquery-ui').dontMock('lodash')
-    .dontMock('../../../views/contentView/thumbnailView/carousel/CarouselActionControl')
+    .dontMock('../../../views/contentView/carouselView/CarouselActionControlView')
     .dontMock('../../../views/contentView/thumbnailView/ContentThumbnail')
-    .dontMock('../../../views/contentView/thumbnailView/carousel/CarouselItem')
+    .dontMock('../../../views/contentView/carouselView/CarouselItem')
     .dontMock('../../../libraries/js/flux/MicroEvent')
-    .dontMock('../../../views/contentView/thumbnailView/carousel/Carousel')
+    .dontMock('../../../views/contentView/carouselView/CarouselView')
     .dontMock('../../../screen/contentScreen/ContentStore')
     .dontMock('../../../screen/contentScreen/ContentApplicationData')
     .dontMock('../../../screen/contentScreen/ContentComponentProperties');
@@ -12,9 +12,9 @@ var React = require('react/addons');
 var ReactJestUtil = require('react-jest-util');
 var TestUtils = React.addons.TestUtils;
 var ContentThumbnail = require('../../../views/contentView/thumbnailView/ContentThumbnail');
-var Carousel = require('../../../views/contentView/thumbnailView/carousel/Carousel');
-var CarouselActionControl = require('../../../views/contentView/thumbnailView/carousel/CarouselActionControl');
-var carouselItem = require('../../../views/contentView/thumbnailView/carousel/carouselItem');
+var Carousel = require('../../../views/contentView/carouselView/CarouselView');
+var CarouselActionControl = require('../../../views/contentView/carouselView/CarouselActionControlView');
+var carouselItem = require('../../../views/contentView/carouselView/CarouselItem');
 var ContentAction = require('../../../screen/contentScreen/ContentAction');
 var ContentStore = require('../../../screen/contentScreen/ContentStore');
 var _ = require('lodash');
@@ -38,20 +38,20 @@ describe("1. When click on next button", function () {
   });
 
   it("will call 'carouselPositionChanged' methods", function () {
-   /* var nextClick = Component.refs.controller.refs.nextBtn.getDOMNode();
+    var nextClick = Component.refs.controller.refs.nextBtn.getDOMNode();
     expect(ContentAction.carouselPositionChanged.mock.calls.length).toEqual(0);
     TestUtils.Simulate.click(nextClick);
     expect(ContentAction.carouselPositionChanged.mock.calls.length).toEqual(1);
     expect(ContentAction.carouselPositionChanged).toBeCalled();
     ReactJestUtil.log(ContentStore.getData().componentProps.getCarouselPosition(),2);
-    /!*Resets all information stored in the mockFn.mock.calls and mockFn.mock.instances arrays.
-        Often this is useful when you want to clean up a mock's usage data between two assertions.*!/
-    ContentAction.carouselPositionChanged.mockClear();*/
+    /*/!*Resets all information stored in the mockFn.mock.calls and mockFn.mock.instances arrays.
+        Often this is useful when you want to clean up a mock's usage data between two assertions.*!/*/
+    ContentAction.carouselPositionChanged.mockClear();
   });
 
 });
 
-/*describe("2. when click on previous controller", function () {
+describe("2. when click on previous controller", function () {
   beforeEach(function () {
     productItems = getProductItems(productList);
     selectedIndex = 0;
@@ -68,7 +68,7 @@ describe("1. When click on next button", function () {
     expect(ContentAction.carouselPositionChanged.mock.calls.length).toEqual(1);
     expect(ContentAction.carouselPositionChanged).toBeCalled();
   });
-});*/
+});
 
 function getProductItems (productList) {
   var contentViewStyle = "thumbnail";

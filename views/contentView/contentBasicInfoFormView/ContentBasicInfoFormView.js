@@ -2,7 +2,7 @@ var React = require('react');
 var _ = require('lodash');
 var SplitButton = require('react-bootstrap').SplitButton;
 var MenuItem = require('react-bootstrap').MenuItem;
-var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
+var ContentAction = require('../../../screen/contentScreen/ContentAction');
 
 var ContentBasicInfoFormView = React.createClass({
 
@@ -96,7 +96,7 @@ var ContentBasicInfoFormView = React.createClass({
                 <div className="pimScreenFormSection">
                     <div className="pimScreenFormSectionAttribute">Name* :</div>
                     <div className="pimScreenFormSectionInputWrapper">
-                        <input id="pimScreenProductName" className="pimScreenWizardFormInput" type="text"
+                        <input id="pimScreenProductName" className="pimScreenWizardFormInput productName" type="text"
                                name="name" required="" ref="productName"
                                value={selectedProduct.label}
                                tabIndex="-1"
