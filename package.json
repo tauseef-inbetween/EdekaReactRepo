@@ -2,6 +2,7 @@
   "name": "NodeReactRepo",
   "description": "Edeka transformation using React and Node",
   "main": "application.js",
+
   "dependencies": {
     "jquery": "*",
     "jquery-ui": "*",
@@ -11,6 +12,7 @@
     "react-bootstrap": "*",
     "alertify-webpack": "*"
   },
+
   "devDependencies": {
     "jest-cli": "*",
     "react-jest-util": "*",
@@ -20,12 +22,12 @@
     "gulp": "*",
     "gulp-uglify": "*",
     "jsx-loader": "*",
-    "gulp-jest": "*",
     "style-loader": "*",
     "css-loader": "*",
     "file-loader": "*",
     "url-loader": "*"
   },
+
   "jest": {
     "scriptPreprocessor": "./libraries/buildDependency/preprocessor.js",
     "unmockedModulePathPatterns": [

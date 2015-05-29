@@ -3,8 +3,7 @@ var gulp = require('gulp'),
     sourceFile = './ApplicationStart.js',
     destFolder = './generatedScript',
     destFile = './gulpApplication.js',
-    uglify = require('gulp-uglify'),
-    jest = require('gulp-jest');
+    uglify = require('gulp-uglify');
 
 
 //To minify remove comment of uglify() and commnet [devtool & debig mode]
@@ -40,22 +39,8 @@ gulp.task('webpack', function () {
 });
 
 
-gulp.task('jest', function () {
-    return gulp.src('__tests__').pipe(jest({
-        scriptPreprocessor: "./libraries/buildDependency/preprocessor",
-        unmockedModulePathPatterns: [
-            "react"
-        ]
-    }));
-});
-
-
 gulp.task('watchComp', function () {
     gulp.watch(["./*.*", "./**/*.*", "!./generatedScript/*.*", "!./__tests__"], ['webpack']);
 });
 
-gulp.task('watchTest', function () {
-    gulp.watch(["./__tests__/*.js"], ['jest']);
-});
-
-gulp.task('default', ['jest', 'webpack', 'watchTest', 'watchComp']);
+gulp.task('default', ['webpack', 'watchTest', 'watchComp']);

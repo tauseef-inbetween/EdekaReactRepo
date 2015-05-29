@@ -165,7 +165,8 @@ var ContentAction = (function () {
                 }
             });
 
-            if(!(typeof Boolean(PIMCenterLayout))){
+            //If layout is not created then $.fn.then returns true or false
+            if(typeof PIMCenterLayout != "boolean") {
                 if(type == 'Semi-Structured' || type == 'Asset' || type == 'Impulse') {
                     PIMCenterLayout.hide('east');
                 } else {
