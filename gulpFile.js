@@ -21,7 +21,10 @@ gulp.task('webpack', function () {
                 module: {
                     loaders: [
                         {test: /\.css$/, loader: "style-loader!css-loader" },
-                        {test: /\.(eot|woff)$/, loader: "file-loader"},
+                        { test: /\.woff($|\?)/,   loader: 'url-loader' },
+                        { test: /\.ttf($|\?)/,   loader: 'url-loader' },
+                        { test: /\.eot($|\?)/,   loader: 'url-loader' },
+                        { test: /\.svg($|\?)/,    loader: 'url-loader' },
                         { test: /\.png$/, loader: "url-loader?limit=100000" },
                         { test: /\.jpg$/, loader: "file-loader" },
                         {test: /\.js$/, loader: 'jsx-loader?harmony'}

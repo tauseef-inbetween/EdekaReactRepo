@@ -1,17 +1,13 @@
 var $ = require('jquery');
 var React = require('react');
 
-/*
 require("./libraries/css/bootstrap/bootstrap.css");
 require("./libraries/css/font-awesome.css");
 require("./libraries/css/alertify/alertify.core.css");
 require("./libraries/css/alertify/alertify.bootstrap.css");
-require("./libraries/css/tooltipster/tooltipster.css");
-require("./views/contentView/carouselView/css/carousel.css");
 
 require("./screen/homeScreen/css/style.css");
-require("./screen/contentScreen/css/productScreen.css");
-*/
+
 
 var HomeScreenController = require('./screen/homeScreen/HomeScreenController');
 var HomeScreenStore = require('./screen/homeScreen/HomeScreenStore');
