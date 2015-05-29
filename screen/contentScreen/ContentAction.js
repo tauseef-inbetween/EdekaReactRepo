@@ -165,10 +165,12 @@ var ContentAction = (function () {
                 }
             });
 
-            if(type == 'Semi-Structured' || type == 'Asset' || type == 'Impulse') {
-                PIMCenterLayout.hide('east');
-            } else {
-                PIMCenterLayout.show('east');
+            if(!(typeof Boolean(PIMCenterLayout))){
+                if(type == 'Semi-Structured' || type == 'Asset' || type == 'Impulse') {
+                    PIMCenterLayout.hide('east');
+                } else {
+                    PIMCenterLayout.show('east');
+                }
             }
         }
     }
