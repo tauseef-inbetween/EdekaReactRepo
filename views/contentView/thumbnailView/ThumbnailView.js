@@ -57,12 +57,11 @@ var ThumbnailView = React.createClass({
         //#LogicFlow #DataCreation
         //@get: product thumbs and assigning in {productItems} variable
         var productItems = this.getProductItems(that.props.productList);
-
         //@decide: to show thumbnails in carousel or simple view mode
         var productItemView = (this.props.contentViewMode == 'editMode') ?
             <CarouselView items={productItems} selectedIndex={selectedProps.selectedIndex} key="carousel" ref="owlCarousel"
-                      carouselPosition={carouselPosition}/> : (
-            <ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>);
+                      carouselPosition={carouselPosition}/> : (productItems);
+        //<ReactCSSTransitionGroup transitionName="productTransition">{productItems}</ReactCSSTransitionGroup>
 
         return (
             <div id="northDOM" className="ui-layout-north">

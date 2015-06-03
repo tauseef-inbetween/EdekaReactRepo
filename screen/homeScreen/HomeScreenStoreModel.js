@@ -1,11 +1,11 @@
 var HomeScreenStoreModel = (function () {
     var allScreens = [
-        {title: "Calender", isSelected: true},
+        {title: "Calender", isSelected: false},
         {title: "Campaign", isSelected: false},
         {title: "Template", isSelected: false},
         {title: "Promotion", isSelected: false},
         {title: "Assortment", isSelected: false},
-        {title: "Content", isSelected: false},
+        {title: "Content", isSelected: true},
         {title: "Target", isSelected: false},
         {title: "Report", isSelected: false}
     ];

@@ -1,5 +1,4 @@
 var $ = require('jquery');
-require('jquery-ui');
 
 var ContentUtils = (function () {
 

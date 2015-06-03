@@ -10,7 +10,8 @@
     "promise": "*",
     "react-addons": "*",
     "react-bootstrap": "*",
-    "alertify-webpack": "*"
+    "alertify-webpack": "*",
+    "material-ui": "*"
   },
 
   "devDependencies": {
@@ -25,7 +26,9 @@
     "style-loader": "*",
     "css-loader": "*",
     "file-loader": "*",
-    "url-loader": "*"
+    "url-loader": "*",
+    "express": "*",
+    "handlebars": "*"
   },
 
   "jest": {

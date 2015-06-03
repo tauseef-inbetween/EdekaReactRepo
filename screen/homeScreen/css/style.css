@@ -117,3 +117,16 @@ body{
     overflow: hidden;
     height: 675px;
 }
+
+#loaderContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+
+.loading {
+    display: block !important;
+}

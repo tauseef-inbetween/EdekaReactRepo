@@ -1,5 +1,5 @@
 var Promise = require('promise');
-
+var CommonUtils = require('../CommonUtils');
 // A-> $http function is implemented in order to follow the standard Adapter pattern
 function $http(url){
 
@@ -33,6 +33,7 @@ function $http(url){
                 client.send();
 
                 client.onload = function () {
+                    CommonUtils.hideLoader();
                     if (this.status == 200) {
                         // Performs the function "resolve" when this.status is equal to 200
                         resolve(this.response);
@@ -42,6 +43,7 @@ function $http(url){
                     }
                 };
                 client.onerror = function () {
+                    CommonUtils.hideLoader();
                     reject(this.statusText);
                 };
             });
@@ -54,6 +56,7 @@ function $http(url){
     // Adapter pattern
     return {
         'get' : function(args) {
+            CommonUtils.showLoader();
             return core.ajax('GET', url, args);
         },
         'post' : function(args) {

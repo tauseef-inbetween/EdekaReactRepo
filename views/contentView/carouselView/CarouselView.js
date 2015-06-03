@@ -1,10 +1,9 @@
 var React = require('react');
 var $ = require('jquery');
-require('jquery-ui');
 var CarouselItem = require('./CarouselItem');
 var CarouselActionControlView = require('./CarouselActionControlView');
 var ContentAction = require('../../../screen/contentScreen/ContentAction.js');
-require('./css/carousel.css');
+//require('./css/carousel.css');
 
 var Carousel = React.createClass({
 

@@ -43,4 +43,4 @@ gulp.task('watchComp', function () {
     gulp.watch(["./*.*", "./**/*.*", "!./generatedScript/*.*", "!./__tests__"], ['webpack']);
 });
 
-gulp.task('default', ['webpack', 'watchTest', 'watchComp']);
+gulp.task('default', ['webpack', 'watchComp']);

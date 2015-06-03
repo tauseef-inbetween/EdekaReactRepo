@@ -2,6 +2,7 @@ var ContentStore = require('./ContentStore');
 var ContentUtils = require('./utils/ContentUtils');
 var alertify = require('../../libraries/js/alertify/alertify');
 var $ = require('jquery');
+require('jquery-ui');
 require('../../libraries/js/jquery/jquery.layout.js');
 
 var Promise = require('promise');
