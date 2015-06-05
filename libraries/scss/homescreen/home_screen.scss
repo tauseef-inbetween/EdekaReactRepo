@@ -1,0 +1,45 @@
+* {
+  font-family: Trebuchet, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+body{
+  overflow: hidden;
+}
+
+@import "buttons/master_create";
+@import "modules/menu";
+@import "themes/dark";
+@import "themes/light";
+@import "modules/screen";
+
+.alertify {
+  top: 30%;
+  font-size: 12px;
+  width: 350px;
+  left: 56%;
+}
+
+#popUpContainer {
+  z-index: 12;
+}
+
+#MainContainer {
+  overflow: hidden;
+  height: 675px;
+}
+
+#loaderContainer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: none;
+}
+
+.loading {
+  display: block !important;
+}
+
+
+

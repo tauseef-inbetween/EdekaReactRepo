@@ -1,0 +1,16 @@
+#masterCreateNewButton {
+  height: 27px;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 6px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.createButtonVisible {
+  visibility: visible;
+}
+
+.createButtonNotVisible {
+  visibility: hidden;
+}

@@ -19,6 +19,7 @@ gulp.task('webpack', function () {
                 },
                 module: {
                     loaders: [
+                        {test: /\.scss$/, loader: "style!css!sass" },
                         {test: /\.css$/, loader: "style-loader!css-loader" },
                         { test: /\.woff($|\?)/,   loader: 'url-loader' },
                         { test: /\.ttf($|\?)/,   loader: 'url-loader' },
@@ -31,7 +32,7 @@ gulp.task('webpack', function () {
                 },
                 resolve: {
                     // you can now require('file') instead of require('file.js')
-                    extensions: ['', '.js', '.json', '.jsx', '.css']
+                    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']
                 }
             }))
         //.pipe(uglify())

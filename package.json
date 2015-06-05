@@ -10,7 +10,6 @@
     "promise": "*",
     "react-addons": "*",
     "react-bootstrap": "*",
-    "alertify-webpack": "*",
     "material-ui": "*"
   },
 
@@ -28,7 +27,8 @@
     "file-loader": "*",
     "url-loader": "*",
     "express": "*",
-    "handlebars": "*"
+    "handlebars": "*",
+    "sass-loader": "*"
   },
 
   "jest": {

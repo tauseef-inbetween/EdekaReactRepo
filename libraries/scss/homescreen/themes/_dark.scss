@@ -1,0 +1,24 @@
+.dark {
+
+  font-family: fantasy;
+  font-weight: bold;
+
+  .menuItem {
+    text-shadow: -1px -1px 1px #111;
+  }
+
+  .Menu {
+    color: #1AFF00;
+    background: #000000;
+  }
+
+  .activeMenu {
+    box-shadow: 0 -4px 0 0 #BC1DC0 inset;
+    color: #F9FF00 !important;
+  }
+
+  .inActiveMenu:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 8px 8px -8px #272727, inset 0 -8px 8px -8px #333;
+  }
+}

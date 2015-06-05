@@ -1,0 +1,22 @@
+#moduleContainer {
+  position: relative;
+  top: 50px;
+  width: 1365px;
+  height: 625px;
+  overflow: hidden;
+}
+
+.showScreen {
+  left: 0;
+}
+
+.hideScreen {
+  left: 100%;
+}
+
+.screen {
+  height: 625px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
