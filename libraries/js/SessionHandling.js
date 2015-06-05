@@ -161,24 +161,6 @@ function restoreToLocalStorage(fileName){
   })
 }
 
-/*
-var mode = getQueryVariable("mode");
-if(mode){
-  mode = mode.toLowerCase();
-  switch(mode)
-  {
-    case 'clearcache' :  clearCache(true);
-      break;
-
-    case 'backup'        :  backup();
-      break;
-
-    case 'restore'       :   restore();
-      break;
-  }
-}
-*/
-
 function changeTheme (theme) {
   document.querySelector('body').className = theme;
 }

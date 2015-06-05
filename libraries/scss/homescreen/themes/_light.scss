@@ -1,5 +1,17 @@
 .light {
 
+  #masterCreateNewButton {
+    transition: all 0.3s;
+  }
+
+  #masterCreateNewButton:hover {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: 0;
+    box-shadow: 1px 1px 14px 1px rgb(84, 84, 84);
+  }
+
   .menuItem {
     text-shadow: -1px -1px 1px #798DC2;
   }
