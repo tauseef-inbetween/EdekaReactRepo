@@ -23,7 +23,7 @@ $(document).ready(function () {
     loadContent();
     ModuleDataLoader.loadDataFromNetwork('Content');
 
-    $('body').on('click', function(event) {
+    /*$('body').on('click', function(event) {
         var className = document.querySelector('body').className;
         if(className == 'dark'){
             document.querySelector('body').className = 'light';
@@ -32,7 +32,7 @@ $(document).ready(function () {
         } else {
             document.querySelector('body').className = 'dark';
         }
-    })
+    })*/
 });
 
 

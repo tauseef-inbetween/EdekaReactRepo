@@ -1,0 +1,132 @@
+* {
+    font-family: Trebuchet, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+.default .menuItem {
+    height: 103%;
+    width: 75px;
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 5px 5px 5px;
+    margin: 0 2px;
+    text-shadow: -1px -1px 1px #111;
+}
+
+.default .Menu {
+    width: 100%;
+    font-size: 12px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-weight: normal;
+    height: 50px;
+    background: #434343;
+    position: fixed;
+    overflow: hidden;
+    border: none;
+    z-index: 10;
+}
+
+.default #edekaCSHeaderLogo {
+    background: url("../screens/contentScreen/view/thumbnailView/images/jira-logo-scaled.png") no-repeat;
+    width: 40px;
+    height: 40px;
+    margin: 8px 20px 0 13px;
+    float: left;
+    display: inline-block;
+    background-size: 172px;
+}
+
+.default .menuIcon {
+    height: 18px;
+    width: 14px;
+    font-size: 14px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+.default .activeMenu {
+    box-shadow: 0 -4px 0 0 #87C6EB inset;
+    color: #87C6EB !important;
+}
+
+.default #masterCreateNewButton {
+    /* display: none; */
+    height: 27px;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 6px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.default .createButtonVisible {
+    visibility: visible;
+}
+
+.default .createButtonNotVisible {
+    visibility: hidden;
+}
+
+.default .inActiveMenu:hover {
+    background-color: #008fd0;
+    box-shadow: inset 0 8px 8px -8px #333, inset 0 -8px 8px -8px #333;
+}
+
+.default #moduleContainer {
+    position: relative;
+    top: 50px;
+    width: 1365px;
+    height: 625px;
+    overflow: hidden;
+}
+
+.default .showScreen {
+    left: 0;
+}
+
+.default .hideScreen {
+    left: 100%;
+}
+
+.default .screen {
+    height: 625px;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.default .alertify {
+    top: 30%;
+    font-size: 12px;
+    width: 350px;
+    left: 56%;
+}
+
+.default #popUpContainer {
+    z-index: 12;
+}
+
+.default #MainContainer {
+    overflow: hidden;
+    height: 675px;
+}
+
+.default #loaderContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+
+.default .loading {
+    display: block !important;
+}
