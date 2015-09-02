@@ -4,11 +4,11 @@ var $ = require('jquery');
 var CommonUtils = (function () {
     return {
       showLoader: function () {
-          $('#loaderContainer').addClass('loading');
+          //$('#loaderContainer').addClass('loading');
       },
 
       hideLoader: function () {
-          $('#loaderContainer').removeClass('loading');
+          //$('#loaderContainer').removeClass('loading');
       }
     };
 })();

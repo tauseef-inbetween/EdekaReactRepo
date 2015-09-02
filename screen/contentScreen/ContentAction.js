@@ -1,9 +1,9 @@
 var ContentStore = require('./ContentStore');
 var ContentUtils = require('./utils/ContentUtils');
 var alertify = require('../../libraries/js/alertify/alertify');
-var $ = require('jquery');
-require('jquery-ui');
-require('../../libraries/js/jquery/jquery.layout.js');
+//var $ = require('jquery');
+//require('jquery-ui');
+//require('../../libraries/js/jquery/jquery.layout.js');
 
 var Promise = require('promise');
 
@@ -125,7 +125,7 @@ var ContentAction = (function () {
         },
 
         initialiseLayouts: function (type) {
-            $('#northDOM').layout({
+            /*$('#northDOM').layout({
                 applyDefaultStyles: true,
                 panes: {
                     spacing_open: 6
@@ -164,7 +164,7 @@ var ContentAction = (function () {
                 west: {
                     size: 300
                 }
-            });
+            });*/
 
             //If layout is not created then $.fn.then returns true or false
             if(typeof PIMCenterLayout != "boolean") {

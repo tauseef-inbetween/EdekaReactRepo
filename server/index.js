@@ -7,13 +7,15 @@ require("node-jsx").install({ extension: ".js" });
 var HomeScreenController = require('../screen/homeScreen/HomeScreenController');
 var HomeScreenStore = require('../screen/homeScreen/HomeScreenStore');
 var ModuleDataLoader = require('../screen/homeScreen/utils/ModuleDataLoader');
-ModuleDataLoader.loadDataFromNetwork('Content');
+var MenuStore = require('./../screen/homeScreen/menuBar/MenuStore');
+
+//ModuleDataLoader.loadDataFromNetwork('Content');
 
 // Since we're not using JSX here, we need to wrap the component in a factory
 var HomeScreenControllerFactory = React.createFactory(HomeScreenController);
 
 var renderedComponent = React.renderToString(
-    HomeScreenControllerFactory({store: HomeScreenStore})
+    HomeScreenControllerFactory({store: HomeScreenStore, MenuStore: MenuStore})
 );
 
 
@@ -45,7 +47,7 @@ app.get('/', function(req, res) {
 
 // NOTE: This route is last since we want to match the dynamic routes above
 // first before attempting to match a static resource (js/css/etc)
-app.use(express.static('./'));
+app.use(express.static('../'));
 
 app.listen(3200, function() {
   console.log("Listening on port 3200");

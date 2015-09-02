@@ -10,7 +10,7 @@ var TargetScreenController = require('../targetScreen/TargetScreenController');
 var ReportScreenController = require('../reportScreen/ReportScreenController');
 var MenuBar = require('./menuBar/MenuBar');
 var ContentStore = require('../contentScreen/ContentStore');
-var MenuStore = require('./menuBar/MenuStore');
+//var MenuStore = require('./menuBar/MenuStore');
 
 var HomeScreenController = React.createClass({
 
@@ -51,7 +51,7 @@ var HomeScreenController = React.createClass({
         return (
             <div id="MainContainer">
                 <div id="menuContainer">
-                    <MenuBar ref="menuBar" store={MenuStore}/>
+                    <MenuBar ref="menuBar" store={this.props.MenuStore}/>
                 </div>
                 <div id="moduleContainer">
                     <CalendarScreenController ref="calenderScreen" key="0" className={screenDisplayClasses[0]}/>

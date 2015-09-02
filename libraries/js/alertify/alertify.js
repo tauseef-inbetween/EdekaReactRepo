@@ -4,10 +4,6 @@ var _ = require('lodash');
 (function (global, undefined) {
     "use strict";
 
-    if(_.isEmpty(global)) {
-        global = window;
-    }
-
     var document = global.document,
         Alertify;
 
